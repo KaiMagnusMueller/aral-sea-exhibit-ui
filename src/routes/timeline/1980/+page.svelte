@@ -4,13 +4,13 @@
 </script>
 
 <svelte:head>
-    <title>1960</title>
-    <meta name="description" content="Aral Sea 1960" />
+    <title>1980</title>
+    <meta name="description" content="Aral Sea 1980" />
 </svelte:head>
 
 <div class="content">
-    <h1>{$t('1960.water.title')}</h1>
-    <p>{$t('1960.water.content')}</p>
+    <h1>{$t('1980.water.title')}</h1>
+    <p>{$t('1980.water.content')}</p>
 </div>
 
 <style>
