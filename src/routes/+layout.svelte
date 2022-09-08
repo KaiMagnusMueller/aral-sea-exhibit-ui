@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Header from '$lib/header/Header.svelte';
 	import '../app.css';
 
 	import LangSwitch from '$lib/LangSwitch.svelte';
@@ -13,12 +12,19 @@
 		initialLocale: 'de',
 		fallbackLocale: 'en',
 	});
+
+	import PageTransition from '$lib/PageTransition.svelte';
+
+	// /** @type {import('./$types').LayoutData} */
+	// export let data: any;
 </script>
 
 <LangSwitch />
 
 <main data-sveltekit-prefetch>
+	<!-- <PageTransition pathname={data.pathname}> -->
 	<slot />
+	<!-- </PageTransition> -->
 </main>
 
 <style>
@@ -28,7 +34,6 @@
 		flex-direction: column;
 		padding: 1rem;
 		width: 100%;
-		max-width: 1024px;
 		margin: 0 auto;
 		box-sizing: border-box;
 	}
