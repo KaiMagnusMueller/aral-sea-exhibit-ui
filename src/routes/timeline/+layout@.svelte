@@ -5,6 +5,4 @@
 
 <TimelineHeader />
 
-<LangSwitch />
-
 <slot />

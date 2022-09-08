@@ -17,6 +17,9 @@
 <header>
     <nav>
         <ul>
+            <li class:active={$page.url.pathname === '/'}>
+                <a href="/">Restart</a>
+            </li>
             {#each pages as p}
                 <li class:active={$page.url.pathname === '/timeline/' + p}>
                     <a href="./{p}">{p}</a>

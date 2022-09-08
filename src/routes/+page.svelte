@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Counter from '$lib/Counter.svelte';
+	import { t } from 'svelte-intl-precompile';
 </script>
 
 <svelte:head>
@@ -15,15 +15,14 @@
 				<img src="svelte-welcome.png" alt="Welcome" />
 			</picture>
 		</span>
-
-		to your new<br />SvelteKit app
+		{$t('splash.intro.text')}
 	</h1>
+
+	<a href="timeline/">{$t('splash.start.button')}</a>
 
 	<h2>
 		try editing <strong>src/routes/+page.svelte</strong>
 	</h2>
-
-	<Counter />
 </section>
 
 <style>

@@ -1,4 +1,9 @@
 {
+    "splash": {
+        "title": "",
+        "intro.text": "to the Aral Sea exhibit",
+        "start.button": "Start the experience"
+    },
     "1960": {
         "water": {
             "title": "Water level, salinity, environmental effects",

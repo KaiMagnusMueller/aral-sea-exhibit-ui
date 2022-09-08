@@ -1,4 +1,9 @@
 {
+    "splash": {
+        "title": "",
+        "intro.text": "Wilkommen zum Aral See Exponat",
+        "start.button": "Starte die Reise"
+    },
     "1960": {
         "water": {
             "title": "Wasserstand, Salzgehalt, Umweltauswirkungen",
