@@ -1,7 +1,11 @@
 <script>
-    import { t } from 'svelte-intl-precompile';
+    import { t, locale } from 'svelte-intl-precompile';
     import { page } from '$app/stores';
     import TextContent from '../components/TextContent.svelte';
+    import Water_de from './Water_de.svx';
+    import Water_en from './Water_en.svx';
+    import Cotton_de from './Cotton_de.svx';
+    import Cotton_en from './Cotton_en.svx';
 
     // import { fly } from 'svelte/transition';
 </script>
@@ -13,12 +17,20 @@
 
 <TextContent duration={600}>
     <div class="content">
-        <h1>{$t('1960.water.title')}</h1>
+        <!-- <h1>{$t('1960.water.title')}</h1>
         <p>{$t('1960.water.content')}</p>
         <h1>{$t('1960.cotton.title')}</h1>
         <p>{$t('1960.cotton.content')}</p>
         <h1>{$t('1960.politics.title')}</h1>
-        <p>{$t('1960.politics.content')}</p>
+        <p>{$t('1960.politics.content')}</p> -->
+
+        {#if $locale === 'de'}
+            <Water_de />
+            <Cotton_de />
+        {:else if $locale === 'en'}
+            <Water_en />
+            <Cotton_en />
+        {/if}
     </div>
 </TextContent>
 
