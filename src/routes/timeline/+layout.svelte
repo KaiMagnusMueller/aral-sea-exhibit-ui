@@ -9,6 +9,13 @@
 
 <TimelineHeader />
 
-<!-- <PageTransition pathname={data.pathname}> -->
-<slot />
-<!-- </PageTransition> -->
+<div class="content-container grid col-2 gap-m">
+    <!-- <PageTransition pathname={data.pathname}> -->
+    <slot />
+    <!-- </PageTransition> -->
+</div>
+
+<style>
+    .content-container {
+    }
+</style>
