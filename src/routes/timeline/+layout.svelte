@@ -13,7 +13,7 @@
     <TimelineHeader />
 </header>
 
-<div class="content-container grid col-2 gap-l">
+<div class="content-container">
     <!-- <PageTransition pathname={data.pathname}> -->
     <slot />
     <!-- </PageTransition> -->
@@ -24,10 +24,8 @@
     }
 
     .content-container {
-        height: 940px;
-    }
-
-    .tab-bar {
-        margin: auto;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
     }
 </style>

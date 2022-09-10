@@ -35,6 +35,22 @@
 	flex-direction: column;
 }
 
+.gap-xxs {
+	gap: 16px
+}
+
+.gap-xs {
+	gap: 32px
+}
+
+.gap-s {
+	gap: 64px
+}
+
+.gap-m {
+	gap: 80px
+}
+
 .gap-l {
 	gap: 128px
 }
