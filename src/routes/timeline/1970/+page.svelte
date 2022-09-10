@@ -53,4 +53,16 @@
         max-width: var(--column-width);
         margin: var(--column-margin-top) auto 0 auto;
     }
+
+    .first-image {
+        width: 50%;
+        right: 0;
+        top: 80px;
+        position: absolute;
+        transform: rotate(2deg);
+    }
+
+    .image-section {
+        position: relative;
+    }
 </style>

@@ -19,8 +19,6 @@
 	// export let data: any;
 </script>
 
-<LangSwitch />
-
 <main data-sveltekit-prefetch>
 	<!-- <PageTransition pathname={data.pathname}> -->
 	<slot />
@@ -36,5 +34,7 @@
 		width: 100%;
 		margin: 0 auto;
 		box-sizing: border-box;
+		height: 100vh;
+		gap: 20px;
 	}
 </style>

@@ -22,6 +22,21 @@
     import Cotton_01 from '$lib/media/Cotton_01.jpg';
 
     let imagePath = '';
+
+    let topics = [
+        {
+            title: $t('1960.water.title_short'),
+            name: 'water',
+        },
+        {
+            title: $t('1960.cotton.title_short'),
+            name: 'cotton',
+        },
+        {
+            title: $t('1960.politics.title_short'),
+            name: 'politics',
+        },
+    ];
 </script>
 
 <svelte:head>
@@ -58,13 +73,36 @@
     </TextContent>
 </div>
 
+<div class="tab-bar border-l border-radius-l">
+    {#each topics as topic}
+        <div>{$t('1960.' + topic.name + '.title_short')}</div>
+    {/each}
+</div>
+
 <style>
     .content {
-        width: 100%;
-        max-width: var(--column-width);
-        margin: var(--column-margin-top) auto 0 auto;
+        overflow-y: scroll;
     }
     /* 
     in:fly={{ delay: 200, duration: 200, x: 50 }}
     out:fly={{ delay: 0, duration: 200, x: -50 }} */
+
+    .first-image {
+        width: 50%;
+        top: 80px;
+        right: 0;
+        position: absolute;
+        transform: rotate(2deg);
+    }
+
+    .image-section {
+        position: relative;
+    }
+
+    .text-section {
+        overflow-y: scroll;
+    }
+
+    .tab-bar {
+    }
 </style>
