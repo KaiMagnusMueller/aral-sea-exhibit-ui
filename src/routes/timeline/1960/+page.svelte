@@ -1,7 +1,7 @@
 <script>
     import TabBar from '$lib/TabBar.svelte';
 
-    import { t, locale, format } from 'svelte-intl-precompile';
+    import { t, locale, format, getCurrentLocale } from 'svelte-intl-precompile';
     import { page } from '$app/stores';
     import TextContent from '../components/TextContent.svelte';
     // @ts-ignore
@@ -26,6 +26,9 @@
     let imagePath = '';
 
     import { topics } from '../store';
+    import ContentContainer from '../ContentContainer.svelte';
+    import ImageSection from '../ImageSection.svelte';
+    import TextSection from '../TextSection.svelte';
 
     $topics = [
         {
@@ -42,6 +45,17 @@
             name: 'politics',
         },
     ];
+
+    let currentTopic = {
+        name: '',
+        title: '',
+        current: false,
+    };
+    $: $topics, getCurrentTopic();
+
+    function getCurrentTopic() {
+        currentTopic = $topics.find((elem) => elem.current == true);
+    }
 </script>
 
 <svelte:head>
@@ -49,14 +63,36 @@
     <meta name="description" content="Aral Sea 1960" />
 </svelte:head>
 
-<div class="content-container grid col-2 gap-l">
-    <div class="image-section">
+<ContentContainer>
+    <ImageSection>
         <div class="first-image">
             <Image src={Cotton_01} alt={$t('1960.water.title')} />
         </div>
-    </div>
+    </ImageSection>
 
-    <div class="text-section">
+    <TextSection>
+        {#if currentTopic.name === 'water' && currentTopic.current === true}
+            {#if $locale === 'de'}
+                <Water_de />
+            {:else if $locale === 'en'}
+                <Water_en />
+            {/if}
+        {/if}
+        {#if currentTopic.name === 'cotton' && currentTopic.current === true}
+            {#if $locale === 'de'}
+                <Cotton_de />
+            {:else if $locale === 'en'}
+                <Cotton_en />
+            {/if}
+        {/if}
+        {#if currentTopic.name === 'politics' && currentTopic.current === true}
+            {#if $locale === 'de'}
+                <Politics_de />
+            {:else if $locale === 'en'}
+                <Politics_en />
+            {/if}
+        {/if}
+
         <TextContent duration={600}>
             <div class="content">
                 <!-- <h1>{$t('1960.water.title')}</h1>
@@ -65,7 +101,7 @@
                 <p>{$t('1960.cotton.content')}</p>
                 <h1>{$t('1960.politics.title')}</h1>
                 <p>{$t('1960.politics.content')}</p> -->
-
+                <!-- 
                 {#if $locale === 'de'}
                     <Water_de />
                     <Cotton_de />
@@ -74,11 +110,11 @@
                     <Water_en />
                     <Cotton_en />
                     <Politics_en />
-                {/if}
+                {/if} -->
             </div>
         </TextContent>
-    </div>
-</div>
+    </TextSection>
+</ContentContainer>
 
 <TabBar />
 
@@ -87,11 +123,7 @@
         overflow-y: scroll;
     }
 
-    .content-container {
-        flex-grow: 1;
-    }
-    /* 
-    in:fly={{ delay: 200, duration: 200, x: 50 }}
+    /* in:fly={{ delay: 200, duration: 200, x: 50 }}
     out:fly={{ delay: 0, duration: 200, x: -50 }} */
 
     .first-image {
@@ -100,13 +132,5 @@
         right: 0;
         position: absolute;
         transform: rotate(2deg);
-    }
-
-    .image-section {
-        position: relative;
-    }
-
-    .text-section {
-        overflow-y: scroll;
     }
 </style>
