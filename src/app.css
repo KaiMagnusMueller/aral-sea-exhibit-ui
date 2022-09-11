@@ -19,6 +19,20 @@
 
 	--aral-color-bg: #FFFCDF;
 	--aral-color-content: #000000;
+
+
+	/* ----------------- */
+	/* ----------------- */
+	/* SIZES */
+
+	--size-xxs: 4px;
+	--size-xs: 8px;
+	--size-s: 16px;
+	--size-sm: 20px;
+	--size-m: 32px;
+	--size-l: 48px;
+	--size-xl: 64px;
+	--size-xxl: 128px;
 }
 
 
@@ -73,16 +87,22 @@
 /* ----------------- */
 /* BORDERS */
 
-.border-l {
-	border: 2px solid var(--aral-color-content);
+:root {
+	--border-l: 2px solid var(--aral-color-content);
+	--border-radius-l: var(--size-xs);
+	--border-radius-xl: var(--size-s);
 }
 
-.border-radius-xl {
-	border-radius: 16px;
+.border-l {
+	border: var(--border-l);
 }
 
 .border-radius-l {
-	border-radius: 8px;
+	border-radius: var(--border-radius-xl);
+}
+
+.border-radius-xl {
+	border-radius: var(--border-radius-xl);
 }
 
 
@@ -200,4 +220,87 @@ button:focus:not(:focus-visible) {
 	h1 {
 		font-size: 18px;
 	}
+}
+
+
+/* ----------------- */
+/* ----------------- */
+/* TABLE */
+
+.text-section table {
+	/* border: var(--border-l); */
+	border-collapse: separate;
+	border-left: 0;
+	border-radius: var(--size-xs);
+	border-spacing: 0px;
+}
+
+.text-section thead {
+	display: table-header-group;
+	vertical-align: middle;
+	border-color: inherit;
+	border-collapse: separate;
+}
+
+.text-section tr {
+	display: table-row;
+	vertical-align: inherit;
+	border-color: inherit;
+}
+
+.text-section th,
+.text-section td {
+	padding: var(--size-xs) var(--size-sm);
+	text-align: left;
+	vertical-align: top;
+	border-left: var(--border-l);
+}
+
+.text-section td,
+.text-section th {
+	border-top: var(--border-l);
+}
+
+.text-section thead:first-child tr:first-child th:first-child,
+.text-section tbody:first-child tr:first-child td:first-child {
+	border-radius: var(--size-xs) 0 0 0;
+}
+
+.text-section thead:last-child tr:last-child th:first-child,
+.text-section tbody tr:last-child td:first-child {
+	border-radius: 0 0 0 var(--size-xs);
+}
+
+.text-section tbody tr:first-child td:first-child {
+	border-radius: var(--size-xs) 0 0 0;
+}
+
+.text-section thead tr:first-child th:last-child,
+.text-section tbody tr:first-child td:last-child {
+	border-radius: 0 var(--size-xs) 0 0;
+}
+
+.text-section tbody tr:last-child td:last-child {
+	border-radius: 0 0 var(--size-xs) 0;
+}
+
+.text-section table th:last-child,
+.text-section table td:last-child {
+	border-right: var(--border-l);
+}
+
+.text-section tbody tr:last-child td {
+	border-bottom: var(--border-l);
+}
+
+.text-section thead:has(tr:has(th:empty)) {
+	display: none;
+}
+
+.text-section table:not(:has(th:empty)) tbody tr:first-child td:first-child {
+	border-radius: 0;
+}
+
+.text-section table:not(:has(th:empty)) tbody tr:first-child td:last-child {
+	border-radius: 0;
 }
