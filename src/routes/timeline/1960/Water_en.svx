@@ -1,0 +1,11 @@
+# Water level, salinity, environmental effects
+
+In 1960, the Aral Sea is still the 4th largest inland lake in the world with an area of about 68,000 square kilometers (which is approximately the size of Bavaria). From the south comes the tributary Amudarya, from the east the Syrdarya into the Aral Sea. It is a habitat for over 20 species of fish, including carp, catfish and sturgeon.
+
+
+                              |       
+----------------------------- | ------
+Water level m above sea level | 53.4  
+Water volume km<sup>3</sup>   | 1089  
+Surface area km<sup>2</sup>   | 67,500
+Salinity (g/L)                | 10    

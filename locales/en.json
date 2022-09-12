@@ -1,8 +1,40 @@
 {
+    "general": {
+        "reset": "Restart"
+    },
+    "splash": {
+        "title": "",
+        "intro.text": "to the Aral Sea exhibit",
+        "start.button": "Start the experience"
+    },
     "1960": {
+        "title": "Aral Sea 1970",
         "water": {
             "title": "Water level, salinity, environmental effects",
-            "content": "In 1960, the Aral Sea is still the 4th largest inland lake in the world with an area of about 68,000 square kilometers (which is approximately the size of Bavaria). From the south comes the tributary Amudarya, from the east the Syrdarya into the Aral Sea. It is a habitat for over 20 species of fish, including carp, catfish and sturgeon."
+            "title_short": "Water & Environment"
+        },
+        "cotton": {
+            "title": "Cotton production",
+            "title_short": "Cotton production"
+        },
+        "politics": {
+            "title": "Political Situation / Decisions",
+            "title_short": "Political Situation"
+        }
+    },
+    "1970": {
+        "title": "Aral Sea 1970",
+        "water": {
+            "title": "Water level, salinity, environmental effects",
+            "title_short": "Water & Environment"
+        },
+        "cotton": {
+            "title": "Cotton production",
+            "title_short": "Cotton production"
+        },
+        "politics": {
+            "title": "Political Situation / Decisions",
+            "title_short": "Political Situation"
         }
     }
 }

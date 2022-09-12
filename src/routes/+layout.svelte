@@ -1,6 +1,7 @@
 <script lang="ts">
-	import Header from '$lib/header/Header.svelte';
 	import '../app.css';
+
+	import LangSwitch from '$lib/LangSwitch.svelte';
 
 	import { addMessages, init } from 'svelte-intl-precompile';
 	import en from '$locales/en';
@@ -11,45 +12,29 @@
 		initialLocale: 'de',
 		fallbackLocale: 'en',
 	});
+
+	import PageTransition from '$lib/PageTransition.svelte';
+
+	// /** @type {import('./$types').LayoutData} */
+	// export let data: any;
 </script>
 
-<Header />
-
 <main data-sveltekit-prefetch>
+	<!-- <PageTransition pathname={data.pathname}> -->
 	<slot />
+	<!-- </PageTransition> -->
 </main>
-
-<footer>
-	<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
-</footer>
 
 <style>
 	main {
 		flex: 1;
 		display: flex;
 		flex-direction: column;
-		padding: 1rem;
+		padding: 1rem 80px;
 		width: 100%;
-		max-width: 1024px;
 		margin: 0 auto;
 		box-sizing: border-box;
-	}
-
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 40px;
-	}
-
-	footer a {
-		font-weight: bold;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 40px 0;
-		}
+		height: 100vh;
+		gap: 20px;
 	}
 </style>

@@ -1,8 +1,40 @@
 {
+    "general": {
+        "reset": "Neustart"
+    },
+    "splash": {
+        "title": "",
+        "intro.text": "Wilkommen zum Aral See Exponat",
+        "start.button": "Starte die Reise"
+    },
     "1960": {
+        "title": "Aral See 1960",
         "water": {
             "title": "Wasserstand, Salzgehalt, Umweltauswirkungen",
-            "content": "1960 ist der Aralsee noch der 4. größte Binnensee der Welt mit einer Fläche von rund 68.000 Quadratkilometern (was ungefähr der Größe Bayerns entspricht). Von Süden kommt der Zufluss Amudarja, vom Osten der Syrdarja in den Aralsee. Er ist Lebensraum für über 20 Fischarten, darunter Karpfen, Welse und Störe."
+            "title_short": "Wasser & Umwelt"
+        },
+        "cotton": {
+            "title": "Baumwollproduktion",
+            "title_short": "Baumwollproduktion"
+        },
+        "politics": {
+            "title": "Politische Situation / Entscheidungen",
+            "title_short": "Politische Situation"
+        }
+    },
+    "1970": {
+        "title": "Aral See 1970",
+        "water": {
+            "title": "Wasserstand, Salzgehalt, Umweltauswirkungen",
+            "title_short": "Wasser & Umwelt"
+        },
+        "cotton": {
+            "title": "Baumwollproduktion",
+            "title_short": "Baumwollproduktion"
+        },
+        "politics": {
+            "title": "Politische Situation / Entscheidungen",
+            "title_short": "Politische Situation"
         }
     }
 }

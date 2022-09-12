@@ -1,7 +1,8 @@
 @import '@fontsource/fira-mono';
+@import '@fontsource/inter';
 
 :root {
-	font-family: Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+	font-family: "Inter", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
 		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	--font-mono: 'Fira Mono', monospace;
 	--pure-white: #ffffff;
@@ -14,34 +15,147 @@
 	--background-without-opacity: rgba(255, 255, 255, 0.7);
 	--column-width: 42rem;
 	--column-margin-top: 4rem;
+
+
+	--aral-color-bg: #FFFCDF;
+	--aral-color-content: #000000;
+
+
+	/* ----------------- */
+	/* ----------------- */
+	/* SIZES */
+
+	--size-xxs: 4px;
+	--size-xs: 8px;
+	--size-s: 16px;
+	--size-sm: 20px;
+	--size-m: 32px;
+	--size-l: 48px;
+	--size-xl: 64px;
+	--size-xxl: 128px;
 }
+
+
+/* ----------------- */
+/* ----------------- */
+/* FLEX */
+
+
+.flex {
+	display: flex;
+}
+
+.column {
+	flex-direction: column;
+}
+
+.gap-xxs {
+	gap: 16px
+}
+
+.gap-xs {
+	gap: 32px
+}
+
+.gap-s {
+	gap: 64px
+}
+
+.gap-m {
+	gap: 80px
+}
+
+.gap-l {
+	gap: 128px
+}
+
+
+/* ----------------- */
+/* ----------------- */
+/* GRID */
+
+.grid {
+	display: grid;
+}
+
+.col-2 {
+	grid-template-columns: 3fr 2fr;
+}
+
+
+/* ----------------- */
+/* ----------------- */
+/* BORDERS */
+
+:root {
+	--border-l: 2px solid var(--aral-color-content);
+	--border-radius-l: var(--size-xs);
+	--border-radius-xl: var(--size-s);
+}
+
+.border-l {
+	border: var(--border-l);
+}
+
+.border-radius-l {
+	border-radius: var(--border-radius-xl);
+}
+
+.border-radius-xl {
+	border-radius: var(--border-radius-xl);
+}
+
+
+/* ----------------- */
+/* ----------------- */
+/* TEXT */
+
+.text-body-m {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 28px;
+}
+
+.text-heading-m {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 28px;
+}
+
+/* ----------------- */
+/* ----------------- */
+/* SHADOWS */
+
+.shadow-m {
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------------------------- */
+/* ---------------------------- */
+/* ---------------------------- */
+/* ---------------------------- */
 
 body {
 	min-height: 100vh;
 	margin: 0;
-	background-color: var(--primary-color);
-	background: linear-gradient(
-		180deg,
-		var(--primary-color) 0%,
-		var(--secondary-color) 10.45%,
-		var(--tertiary-color) 41.35%
-	);
-}
-
-body::before {
-	content: '';
-	width: 80vw;
-	height: 100vh;
-	position: absolute;
-	top: 0;
-	left: 10vw;
-	z-index: -1;
-	background: radial-gradient(
-		50% 50% at 50% 50%,
-		var(--pure-white) 0%,
-		rgba(255, 255, 255, 0) 100%
-	);
-	opacity: 0.05;
+	background-color: var(--aral-color-bg)
 }
 
 #svelte {
@@ -50,15 +164,10 @@ body::before {
 	flex-direction: column;
 }
 
-h1,
-h2,
 p {
 	font-weight: 400;
-	color: var(--heading-color);
-}
-
-p {
-	line-height: 1.5;
+	font-size: 18px;
+	line-height: 28px;
 }
 
 a {
@@ -71,16 +180,19 @@ a:hover {
 }
 
 h1 {
-	font-size: 2rem;
-	text-align: center;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 28px;
 }
 
 h2 {
-	font-size: 1rem;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 28px;
 }
 
 pre {
-	font-size: 16px;
+	font-size: 18px;
 	font-family: var(--font-mono);
 	background-color: rgba(255, 255, 255, 0.45);
 	border-radius: 3px;
@@ -88,6 +200,10 @@ pre {
 	padding: 0.5em;
 	overflow-x: auto;
 	color: var(--text-color);
+
+
+
+
 }
 
 input,
@@ -102,6 +218,89 @@ button:focus:not(:focus-visible) {
 
 @media (min-width: 720px) {
 	h1 {
-		font-size: 2.4rem;
+		font-size: 18px;
 	}
+}
+
+
+/* ----------------- */
+/* ----------------- */
+/* TABLE */
+
+.text-section table {
+	/* border: var(--border-l); */
+	border-collapse: separate;
+	border-left: 0;
+	border-radius: var(--size-xs);
+	border-spacing: 0px;
+}
+
+.text-section thead {
+	display: table-header-group;
+	vertical-align: middle;
+	border-color: inherit;
+	border-collapse: separate;
+}
+
+.text-section tr {
+	display: table-row;
+	vertical-align: inherit;
+	border-color: inherit;
+}
+
+.text-section th,
+.text-section td {
+	padding: var(--size-xs) var(--size-sm);
+	text-align: left;
+	vertical-align: top;
+	border-left: var(--border-l);
+}
+
+.text-section td,
+.text-section th {
+	border-top: var(--border-l);
+}
+
+.text-section thead:first-child tr:first-child th:first-child,
+.text-section tbody:first-child tr:first-child td:first-child {
+	border-radius: var(--size-xs) 0 0 0;
+}
+
+.text-section thead:last-child tr:last-child th:first-child,
+.text-section tbody tr:last-child td:first-child {
+	border-radius: 0 0 0 var(--size-xs);
+}
+
+.text-section tbody tr:first-child td:first-child {
+	border-radius: var(--size-xs) 0 0 0;
+}
+
+.text-section thead tr:first-child th:last-child,
+.text-section tbody tr:first-child td:last-child {
+	border-radius: 0 var(--size-xs) 0 0;
+}
+
+.text-section tbody tr:last-child td:last-child {
+	border-radius: 0 0 var(--size-xs) 0;
+}
+
+.text-section table th:last-child,
+.text-section table td:last-child {
+	border-right: var(--border-l);
+}
+
+.text-section tbody tr:last-child td {
+	border-bottom: var(--border-l);
+}
+
+.text-section thead:has(tr:has(th:empty)) {
+	display: none;
+}
+
+.text-section table:not(:has(th:empty)) tbody tr:first-child td:first-child {
+	border-radius: 0;
+}
+
+.text-section table:not(:has(th:empty)) tbody tr:first-child td:last-child {
+	border-radius: 0;
 }

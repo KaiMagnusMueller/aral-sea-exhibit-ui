@@ -1,5 +1,6 @@
 <script lang="ts">
     import { page } from '$app/stores';
+    import { t } from 'svelte-intl-precompile';
 
     // import { getPages } from '$lib/pages';
 
@@ -17,6 +18,9 @@
 <header>
     <nav>
         <ul>
+            <li class:active={$page.url.pathname === '/'}>
+                <a href="/">{$t('general.reset')}</a>
+            </li>
             {#each pages as p}
                 <li class:active={$page.url.pathname === '/timeline/' + p}>
                     <a href="./{p}">{p}</a>
@@ -29,5 +33,11 @@
 <style>
     .active {
         font-weight: 700;
+    }
+
+    ul {
+        display: flex;
+        list-style: none;
+        gap: 10px;
     }
 </style>

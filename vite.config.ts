@@ -5,7 +5,8 @@ import type { UserConfig } from 'vite';
 
 const config: UserConfig = {
 	plugins: [
-		sveltekit(),
+		sveltekit(
+		),
 		precompileIntl('locales') // if your translations are defined in /locales/[lang].json
 	]
 };
