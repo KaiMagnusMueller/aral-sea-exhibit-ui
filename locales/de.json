@@ -8,20 +8,33 @@
         "start.button": "Starte die Reise"
     },
     "1960": {
+        "title": "Aral See 1960",
         "water": {
             "title": "Wasserstand, Salzgehalt, Umweltauswirkungen",
-            "title_short": "Wasser & Umwelt",
-            "content": "1960 ist der Aralsee noch der 4. größte Binnensee der Welt mit einer Fläche von rund 68.000 Quadratkilometern (was ungefähr der Größe Bayerns entspricht). Von Süden kommt der Zufluss Amudarja, vom Osten der Syrdarja in den Aralsee. Er ist Lebensraum für über 20 Fischarten, darunter Karpfen, Welse und Störe."
+            "title_short": "Wasser & Umwelt"
         },
         "cotton": {
             "title": "Baumwollproduktion",
-            "title_short": "Baumwollproduktion",
-            "content": "Baumwolle wurde im Planwirtschaftssystem u.a. in Kolchosen und Sowchosen angebaut. Ein Kolchos ist ein kollektiv landwirtschaftlicher Betrieb. Eine Sowchose ein staatlicher Großbetrieb in der Landwirtschaft der ehemaligen Sowjetunion. Die Unternehmensverfassung ist ähnlich der eines staatlichen Unternehmens in der Industrie: Der Direktor wird von übergeordneten Instanzen eingesetzt, die Beschäftigten haben Arbeitnehmerstatus. Seit 1952 hat Usbekistan trotz großer Anstrengungen wie Bewässerung und Zwangsarbeit die Baumwollpläne nicht mehr richtig erfüllen können."
+            "title_short": "Baumwollproduktion"
         },
         "politics": {
             "title": "Politische Situation / Entscheidungen",
-            "title_short": "Politische Situation",
-            "content": "Seit 1959 regiert Scharaf Raschidow in einer lokalen Partokratie mit den Attributen eines kommunistischen Khanats Usbekistan. Es wurden große Anstrengungen unternommen, den Baumwollanbau zu verbessern. Die Schwierigkeiten lagen nicht auf den Feldern, sondern in der Politik. So wurde die politische Entscheidung getroffen, neue Anbaumethoden einzuführen. Statt mit 70 cm Abstand wurden die Pflanzen entgegen der Stimmen aus der Wissenschaft in einem Abstand von 45 cm gesät. Die Folgen waren ein Mehr Wasserbedarf, Dünger und Arbeitskräften sowie eine aufwendige Umstellung der landwirtschaftlichen Geräte von 70 cm Furchenbreite auf 45 cm. 1967 wurde auch der Karakum Kanal fertiggestellt. Der 1.445 km lange Kanal entzieht dem Aralzufluss Amudarja Wasser für den Baumwoll- und Reisanbau. Weil der Kanal bis Bereket (früherer Name Gazanjyk, ♁39° 15′ N, 55° 31′ O) offen verläuft und zudem über kein betoniertes Bett verfügt, verdunstet oder versickert etwa die Hälfte der in ihm hindurchgeleiteten Wassermenge."
+            "title_short": "Politische Situation"
+        }
+    },
+    "1970": {
+        "title": "Aral See 1970",
+        "water": {
+            "title": "Wasserstand, Salzgehalt, Umweltauswirkungen",
+            "title_short": "Wasser & Umwelt"
+        },
+        "cotton": {
+            "title": "Baumwollproduktion",
+            "title_short": "Baumwollproduktion"
+        },
+        "politics": {
+            "title": "Politische Situation / Entscheidungen",
+            "title_short": "Politische Situation"
         }
     }
 }

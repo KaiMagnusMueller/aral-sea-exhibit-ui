@@ -1,5 +1,11 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+
 	import { t } from 'svelte-intl-precompile';
+	import { topics } from '../routes/timeline/store';
+	onMount(() => {
+		$topics.currentTopic = '';
+	});
 </script>
 
 <svelte:head>

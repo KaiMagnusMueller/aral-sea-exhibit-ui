@@ -1,24 +1,31 @@
-<script>
+<script lang="ts">
+    import { onMount } from 'svelte';
+
     import { t } from 'svelte-intl-precompile';
     import { topics } from '../routes/timeline/store';
 
-    function handleClick(event) {
+    onMount(() => {
+        if (!$topics.currentTopic) {
+            $topics.currentTopic = $topics.topicList[0].name;
+        }
+    });
+
+    function handleClick(event: MouseEvent) {
         console.log(event);
 
-        $topics.forEach((topic) => {
-            topic.current = false;
+        $topics.currentTopic = event.target.attributes.name.value;
 
-            if (event.target.attributes.name.value === topic.name) {
-                topic.current = true;
-            }
-        });
         $topics = $topics;
     }
 </script>
 
 <div class="tab-bar flex border-l gap-xxs border-radius-xl text-heading-m">
-    {#each $topics as topic (topic.name)}
-        <div class:active={topic.current} on:click={handleClick} name={topic.name}>
+    {#each $topics.topicList as topic (topic.name)}
+        <div
+            class:active={$topics.currentTopic === topic.name}
+            on:click={handleClick}
+            name={topic.name}
+        >
             {$t('1960.' + topic.name + '.title_short')}
         </div>
     {/each}
