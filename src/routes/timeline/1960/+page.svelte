@@ -107,13 +107,6 @@
 <TabBar />
 
 <style>
-    .content {
-        overflow-y: scroll;
-    }
-
-    /* in:fly={{ delay: 200, duration: 200, x: 50 }}
-    out:fly={{ delay: 0, duration: 200, x: -50 }} */
-
     .first-image {
         width: 50%;
         top: 80px;
