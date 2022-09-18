@@ -27,6 +27,7 @@
     import ContentContainer from '../ContentContainer.svelte';
     import ImageSection from '../ImageSection.svelte';
     import TextSection from '../TextSection.svelte';
+    import BarChart from '$lib/Charts/BarChart.svelte';
 
     $currentYear = 1960;
 
@@ -56,6 +57,8 @@
         <div class="first-image">
             <Image src={Cotton_01} alt={$t('1960.water.title')} />
         </div>
+
+        <BarChart />
     </ImageSection>
 
     <TextSection>
