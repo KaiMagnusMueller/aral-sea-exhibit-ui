@@ -1,12 +1,15 @@
 <script lang="ts">
     import { onMount } from 'svelte';
-    import { number } from 'svelte-intl-precompile';
+    import { bind } from 'svelte/internal';
+    import { getDimensions, getLargestValue, scaleValue, getColor } from './chartUtils';
+    import Tooltip from './Tooltip.svelte';
 
     export let data = [12, 10, 7, 8];
 
     export let barWidth = 45;
     export let barGap = 20;
     export let chartHeight = 250;
+    export let colorRamp = 'default';
 
     let chartContainer: HTMLElement;
 
@@ -18,7 +21,7 @@
 
     let ready = false;
 
-    $: console.log(rescaledData);
+    // $: console.log(rescaledData);
 
     onMount(() => {
         dimensions = getDimensions(chartContainer);
@@ -33,18 +36,18 @@
         ready = true;
     });
 
-    function getLargestValue(numbers: number[]) {
-        return Math.max(...numbers);
-    }
+    let visibleTooltip = false;
+    let hoveredElem: SVGRectElement;
 
-    function getDimensions(elem: HTMLElement) {
-        return [elem.clientWidth, elem.clientHeight];
+    function showTooltip(event: MouseEvent, entry) {
+        hoveredElem = event.target;
+        visibleTooltip = true;
+        console.log(event);
     }
-
-    function scaleValue(value: number, from: number[], to: number[]) {
-        var scale = (to[1] - to[0]) / (from[1] - from[0]);
-        var capped = Math.min(from[1], Math.max(from[0], value)) - from[0];
-        return ~~(capped * scale + to[0]);
+    function hideTooltip(event: MouseEvent) {
+        visibleTooltip = false;
+        hoveredElem = '';
+        console.log(event);
     }
 </script>
 
@@ -53,8 +56,11 @@
         <p>{maximumValue}</p>
         <p>{dimensions}</p>
     </div>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 {dimensions[0] + 4} {dimensions[1] + 4}">
-        {#if ready}
+    {#if ready}
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="-2 -2 {dimensions[0] + 4} {dimensions[1] + 4}"
+        >
             {#each rescaledData as entry, i}
                 <rect
                     x="{barWidth * i + barGap * i}px"
@@ -62,10 +68,18 @@
                     width="{barWidth}px"
                     height="{entry}px"
                     rx="6px"
+                    fill={getColor(colorRamp, i)}
+                    data-value={entry}
+                    on:mouseenter={(event) => showTooltip(event, entry)}
+                    on:mouseleave={hideTooltip}
                 />
             {/each}
-        {/if}
-    </svg>
+        </svg>
+    {/if}
+
+    {#if visibleTooltip}
+        <Tooltip {visibleTooltip} {hoveredElem} />
+    {/if}
 </div>
 
 <style>
@@ -83,6 +97,5 @@
     rect {
         stroke: var(--aral-color-content);
         stroke-width: 2px;
-        fill: aqua;
     }
 </style>
