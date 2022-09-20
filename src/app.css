@@ -97,6 +97,10 @@
 	border: var(--border-l);
 }
 
+.border-right-l {
+	border-right: var(--border-l);
+}
+
 .border-radius-l {
 	border-radius: var(--border-radius-xl);
 }

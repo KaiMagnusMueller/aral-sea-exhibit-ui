@@ -1,4 +1,8 @@
 
+export function getSmallestValue(numbers: number[]) {
+    return Math.min(...numbers);
+}
+
 export function getLargestValue(numbers: number[]) {
     return Math.max(...numbers);
 }
