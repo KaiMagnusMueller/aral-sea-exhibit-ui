@@ -1,6 +1,5 @@
 <script lang="ts">
     import { onMount } from 'svelte';
-    import { bind } from 'svelte/internal';
     import { getDimensions, getLargestValue, scaleValue, getColor } from './chartUtils';
     import Tooltip from './Tooltip.svelte';
 
@@ -37,21 +36,24 @@
     });
 
     let visibleTooltip = false;
-    let hoveredElem: SVGRectElement;
+    let hoveredElem: any;
 
-    function showTooltip(event: MouseEvent, entry) {
+    function showTooltip(event: MouseEvent) {
         hoveredElem = event.target;
         visibleTooltip = true;
-        console.log(event);
     }
-    function hideTooltip(event: MouseEvent) {
-        visibleTooltip = false;
-        hoveredElem = '';
-        console.log(event);
+    function hideTooltip() {
+        // visibleTooltip = false;
+        // hoveredElem = '';
     }
 </script>
 
-<div class="chart-container" bind:this={chartContainer} style="height: {chartHeight}px">
+<div
+    class="chart-container"
+    bind:this={chartContainer}
+    style="height: {chartHeight}px"
+    on:mouseleave={hideTooltip}
+>
     <div class="chart-legend">
         <p>{maximumValue}</p>
         <p>{dimensions}</p>
@@ -70,7 +72,7 @@
                     rx="6px"
                     fill={getColor(colorRamp, i)}
                     data-value={entry}
-                    on:mouseenter={(event) => showTooltip(event, entry)}
+                    on:mouseenter={(event) => showTooltip(event)}
                     on:mouseleave={hideTooltip}
                 />
             {/each}
@@ -78,7 +80,7 @@
     {/if}
 
     {#if visibleTooltip}
-        <Tooltip {visibleTooltip} {hoveredElem} />
+        <Tooltip {hoveredElem} />
     {/if}
 </div>
 
