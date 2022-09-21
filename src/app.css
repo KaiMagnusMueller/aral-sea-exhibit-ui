@@ -69,6 +69,10 @@
 	gap: 128px
 }
 
+.flex-cross-center {
+	align-items: center;
+}
+
 
 /* ----------------- */
 /* ----------------- */
@@ -100,6 +104,13 @@
 .border-right-l {
 	border-right: var(--border-l);
 }
+
+.border-bottom-l {
+	border-bottom: var(--border-l);
+}
+
+
+
 
 .border-radius-l {
 	border-radius: var(--border-radius-xl);
@@ -144,11 +155,17 @@
 }
 
 
+/* ----------------- */
+/* ----------------- */
+/* PADDING */
 
+.padding-all-s {
+	padding: var(--size-s);
+}
 
-
-
-
+.padding-left-s {
+	padding-left: var(--size-s);
+}
 
 
 

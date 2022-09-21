@@ -70,7 +70,7 @@
 </script>
 
 <div
-    class="chart-container"
+    class="chart-container padding-all-s"
     bind:this={chartContainer}
     style="height: {chartHeight}px"
     on:mouseleave={hideTooltip}

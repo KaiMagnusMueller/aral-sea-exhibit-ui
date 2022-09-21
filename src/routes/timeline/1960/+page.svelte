@@ -28,6 +28,7 @@
     import ImageSection from '../ImageSection.svelte';
     import TextSection from '../TextSection.svelte';
     import BarChart from '$lib/Charts/BarChart.svelte';
+    import Window from '$lib/Window.svelte';
 
     $currentYear = 1960;
 
@@ -55,10 +56,16 @@
 <ContentContainer>
     <ImageSection>
         <div class="first-image">
-            <Image src={Cotton_01} alt={$t('1960.water.title')} />
+            <Window>
+                <Image src={Cotton_01} alt={$t('1960.water.title')} />
+            </Window>
         </div>
 
-        <BarChart />
+        <div class="chart-test">
+            <Window header="Test">
+                <BarChart />
+            </Window>
+        </div>
     </ImageSection>
 
     <TextSection>
@@ -123,5 +130,10 @@
         right: 0;
         position: absolute;
         transform: rotate(2deg);
+    }
+
+    .chart-test {
+        height: 350px;
+        width: 500px;
     }
 </style>
