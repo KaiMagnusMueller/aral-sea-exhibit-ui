@@ -1,10 +1,10 @@
 <script lang="ts">
     import { fade } from 'svelte/transition';
     export let hoveredElem: any;
+    export let offset: number = 0;
 
     let tooltipPos: number[] = [];
     let hovElemDim: number[] = [];
-
     $: {
         hovElemDim[0] = hoveredElem.x.baseVal.value;
         hovElemDim[1] = hoveredElem.y.baseVal.value;
@@ -12,10 +12,11 @@
         hovElemDim[2] = hoveredElem.width.baseVal.value;
         hovElemDim[3] = hoveredElem.height.baseVal.value;
 
-        tooltipPos[0] = hovElemDim[0] + hovElemDim[2] / 2;
-        tooltipPos[1] = hovElemDim[1];
+        tooltipPos[0] = hovElemDim[0] + hovElemDim[2] / 2 - offset;
+        tooltipPos[1] = hovElemDim[1] - offset;
 
-        console.log(tooltipPos);
+        // console.log(tooltipPos);
+        // console.log(hoveredElem);
     }
 </script>
 
@@ -61,6 +62,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        z-index: 100;
     }
     .tooltip-content {
         background-color: var(--aral-color-content);

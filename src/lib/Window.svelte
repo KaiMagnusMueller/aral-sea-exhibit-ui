@@ -18,6 +18,9 @@
         position: relative;
         background-color: var(--aral-color-bg);
         overflow: clip;
+        height: inherit;
+        display: flex;
+        flex-direction: column;
     }
 
     .header {
@@ -29,6 +32,6 @@
     }
 
     .content {
-        overflow: auto;
+        flex-grow: 1;
     }
 </style>

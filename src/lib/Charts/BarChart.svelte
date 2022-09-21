@@ -32,7 +32,10 @@
     // $: console.log(rescaledData);
 
     onMount(() => {
-        dimensions = getDimensions(chartContainer);
+        dimensions = getDimensions(chartElem);
+
+        console.log(chartElem);
+
         minimunmValue = getSmallestValue(data);
         maximumValue = getLargestValue(data);
 
@@ -60,64 +63,65 @@
 
     let chartElem: any;
 
-    $: {
-        if (chartElem) {
-            // console.log(chartElem);
-            chartDimensions = getDimensions(chartElem);
-            console.log(chartDimensions);
-        }
-    }
+    // $: {
+    //     if (chartElem) {
+    //         // console.log(chartElem);
+    //         chartDimensions = getDimensions(chartElem);
+    //         console.log(chartDimensions);
+    //     }
+    // }
 </script>
 
-<div
-    class="chart-container padding-all-s"
-    bind:this={chartContainer}
-    style="height: {chartHeight}px"
-    on:mouseleave={hideTooltip}
->
+<div class="chart-container padding-all-s" bind:this={chartContainer} on:mouseleave={hideTooltip}>
     <!-- <div class="chart-legend">
         <p>{maximumValue}</p>
         <p>{dimensions}</p>
     </div> -->
-    {#if ready}
-        <div class="y-axis border-right-l">
-            <span>{maximumValue}</span>
-            <span>0</span>
-        </div>
-        <div class="vertical-helper">
-            <svg
-                bind:this={chartElem}
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="-2 -2 {dimensions[0] + 4} {dimensions[1] + 4}"
-            >
-                {#each rescaledData as entry, i}
-                    <rect
-                        x="{barWidth * i + barGap * i}px"
-                        y="{rescaledMaximumValue - entry}px"
-                        width="{barWidth}px"
-                        height="{entry}px"
-                        rx="6px"
-                        fill={getColor(colorRamp, i)}
-                        data-value={entry}
-                        on:mouseenter={(event) => showTooltip(event)}
-                        on:mouseleave={hideTooltip}
-                    />
-                {/each}
-                <g>
-                    <text x="0" y="10px" class="small">{maximumValue}</text>
-                    <text x="0" y={dimensions[1]} class="small">0</text>
-                    <line x1="20px" y1="" x2="20px" y2="100%" />
-                </g>
-            </svg>
-            <div class="x-axis border-right-l">
+    <!-- <div class="y-axis border-right-l">
+        <span>{maximumValue}</span>
+        <span>0</span>
+    </div> -->
+    <!-- <div class="vertical-helper"> -->
+    <svg
+        bind:this={chartElem}
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="-1 -1  {dimensions[0] + 2} {dimensions[1] + 2}"
+    >
+        {#if ready}
+            {#each rescaledData as entry, i}
+                <rect
+                    x="{barWidth * i + barGap * i}px"
+                    y="{rescaledMaximumValue - entry}px"
+                    width="{barWidth}px"
+                    height="{entry}px"
+                    rx="6px"
+                    fill={getColor(colorRamp, i)}
+                    data-value={entry}
+                    on:mouseenter={(event) => showTooltip(event)}
+                    on:mouseleave={hideTooltip}
+                />
+            {/each}
+            <g>
+                <text x="0" y="10px" class="small">{maximumValue}</text>
+                <text x="0" y={dimensions[1]} class="small">0</text>
+                <line x1="20px" y1="" x2="20px" y2="100%" />
+            </g>
+            <path
+                fill="none"
+                stroke="green"
+                stroke-width="3"
+                d="M 0 {dimensions[1] - 40} a 20 20, 0, 0, 0, 20 20"
+            />
+        {/if}
+    </svg>
+    <!-- <div class="x-axis border-right-l">
                 <span>0</span>
                 <span>{dimensions[1]}</span>
-            </div>
-        </div>
-    {/if}
+            </div> -->
+    <!-- </div> -->
 
     {#if visibleTooltip}
-        <Tooltip {hoveredElem} />
+        <Tooltip {hoveredElem} offset={-16} />
     {/if}
 </div>
 
@@ -132,10 +136,15 @@
         position: relative;
         background-color: bisque;
         display: flex;
+        height: 100%;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     svg {
         background-color: lightgray;
+        height: 100%;
+        width: 100%;
     }
     rect {
         stroke: var(--aral-color-content);
