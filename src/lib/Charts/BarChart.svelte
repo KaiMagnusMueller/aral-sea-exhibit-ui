@@ -1,4 +1,6 @@
 <script lang="ts">
+    import ChartAxes from './ChartAxes.svelte';
+
     import { onMount } from 'svelte';
     import {
         getDimensions,
@@ -18,21 +20,30 @@
 
     let chartContainer: HTMLElement;
 
-    let dimensions = {
-        x: 0,
-        y: 0,
+    let containerDimensions = {
+        width: 0,
+        height: 0,
     };
     let maximumValue: number;
-    let minimunmValue: number;
+    let minimumValue: number;
     let rescaledMaximumValue: number;
 
     let chartPadding = {
-        x: 16,
-        y: 16,
+        x: 8,
+        y: 8,
     };
     let chartInnerDimensions = {
+        width: 0,
+        height: 0,
         x: 0,
         y: 0,
+    };
+
+    let legendPadding = {
+        top: 2,
+        right: 2,
+        bottom: 20,
+        left: 40,
     };
 
     // Scale data to calculate coordinates of the chart
@@ -40,23 +51,29 @@
 
     let ready = false;
 
-    // $: console.log(rescaledData);
-
     onMount(() => {
         console.log(chartElem);
-        dimensions = getDimensions(chartContainer);
-        chartInnerDimensions.x = dimensions.x - chartPadding.x;
-        chartInnerDimensions.y = dimensions.y - chartPadding.y * 2;
+        containerDimensions = getDimensions(chartContainer);
 
-        console.log(dimensions);
+        chartInnerDimensions.width = containerDimensions.width - chartPadding.x * 2 - yAxisWidth;
+        chartInnerDimensions.height = containerDimensions.height - chartPadding.y * 2 - xAxisHeight;
+
+        chartInnerDimensions.x = chartPadding.x;
+        chartInnerDimensions.y = chartPadding.y;
+
+        console.log(containerDimensions);
         console.log(chartInnerDimensions);
 
-        minimunmValue = getSmallestValue(data);
+        minimumValue = getSmallestValue(data);
         maximumValue = getLargestValue(data);
 
         data.forEach((element) => {
             rescaledData.push(
-                scaleValue(element, [0, maximumValue], [chartPadding.y, chartInnerDimensions.y])
+                scaleValue(
+                    element,
+                    [0, maximumValue],
+                    [chartPadding.y, chartInnerDimensions.height]
+                )
             );
         });
 
@@ -79,107 +96,103 @@
 
     let chartElem: any;
 
-    // $: {
-    //     if (chartElem) {
-    //         // console.log(chartElem);
-    //         chartDimensions = getDimensions(chartElem);
-    //         console.log(chartDimensions);
-    //     }
-    // }
+    let yAxisWidth: number = 0;
+    let xAxisHeight: number = 0;
+
+    $: {
+        console.log(yAxisWidth, xAxisHeight);
+        chartInnerDimensions.width =
+            containerDimensions.width - chartPadding.x * 2 - yAxisWidth - legendPadding.right;
+        chartInnerDimensions.height =
+            containerDimensions.height - chartPadding.y * 2 - xAxisHeight - legendPadding.top;
+
+        chartInnerDimensions.x = chartPadding.x + yAxisWidth + legendPadding.right;
+        chartInnerDimensions.y = chartPadding.y;
+
+        rescaledData = [];
+
+        data.forEach((element) => {
+            rescaledData.push(
+                scaleValue(
+                    element,
+                    [0, maximumValue],
+                    [chartPadding.y, chartInnerDimensions.height]
+                )
+            );
+        });
+
+        rescaledMaximumValue = getLargestValue(rescaledData);
+    }
 </script>
 
 <div class="chart-container margin-all-s" bind:this={chartContainer} on:mouseleave={hideTooltip}>
-    <!-- <div class="chart-legend">
-        <p>{maximumValue}</p>
-        <p>{dimensions}</p>
-    </div> -->
-    <!-- <div class="y-axis border-right-l">
-        <span>{maximumValue}</span>
-        <span>0</span>
-    </div> -->
-    <!-- <div class="vertical-helper"> -->
     {#if ready}
         <svg
             bind:this={chartElem}
             xmlns="http://www.w3.org/2000/svg"
-            viewBox="-1 -1  {dimensions.x + 2} {dimensions.y + 2}"
+            viewBox="-1 -1  {containerDimensions.width + 2} {containerDimensions.height + 2}"
             on:mousemove|once={(event) => {
                 console.log(event);
             }}
         >
-            {#each rescaledData as entry, i}
-                <rect
-                    x="{chartPadding.x + barWidth * i + barGap * i}px"
-                    y="{rescaledMaximumValue + chartPadding.y - entry}px"
-                    width="{barWidth}px"
-                    height="{entry}px"
-                    rx="6px"
-                    fill={getColor(colorRamp, i)}
-                    data-value={entry}
-                    on:mouseenter={(event) => showTooltip(event)}
-                    on:mouseleave={hideTooltip}
-                />
-            {/each}
-            <g>
-                <text x="0" y="10px" class="small">{maximumValue}</text>
-                <text x="0" y={chartInnerDimensions.y} class="small">0</text>
-                <line x1="20px" y1="" x2="20px" y2="100%" />
-            </g>
-            <path
-                fill="none"
-                stroke="green"
-                stroke-width="3"
-                d="M 0 {dimensions.y - 40} a 20 20, 0, 0, 0, 20 20"
+            <svg
+                style="overflow: visible;"
+                width={chartInnerDimensions.width}
+                height={chartInnerDimensions.height}
+                x={chartInnerDimensions.x}
+                y={chartInnerDimensions.y}
+            >
+                {#each rescaledData as entry, i}
+                    <rect
+                        x="{barWidth * i + barGap * i}px"
+                        y="{rescaledMaximumValue - entry}px"
+                        width="{barWidth}px"
+                        height="{entry}px"
+                        rx="6px"
+                        fill={getColor(colorRamp, i)}
+                        data-value={entry}
+                        on:mouseenter={(event) => showTooltip(event)}
+                        on:mouseleave={hideTooltip}
+                    />
+                {/each}
+            </svg>
+            <ChartAxes
+                {containerDimensions}
+                {minimumValue}
+                {maximumValue}
+                {chartInnerDimensions}
+                {chartPadding}
+                {legendPadding}
+                bind:xAxisHeight
+                bind:yAxisWidth
             />
         </svg>
     {/if}
-    <!-- <div class="x-axis border-right-l">
-                <span>0</span>
-                <span>{dimensions[1]}</span>
-            </div> -->
-    <!-- </div> -->
-
     {#if visibleTooltip}
         <Tooltip {hoveredElem} />
     {/if}
 </div>
 
 <style>
-    /* .chart-legend {
-        position: absolute;
-        top: 0;
-        right: 0;
-    } */
-
     .chart-container {
         position: relative;
         /* background-color: bisque; */
         box-sizing: border-box;
+        display: flex;
         flex-grow: 1;
     }
 
     svg {
-        background-color: lightgray;
+        /* background-color: lightgray; */
     }
     rect {
         stroke: var(--aral-color-content);
         stroke-width: 2px;
     }
 
-    line {
+    line,
+    path {
         stroke: var(--aral-color-content);
         stroke-width: 2px;
     }
-
-    /* .y-axis {
-        display: flex;
-        flex-direction: column;
-        align-items: end;
-        justify-content: space-between;
-    }
-
-    .x-axis {
-        display: flex;
-        justify-content: space-between;
-    } */
 </style>

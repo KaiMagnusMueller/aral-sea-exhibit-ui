@@ -16,8 +16,8 @@ export function getDimensions(elem: HTMLElement) {
 
 
     return {
-        x: elem.clientWidth,
-        y: elem.clientHeight,
+        width: elem.clientWidth,
+        height: elem.clientHeight,
 
     }
 }

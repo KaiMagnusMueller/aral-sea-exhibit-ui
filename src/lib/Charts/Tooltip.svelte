@@ -11,11 +11,17 @@
         hovElemDim[2] = hoveredElem.width.baseVal.value;
         hovElemDim[3] = hoveredElem.height.baseVal.value;
 
-        tooltipPos[0] = hovElemDim[0] + hovElemDim[2] / 2;
-        tooltipPos[1] = hovElemDim[1];
+        //Since the chart is nested in a SVG that has x, y coordinates, they have to be added as well
+        let viewPortElem = {
+            x: hoveredElem.viewportElement.x.baseVal.value,
+            y: hoveredElem.viewportElement.y.baseVal.value,
+        };
+
+        tooltipPos[0] = hovElemDim[0] + hovElemDim[2] / 2 + viewPortElem.x;
+        tooltipPos[1] = hovElemDim[1] + viewPortElem.y;
 
         // console.log(tooltipPos);
-        // console.log(hoveredElem);
+        console.log(hoveredElem);
     }
 </script>
 

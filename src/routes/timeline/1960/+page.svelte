@@ -62,7 +62,7 @@
         </div>
 
         <div class="chart-test">
-            <Window header="Test">
+            <Window>
                 <BarChart />
             </Window>
         </div>
