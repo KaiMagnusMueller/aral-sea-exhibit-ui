@@ -8,7 +8,18 @@ export function getLargestValue(numbers: number[]) {
 }
 
 export function getDimensions(elem: HTMLElement) {
-    return [elem.clientWidth, elem.clientHeight];
+
+    console.log(elem);
+
+
+    console.log(elem.clientWidth, elem.clientHeight);
+
+
+    return {
+        x: elem.clientWidth,
+        y: elem.clientHeight,
+
+    }
 }
 
 export function scaleValue(value: number, from: number[], to: number[]) {

@@ -1,7 +1,6 @@
 <script lang="ts">
     import { fade } from 'svelte/transition';
     export let hoveredElem: any;
-    export let offset: number = 0;
 
     let tooltipPos: number[] = [];
     let hovElemDim: number[] = [];
@@ -12,8 +11,8 @@
         hovElemDim[2] = hoveredElem.width.baseVal.value;
         hovElemDim[3] = hoveredElem.height.baseVal.value;
 
-        tooltipPos[0] = hovElemDim[0] + hovElemDim[2] / 2 - offset;
-        tooltipPos[1] = hovElemDim[1] - offset;
+        tooltipPos[0] = hovElemDim[0] + hovElemDim[2] / 2;
+        tooltipPos[1] = hovElemDim[1];
 
         // console.log(tooltipPos);
         // console.log(hoveredElem);
