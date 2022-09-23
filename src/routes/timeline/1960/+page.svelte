@@ -1,5 +1,5 @@
 <script>
-    import TabBar from '$lib/TabBar.svelte';
+    import TopicSelector from '$lib/TopicSelector.svelte';
 
     import { t, locale } from 'svelte-intl-precompile';
     import TextContent from '../components/TextContent.svelte';
@@ -20,6 +20,7 @@
 
     import Image from '$lib/Image.svelte';
     import Cotton_01 from '$lib/media/Cotton_01.jpg';
+    import SichlingFisch from '$lib/media/Sichling-Fisch.jpg';
 
     let imagePath = '';
 
@@ -35,15 +36,15 @@
     $topics.topicList = [
         {
             title: $t('1960.water.title_short'),
-            name: 'water',
+            value: 'water',
         },
         {
             title: $t('1960.cotton.title_short'),
-            name: 'cotton',
+            value: 'cotton',
         },
         {
             title: $t('1960.politics.title_short'),
-            name: 'politics',
+            value: 'politics',
         },
     ];
 </script>
@@ -60,10 +61,9 @@
                 <Image src={Cotton_01} alt={$t('1960.water.title')} />
             </Window>
         </div>
-
-        <div class="chart-test">
+        <div class="second-image">
             <Window>
-                <BarChart />
+                <Image src={SichlingFisch} alt={'text'} />
             </Window>
         </div>
     </ImageSection>
@@ -114,7 +114,7 @@
     </TextSection>
 </ContentContainer>
 
-<TabBar />
+<TopicSelector />
 
 <style>
     .first-image {
@@ -123,6 +123,14 @@
         right: 0;
         position: absolute;
         transform: rotate(2deg);
+    }
+
+    .second-image {
+        width: 50%;
+        top: 300px;
+        left: 100px;
+        position: absolute;
+        transform: rotate(-2deg);
     }
 
     .chart-test {

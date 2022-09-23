@@ -1,39 +1,30 @@
 <script lang="ts">
     import { onMount } from 'svelte';
 
-    import { t } from 'svelte-intl-precompile';
-    import { topics } from '../routes/timeline/store';
+    export let items: any = [];
 
-    onMount(() => {
-        if (!$topics.currentTopic) {
-            $topics.currentTopic = $topics.topicList[0].name;
-        }
-    });
+    import { createEventDispatcher } from 'svelte';
+    let dispatch = createEventDispatcher();
 
     function handleClick(event: MouseEvent) {
-        console.log(event);
+        const _item = event.target.attributes.value.value;
 
-        $topics.currentTopic = event.target.attributes.name.value;
-
-        $topics = $topics;
+        dispatch('selection', {
+            activeItem: _item,
+        });
     }
 </script>
 
 <div class="tab-bar flex border-l gap-xxs border-radius-xl text-heading-m">
-    {#each $topics.topicList as topic (topic.name)}
-        <div
-            class:active={$topics.currentTopic === topic.name}
-            on:click={handleClick}
-            name={topic.name}
-        >
-            {$t('1960.' + topic.name + '.title_short')}
+    {#each items as item (item.value)}
+        <div class:active={item.active} on:click={handleClick} value={item.value}>
+            {item.title}
         </div>
     {/each}
 </div>
 
 <style>
     .tab-bar {
-        margin: auto;
         user-select: none;
         padding: 6px;
     }

@@ -1,5 +1,5 @@
 <script>
-    import TabBar from '$lib/TabBar.svelte';
+    import TopicSelector from '$lib/TopicSelector.svelte';
 
     import { t, locale } from 'svelte-intl-precompile';
     import TextContent from '../components/TextContent.svelte';
@@ -25,21 +25,22 @@
     import ContentContainer from '../ContentContainer.svelte';
     import ImageSection from '../ImageSection.svelte';
     import TextSection from '../TextSection.svelte';
+    import Window from '$lib/Window.svelte';
 
     $currentYear = 1970;
 
     $topics.topicList = [
         {
             title: $t('1970.water.title_short'),
-            name: 'water',
+            value: 'water',
         },
         {
             title: $t('1970.cotton.title_short'),
-            name: 'cotton',
+            value: 'cotton',
         },
         {
             title: $t('1970.politics.title_short'),
-            name: 'politics',
+            value: 'politics',
         },
     ];
 </script>
@@ -52,7 +53,9 @@
 <ContentContainer>
     <ImageSection>
         <div class="first-image">
-            <Image src={Cotton_01} alt={$t('1960.water.title')} />
+            <Window>
+                <Image src={Cotton_01} alt={$t('1960.water.title')} />
+            </Window>
         </div>
     </ImageSection>
 
@@ -102,7 +105,7 @@
     </TextSection>
 </ContentContainer>
 
-<TabBar />
+<TopicSelector />
 
 <style>
     .first-image {
