@@ -8,18 +8,18 @@
         "start.button": "Start the experience"
     },
     "1960": {
-        "title": "Aral Sea 1970",
+        "title": "Aral Sea 1960",
         "water": {
-            "title": "Water level, salinity, environmental effects",
-            "title_short": "Water & Environment"
+            "title": "Aral Sea",
+            "title_short": "Aral Sea"
         },
         "cotton": {
-            "title": "Cotton production",
-            "title_short": "Cotton production"
+            "title": "Cotton",
+            "title_short": "Cotton"
         },
         "politics": {
-            "title": "Political Situation / Decisions",
-            "title_short": "Political Situation"
+            "title": "Politics",
+            "title_short": "Politics"
         }
     },
     "1970": {
