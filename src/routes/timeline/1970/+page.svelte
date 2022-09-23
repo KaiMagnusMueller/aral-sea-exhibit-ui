@@ -56,7 +56,7 @@
     <meta name="description" content={$t('1970.title')} />
 </svelte:head>
 
-<div class="content-1-2-1 grid gap-l">
+<ContentContainer>
     <TextSection>
         {#if $topics.currentTopic === 'water'}
             {#if $locale === 'de'}
@@ -102,7 +102,7 @@
         </TextContent>
     </TextSection>
 
-    <div>
+    <div class="flex justify-center">
         <AralSeaOutline />
     </div>
 
@@ -122,7 +122,7 @@
             </Window>
         </div>
     </ImageSection>
-</div>
+</ContentContainer>
 
 <style>
     .first-image {

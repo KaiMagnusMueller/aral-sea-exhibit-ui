@@ -1,10 +1,9 @@
-<div class="content-container grid gap-l">
+<div class="content-container content-1-2-1 grid gap-s overflow-hidden">
     <slot />
 </div>
 
 <style>
     .content-container {
         flex-grow: 1;
-        grid-template-columns: 1fr 3fr;
     }
 </style>

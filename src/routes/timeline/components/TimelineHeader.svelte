@@ -13,6 +13,8 @@
     // console.log(pages);
 
     let pages = [1960, 1970, 1980, 1990, 2000, 2010, 2020];
+
+    console.log($page);
 </script>
 
 <header>
@@ -39,5 +41,6 @@
         display: flex;
         list-style: none;
         gap: 10px;
+        padding: 0;
     }
 </style>

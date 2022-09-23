@@ -35,6 +35,10 @@
 	--size-xxl: 128px;
 }
 
+.overflow-hidden {
+	overflow: hidden;
+}
+
 
 /* ----------------- */
 /* ----------------- */
@@ -76,6 +80,11 @@
 .justify-between {
 	justify-content: space-between;
 }
+
+.justify-center {
+	justify-content: center;
+}
+
 
 .align-bottom {
 	margin-top: auto;
@@ -200,10 +209,14 @@
 /* ---------------------------- */
 /* ---------------------------- */
 
+
+
 body {
 	min-height: 100vh;
 	margin: 0;
-	background-color: var(--aral-color-bg)
+	background: url("/100-90-5-monochrome.png");
+	background-color: var(--aral-color-bg);
+
 }
 
 #svelte {

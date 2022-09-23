@@ -2,7 +2,6 @@
     import TimelineHeader from './components/TimelineHeader.svelte';
     import LangSwitch from '$lib/LangSwitch.svelte';
     import TopicSelector from '$lib/TopicSelector.svelte';
-    TopicSelector;
     // import PageTransition from '$lib/PageTransition.svelte';
 
     // /** @type {import('./$types').LayoutData} */
@@ -34,6 +33,7 @@
         flex-grow: 1;
         display: flex;
         flex-direction: column;
+        overflow: hidden;
     }
 
     footer {
