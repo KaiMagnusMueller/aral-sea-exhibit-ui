@@ -69,6 +69,10 @@
 	gap: 128px
 }
 
+.flex-cross-center {
+	align-items: center;
+}
+
 
 /* ----------------- */
 /* ----------------- */
@@ -96,6 +100,17 @@
 .border-l {
 	border: var(--border-l);
 }
+
+.border-right-l {
+	border-right: var(--border-l);
+}
+
+.border-bottom-l {
+	border-bottom: var(--border-l);
+}
+
+
+
 
 .border-radius-l {
 	border-radius: var(--border-radius-xl);
@@ -134,16 +149,32 @@
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+.drop-shadow-m {
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+}
 
 
+/* ----------------- */
+/* ----------------- */
+/* PADDING */
+
+.padding-all-s {
+	padding: var(--size-s);
+}
+
+.padding-left-s {
+	padding-left: var(--size-s);
+}
 
 
+/* ----------------- */
+/* ----------------- */
+/* MARGIN */
 
-
-
-
-
-
+.margin-all-s {
+	margin: var(--size-s);
+}
 
 
 
