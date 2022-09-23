@@ -7,6 +7,7 @@
     let dispatch = createEventDispatcher();
 
     function handleClick(event: MouseEvent) {
+        // @ts-ignore
         const _item = event.target.attributes.value.value;
 
         dispatch('selection', {

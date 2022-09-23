@@ -1,4 +1,4 @@
-<div class="image-section">
+<div class="image-section flex margin-v-xl">
     <slot />
 </div>
 

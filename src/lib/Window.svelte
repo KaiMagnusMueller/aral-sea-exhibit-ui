@@ -1,8 +1,20 @@
 <script lang="ts">
     export let header = '';
+
+    function handleClick(event: MouseEvent) {
+        console.log(event);
+    }
+
+    let lightbox = false;
 </script>
 
-<div class="window-container border-radius-l border-l shadow-m">
+<div
+    class="window-container border-radius-l border-l shadow-m"
+    class:lightbox
+    on:click|self={() => {
+        lightbox = !lightbox;
+    }}
+>
     {#if header}
         <div class="header flex flex-cross-center padding-left-s border-bottom-l">
             <h2>{header}</h2>
@@ -21,6 +33,7 @@
         height: inherit;
         display: flex;
         flex-direction: column;
+        transition: all 0.5s ease;
     }
 
     .header {
@@ -34,5 +47,13 @@
     .content {
         flex-grow: 1;
         display: flex;
+        pointer-events: none;
+    }
+
+    .lightbox {
+        position: fixed;
+        left: 50px;
+        top: 50px;
+        transform: translate(-50%, -50%);
     }
 </style>

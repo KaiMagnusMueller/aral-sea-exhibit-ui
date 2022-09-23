@@ -35,6 +35,6 @@
 		margin: 0 auto;
 		box-sizing: border-box;
 		height: 100vh;
-		gap: 20px;
+		gap: 32px;
 	}
 </style>

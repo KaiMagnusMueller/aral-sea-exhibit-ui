@@ -13,6 +13,7 @@
     function handleClick(event: MouseEvent) {
         console.log(event);
 
+        // @ts-ignore
         $topics.currentTopic = event.target.attributes.name.value;
 
         $topics = $topics;
@@ -33,7 +34,6 @@
 
 <style>
     .tab-bar {
-        margin: auto;
         user-select: none;
         padding: 6px;
     }

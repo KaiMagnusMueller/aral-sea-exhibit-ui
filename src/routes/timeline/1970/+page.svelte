@@ -16,10 +16,16 @@
     // @ts-ignore
     import Politics_en from './Politics_en.svx';
 
+    // @ts-ignore
+    import SeaTable_de from './SeaTable_de.svx';
+    // @ts-ignore
+    import SeaTable_en from './SeaTable_en.svx';
+
     // import { fly } from 'svelte/transition';
 
     import Image from '$lib/Image.svelte';
     import Cotton_01 from '$lib/media/Cotton_01.jpg';
+    import AralSeaOutline from './AraSeaOutline.svelte';
 
     import { topics, currentYear } from '../store';
     import ContentContainer from '../ContentContainer.svelte';
@@ -50,15 +56,7 @@
     <meta name="description" content={$t('1970.title')} />
 </svelte:head>
 
-<ContentContainer>
-    <ImageSection>
-        <div class="first-image">
-            <Window>
-                <Image src={Cotton_01} alt={$t('1960.water.title')} />
-            </Window>
-        </div>
-    </ImageSection>
-
+<div class="content-1-2-1 grid gap-l">
     <TextSection>
         {#if $topics.currentTopic === 'water'}
             {#if $locale === 'de'}
@@ -103,9 +101,28 @@
             </div>
         </TextContent>
     </TextSection>
-</ContentContainer>
 
-<TopicSelector />
+    <div>
+        <AralSeaOutline />
+    </div>
+
+    <ImageSection>
+        <div class="align-bottom">
+            {#if $topics.currentTopic === 'water'}
+                {#if $locale === 'de'}
+                    <SeaTable_de />
+                {:else if $locale === 'en'}
+                    <SeaTable_en />
+                {/if}
+            {/if}
+        </div>
+        <div class="first-image">
+            <Window>
+                <Image src={Cotton_01} alt={$t('1960.water.title')} />
+            </Window>
+        </div>
+    </ImageSection>
+</div>
 
 <style>
     .first-image {
