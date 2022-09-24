@@ -320,7 +320,7 @@ td {
 }
 
 td,
-n th {
+th {
 	border-top: var(--border-l);
 }
 
@@ -356,7 +356,7 @@ tbody tr:last-child td {
 	border-bottom: var(--border-l);
 }
 
-thead:has(tr:has(th:empty)) {
+thead:has(th:empty) {
 	display: none;
 }
 

@@ -8,7 +8,7 @@
 
 <style>
     .text-section {
-        overflow-y: scroll;
+        overflow-y: auto;
         max-width: 650px;
     }
 </style>
