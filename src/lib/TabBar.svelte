@@ -19,7 +19,9 @@
 <div class="tab-bar flex border-l gap-xxs border-radius-xl text-heading-m">
     {#each items as item (item.value)}
         <div class:active={item.active} on:click={handleClick} value={item.value}>
-            {item.title}
+            <span>
+                {item.title}
+            </span>
         </div>
     {/each}
 </div>
@@ -32,8 +34,13 @@
 
     .tab-bar div {
         padding: 6px 16px;
-
         border-radius: 12px;
+        display: flex;
+    }
+
+    span {
+        margin: auto;
+        pointer-events: none;
     }
 
     .tab-bar div.active {

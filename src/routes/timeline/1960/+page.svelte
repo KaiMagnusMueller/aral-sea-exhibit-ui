@@ -21,12 +21,16 @@
     // @ts-ignore
     import SeaTable_en from './SeaTable_en.svx';
 
-    // import { fly } from 'svelte/transition';
+    // @ts-ignore
+    import CottonTable_de from './CottonTable_de.svx';
+    // @ts-ignore
+    import CottonTable_en from './CottonTable_en.svx';
+
+    import { fly } from 'svelte/transition';
 
     import Image from '$lib/Image.svelte';
     import Cotton_01 from '$lib/media/Cotton_01.jpg';
     import SichlingFisch from '$lib/media/Sichling-Fisch.jpg';
-    import AralSeaOutline from './AraSeaOutline.svelte';
 
     let imagePath = '';
 
@@ -53,6 +57,11 @@
             value: 'politics',
         },
     ];
+
+    import AralSeaOutline from './AraSeaOutline.svelte';
+    import StatsHarvest_de from './StatsHarvest_de.svelte';
+
+    import Kolchose from '$lib/media/Kolchose.jpg';
 </script>
 
 <svelte:head>
@@ -85,32 +94,52 @@
         {/if}
     </TextSection>
 
-    <div class="flex justify-center">
-        <AralSeaOutline />
+    <div class="aral-sea-outline flex justify-center">
+        {#if $topics.currentTopic === 'water'}
+            <AralSeaOutline />
+        {/if}
     </div>
 
-    <ImageSection>
-        <div class="align-bottom">
-            {#if $topics.currentTopic === 'water'}
+    <div class="image-section margin-v-xl">
+        {#if $topics.currentTopic === 'water'}
+            <div class="second-image">
+                <Window>
+                    <Image src={SichlingFisch} alt={'text'} />
+                </Window>
+            </div>
+            <div class="align-bottom margin-l-auto">
                 {#if $locale === 'de'}
                     <SeaTable_de />
                 {:else if $locale === 'en'}
                     <SeaTable_en />
                 {/if}
-            {/if}
-        </div>
+            </div>
+        {/if}
+        {#if $topics.currentTopic === 'cotton'}
+            <div class="align-bottom margin-l-auto">
+                {#if $locale === 'de'}
+                    <Window padding transparent>
+                        <StatsHarvest_de />
+                    </Window>
+                {:else if $locale === 'en'}
+                    <Window padding transparent>
+                        <StatsHarvest_de />
+                    </Window>
+                {/if}
+            </div>
+            <div class="cotton-image image image-transition">
+                <Window>
+                    <Image src={Kolchose} alt={'text'} />
+                </Window>
+            </div>
+        {/if}
 
-        <div class="first-image">
+        <!-- <div class="first-image">
             <Window>
                 <Image src={Cotton_01} alt={$t('1960.water.title')} />
             </Window>
-        </div>
-        <div class="second-image">
-            <Window>
-                <Image src={SichlingFisch} alt={'text'} />
-            </Window>
-        </div>
-    </ImageSection>
+        </div> -->
+    </div>
 </ContentContainer>
 
 <style>
@@ -123,9 +152,10 @@
     }
 
     .second-image {
-        width: 50%;
-        top: 300px;
-        left: 100px;
+        width: 500px;
+        top: 100px;
+        /* left: 100px; */
+        right: 100px;
         position: absolute;
         transform: rotate(-2deg);
     }
@@ -138,5 +168,38 @@
     .first-image:has(.lightbox),
     .second-image:has(.lightbox) {
         transform: rotate(0);
+    }
+
+    .aral-sea-outline {
+        grid-column: 2/3;
+        grid-row: 1/2;
+    }
+
+    .image-section {
+        grid-column: 2/4;
+        grid-row: 1/2;
+        position: relative;
+        display: flex;
+    }
+
+    .cotton-image {
+        width: 600px;
+        /* left: 100px; */
+        position: absolute;
+        transform: rotate(-2deg);
+    }
+
+    .cotton-image:has(.lightbox) {
+        transform: rotate(0);
+        width: 80%;
+        z-index: 1000;
+        transform: rotate(0);
+        /* left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%); */
+    }
+
+    .image-transition {
+        transition: all 0.5s ease;
     }
 </style>

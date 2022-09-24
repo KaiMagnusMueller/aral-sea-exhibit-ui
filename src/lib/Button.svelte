@@ -7,7 +7,7 @@
     console.log($$slots);
 </script>
 
-<div class="button-wrapper border-l border-radius-l">
+<div class="button-wrapper border-l ">
     {#if !isEmpty($$slots)}
         <slot />
     {:else if iconName}
@@ -28,6 +28,7 @@
         justify-content: center;
         padding: 6px;
         border-radius: 12px;
+        cursor: pointer;
     }
 
     .button-wrapper:hover {

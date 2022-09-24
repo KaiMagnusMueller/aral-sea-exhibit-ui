@@ -1,0 +1,6 @@
+## Baumwollerzeugung
+
+| 1955 / Usbekistan | Anbaufläche in Hektar (ha) | Hektarerträge (dz/ha) | Ernte in Tonnen (t) |
+| ----------------- | -------------------------- | --------------------- | ------------------- |
+| Planung der SU    | 1.248.000                  | 26,5                  | 3.300.000           |
+| Realität          | 1.330.000                  | 20                    | 2.700.000           |
