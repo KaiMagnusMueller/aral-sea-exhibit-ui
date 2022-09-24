@@ -90,6 +90,10 @@
 	margin-top: auto;
 }
 
+.align-self-center {
+	align-self: center;
+}
+
 .justify-self-right {
 	justify-content: end;
 }

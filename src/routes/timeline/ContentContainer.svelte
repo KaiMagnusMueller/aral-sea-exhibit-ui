@@ -1,4 +1,4 @@
-<div class="content-container content-1-2-1 row-1 grid gap-s overflow-hidden">
+<div class="content-container ">
     <slot />
 </div>
 

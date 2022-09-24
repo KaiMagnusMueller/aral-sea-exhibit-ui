@@ -58,8 +58,6 @@
         },
     ];
 
-    import AralSeaOutline from './AraSeaOutline.svelte';
-
     import StatsHarvest_de from './StatsHarvest_de.svelte';
     import StatsHarvest_en from './StatsHarvest_en.svelte';
 
@@ -71,78 +69,76 @@
     <meta name="description" content={$t('1960.title')} />
 </svelte:head>
 
-<ContentContainer>
-    <TextSection>
-        {#if $topics.currentTopic === 'water'}
-            {#if $locale === 'de'}
-                <Water_de />
-            {:else if $locale === 'en'}
-                <Water_en />
-            {/if}
+<TextSection>
+    {#if $topics.currentTopic === 'water'}
+        {#if $locale === 'de'}
+            <Water_de />
+        {:else if $locale === 'en'}
+            <Water_en />
         {/if}
-        {#if $topics.currentTopic === 'cotton'}
-            {#if $locale === 'de'}
-                <Cotton_de />
-            {:else if $locale === 'en'}
-                <Cotton_en />
-            {/if}
+    {/if}
+    {#if $topics.currentTopic === 'cotton'}
+        {#if $locale === 'de'}
+            <Cotton_de />
+        {:else if $locale === 'en'}
+            <Cotton_en />
         {/if}
-        {#if $topics.currentTopic === 'politics'}
-            {#if $locale === 'de'}
-                <Politics_de />
-            {:else if $locale === 'en'}
-                <Politics_en />
-            {/if}
+    {/if}
+    {#if $topics.currentTopic === 'politics'}
+        {#if $locale === 'de'}
+            <Politics_de />
+        {:else if $locale === 'en'}
+            <Politics_en />
         {/if}
-    </TextSection>
+    {/if}
+</TextSection>
 
-    <div class="aral-sea-outline flex justify-center">
-        {#if $topics.currentTopic === 'water'}
-            <AralSeaOutline />
-        {/if}
-    </div>
-
-    <div class="image-section margin-v-xl">
-        {#if $topics.currentTopic === 'water'}
-            <div class="second-image">
-                <Window>
-                    <Image src={SichlingFisch} alt={'text'} />
-                </Window>
-            </div>
-            <div class="align-bottom margin-l-auto">
+<div class="image-section margin-v-xl">
+    {#if $topics.currentTopic === 'water'}
+        <div class="second-image">
+            <Window>
+                <Image src={SichlingFisch} alt={'text'} />
+            </Window>
+        </div>
+        <div class="align-bottom margin-l-auto">
+            {#if $locale === 'de'}
+                <SeaTable_de />
+            {:else if $locale === 'en'}
+                <SeaTable_en />
+            {/if}
+        </div>
+    {/if}
+    {#if $topics.currentTopic === 'cotton'}
+        <div class="align-bottom margin-l-auto">
+            <Window padding transparent>
                 {#if $locale === 'de'}
-                    <SeaTable_de />
+                    <StatsHarvest_de />
                 {:else if $locale === 'en'}
-                    <SeaTable_en />
+                    <StatsHarvest_en />
                 {/if}
-            </div>
-        {/if}
-        {#if $topics.currentTopic === 'cotton'}
-            <div class="align-bottom margin-l-auto">
-                <Window padding transparent>
-                    {#if $locale === 'de'}
-                        <StatsHarvest_de />
-                    {:else if $locale === 'en'}
-                        <StatsHarvest_en />
-                    {/if}
-                </Window>
-            </div>
-            <div class="cotton-image image image-transition">
-                <Window>
-                    <Image src={Kolchose} alt={'text'} />
-                </Window>
-            </div>
-        {/if}
+            </Window>
+        </div>
+        <div class="cotton-image image image-transition">
+            <Window>
+                <Image src={Kolchose} alt={'text'} />
+            </Window>
+        </div>
+    {/if}
 
-        <!-- <div class="first-image">
+    <!-- <div class="first-image">
             <Window>
                 <Image src={Cotton_01} alt={$t('1960.water.title')} />
             </Window>
         </div> -->
-    </div>
-</ContentContainer>
+</div>
 
 <style>
+    .image-section {
+        grid-column: 2/-1;
+        position: relative;
+        display: flex;
+    }
+
     .first-image {
         width: 50%;
         top: 80px;
@@ -168,18 +164,6 @@
     .first-image:has(.lightbox),
     .second-image:has(.lightbox) {
         transform: rotate(0);
-    }
-
-    .aral-sea-outline {
-        grid-column: 2/3;
-        grid-row: 1/2;
-    }
-
-    .image-section {
-        grid-column: 2/4;
-        grid-row: 1/2;
-        position: relative;
-        display: flex;
     }
 
     .cotton-image {

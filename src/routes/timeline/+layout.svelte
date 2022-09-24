@@ -9,15 +9,21 @@
 
     // /** @type {import('./$types').LayoutData} */
     // export let data: any;
+    import AralSeaOutline from './AraSeaOutline.svelte';
 </script>
 
 <header class="flex">
     <TimelineHeader />
 </header>
 
-<div class="content-container">
+<div class="content-container content-1-2-1 row-1 grid gap-s overflow-hidden">
     <!-- <PageTransition pathname={data.pathname}> -->
-    <slot />
+    <div class="aral-sea-outline flex align-self-center justify-center">
+        <AralSeaOutline />
+    </div>
+    <div class="page-content content-1-2-1 row-1 grid gap-s overflow-hidden">
+        <slot />
+    </div>
     <!-- </PageTransition> -->
 </div>
 
@@ -35,8 +41,7 @@
 
     .content-container {
         flex-grow: 1;
-        display: flex;
-        flex-direction: column;
+
         overflow: hidden;
     }
 
@@ -47,5 +52,15 @@
         left: 50%;
         position: absolute;
         transform: translateX(-50%);
+    }
+
+    .aral-sea-outline {
+        grid-column: 1/-1;
+        grid-row: 1/2;
+    }
+
+    .page-content {
+        grid-column: 1/-1;
+        grid-row: 1/2;
     }
 </style>
