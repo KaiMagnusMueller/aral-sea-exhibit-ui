@@ -59,7 +59,9 @@
     ];
 
     import AralSeaOutline from './AraSeaOutline.svelte';
+
     import StatsHarvest_de from './StatsHarvest_de.svelte';
+    import StatsHarvest_en from './StatsHarvest_en.svelte';
 
     import Kolchose from '$lib/media/Kolchose.jpg';
 </script>
@@ -117,15 +119,13 @@
         {/if}
         {#if $topics.currentTopic === 'cotton'}
             <div class="align-bottom margin-l-auto">
-                {#if $locale === 'de'}
-                    <Window padding transparent>
+                <Window padding transparent>
+                    {#if $locale === 'de'}
                         <StatsHarvest_de />
-                    </Window>
-                {:else if $locale === 'en'}
-                    <Window padding transparent>
-                        <StatsHarvest_de />
-                    </Window>
-                {/if}
+                    {:else if $locale === 'en'}
+                        <StatsHarvest_en />
+                    {/if}
+                </Window>
             </div>
             <div class="cotton-image image image-transition">
                 <Window>
