@@ -61,7 +61,7 @@
     import StatsHarvest_de from './StatsHarvest_de.svelte';
     import StatsHarvest_en from './StatsHarvest_en.svelte';
 
-    import Kolchose from '$lib/media/Kolchose.jpg';
+    import Kolchose from '$lib/media/kolchose.jpg';
 </script>
 
 <svelte:head>

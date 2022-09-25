@@ -3,17 +3,17 @@
     import { page } from '$app/stores';
     import { topics, currentYear } from '../store';
 
-    $currentYear = 1980;
+    $currentYear = 1990;
 </script>
 
 <svelte:head>
-    <title>1980</title>
-    <meta name="description" content="Aral Sea 1980" />
+    <title>1990</title>
+    <meta name="description" content="Aral Sea 1990" />
 </svelte:head>
 
 <div class="content">
-    <h1>{$t('1980.water.title')}</h1>
-    <p>{$t('1980.water.content')}</p>
+    <h1>{$t('1990.water.title')}</h1>
+    <p>{$t('1990.water.content')}</p>
 </div>
 
 <style>

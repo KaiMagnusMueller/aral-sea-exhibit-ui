@@ -9,7 +9,7 @@
 
     // /** @type {import('./$types').LayoutData} */
     // export let data: any;
-    import AralSeaOutline from './AraSeaOutline.svelte';
+    import AralSeaOutline from '$lib/AraSeaMap/AraSeaMap.svelte';
 </script>
 
 <header class="flex">
