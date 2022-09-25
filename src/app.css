@@ -223,6 +223,28 @@
 }
 
 
+
+
+/* ----------------- */
+/* ----------------- */
+/* LIGHTBOX */
+
+.image:has(.lightbox) {
+	width: 80% !important;
+	z-index: 1000 !important;
+	transform: rotate(0) !important;
+	top: 0 !important;
+
+	/* transform: translate(-50%, -50%) !important; */
+}
+
+
+
+.image-transition {
+	transition: all 0.5s ease;
+}
+
+
 /* ---------------------------- */
 /* ---------------------------- */
 /* ---------------------------- */

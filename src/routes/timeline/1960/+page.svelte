@@ -95,7 +95,7 @@
 
 <div class="image-section margin-v-xl">
     {#if $topics.currentTopic === 'water'}
-        <div class="second-image">
+        <div class="second-image image image-transition">
             <Window>
                 <Image src={SichlingFisch} alt={'text'} />
             </Window>
@@ -161,11 +161,6 @@
         width: 500px;
     }
 
-    .first-image:has(.lightbox),
-    .second-image:has(.lightbox) {
-        transform: rotate(0);
-    }
-
     .cotton-image {
         width: 600px;
         /* left: 100px; */
@@ -173,17 +168,18 @@
         transform: rotate(-2deg);
     }
 
-    .cotton-image:has(.lightbox) {
-        transform: rotate(0);
+    /* .image:has(.lightbox) {
         width: 80%;
         z-index: 1000;
         transform: rotate(0);
-        /* left: 50%;
+        top: 0;
+        // left: 50%;
         top: 50%;
-        transform: translate(-50%, -50%); */
-    }
 
-    .image-transition {
+        //transform: translate(-50%, -50%);
+    } */
+
+    /* .image-transition {
         transition: all 0.5s ease;
-    }
+    } */
 </style>
