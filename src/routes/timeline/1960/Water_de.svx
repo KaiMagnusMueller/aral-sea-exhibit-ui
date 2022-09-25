@@ -1,10 +1,3 @@
-# Wasserstand, Salzgehalt, Umweltauswirkungen
+# Der Aralsee
 
-1960 ist der Aralsee noch der 4. größte Binnensee der Welt mit einer Fläche von rund 68.000 Quadratkilometern (was ungefähr der Größe Bayerns entspricht). Von Süden kommt der Zufluss Amudarja, vom Osten der Syrdarja in den Aralsee. Er ist Lebensraum für über 20 Fischarten, darunter Karpfen, Welse und Störe.
-
-                             |       
----------------------------- | ------
-Wasserspiegel m über NN      | 53,4  
-Wasservolumen km<sup>3</sup> | 1089  
-Oberfläche km<sup>2</sup>    | 67,50
-Salzgehalt / Salinität (g/L) | 10    
+Zwischen 1750 und 1960 betrugen die Schwankungen des Seespiegels weniger als 4,5 m. Gerade in den Jahren 1900 bis 1960 war der Wasserhaushalt des Sees bemerkenswert stabil und sein Jahresdurchschnittsniveau hob und senkte sich im Rahmen eines Meters. Der Salzgehalt lag unter einem Drittel des Ozeans und der See war sowohl von Salzwasser- als auch Brackwasserfischen bevölkert. 1960 war der Aralsee noch der viertgrößte Binnensee der Welt mit einer Fläche von rund 67.500 Quadratkilometern (was ungefähr der Größe Bayerns entspricht). Von Süden kommt der Zufluss Amudarja, vom Osten der Syrdarja in den Aralsee. Er war Lebensraum für über 20 Fischarten, darunter Karpfen, Welse und Störe. 

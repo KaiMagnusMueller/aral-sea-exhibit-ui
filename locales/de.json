@@ -10,16 +10,16 @@
     "1960": {
         "title": "Aral See 1960",
         "water": {
-            "title": "Wasserstand, Salzgehalt, Umweltauswirkungen",
-            "title_short": "Wasser & Umwelt"
+            "title": "Aralsee",
+            "title_short": "Aralsee"
         },
         "cotton": {
-            "title": "Baumwollproduktion",
-            "title_short": "Baumwollproduktion"
+            "title": "Baumwolle",
+            "title_short": "Baumwolle"
         },
         "politics": {
-            "title": "Politische Situation / Entscheidungen",
-            "title_short": "Politische Situation"
+            "title": "Politik",
+            "title_short": "Politik"
         }
     },
     "1970": {

@@ -3,7 +3,7 @@
     export let alt = '';
 </script>
 
-<img {src} {alt} class="" />
+<img {src} {alt} class="image" />
 
 <style>
     img {

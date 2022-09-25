@@ -35,6 +35,10 @@
 	--size-xxl: 128px;
 }
 
+.overflow-hidden {
+	overflow: hidden;
+}
+
 
 /* ----------------- */
 /* ----------------- */
@@ -73,6 +77,26 @@
 	align-items: center;
 }
 
+.justify-between {
+	justify-content: space-between;
+}
+
+.justify-center {
+	justify-content: center;
+}
+
+
+.align-bottom {
+	margin-top: auto;
+}
+
+.align-self-center {
+	align-self: center;
+}
+
+.justify-self-right {
+	justify-content: end;
+}
 
 /* ----------------- */
 /* ----------------- */
@@ -82,10 +106,23 @@
 	display: grid;
 }
 
-.col-2 {
-	grid-template-columns: 3fr 2fr;
+.col-2-3 {
+	grid-template-columns: 2fr 3fr;
 }
 
+.content-1-2-1 {
+	flex-grow: 1;
+	grid-template-columns: 1fr 2fr 1fr;
+}
+
+.content-1-3 {
+	flex-grow: 1;
+	grid-template-columns: 1fr 3fr;
+}
+
+.row-1 {
+	grid-template-rows: 1;
+}
 
 /* ----------------- */
 /* ----------------- */
@@ -176,17 +213,51 @@
 	margin: var(--size-s);
 }
 
+.margin-l-auto {
+	margin-left: auto;
+}
+
+.margin-v-xl {
+	margin-top: var(--size-xl);
+	margin-bottom: var(--size-xl);
+}
+
+
+
+
+/* ----------------- */
+/* ----------------- */
+/* LIGHTBOX */
+
+.image:has(.lightbox) {
+	width: 80% !important;
+	z-index: 1000 !important;
+	transform: rotate(0) !important;
+	top: 0 !important;
+
+	/* transform: translate(-50%, -50%) !important; */
+}
+
+
+
+.image-transition {
+	transition: all 0.5s ease;
+}
 
 
 /* ---------------------------- */
 /* ---------------------------- */
 /* ---------------------------- */
 /* ---------------------------- */
+
+
 
 body {
 	min-height: 100vh;
 	margin: 0;
-	background-color: var(--aral-color-bg)
+	background: url("/100-90-5-monochrome.png");
+	background-color: var(--aral-color-bg);
+
 }
 
 #svelte {
@@ -199,6 +270,7 @@ p {
 	font-weight: 400;
 	font-size: 18px;
 	line-height: 28px;
+	hyphens: auto;
 }
 
 a {
@@ -212,7 +284,7 @@ a:hover {
 
 h1 {
 	font-weight: 700;
-	font-size: 18px;
+	font-size: 24px;
 	line-height: 28px;
 }
 
@@ -247,18 +319,19 @@ button:focus:not(:focus-visible) {
 	outline: none;
 }
 
+/* 
 @media (min-width: 720px) {
 	h1 {
 		font-size: 18px;
 	}
-}
+} */
 
 
 /* ----------------- */
 /* ----------------- */
 /* TABLE */
 
-.text-section table {
+table {
 	/* border: var(--border-l); */
 	border-collapse: separate;
 	border-left: 0;
@@ -266,72 +339,72 @@ button:focus:not(:focus-visible) {
 	border-spacing: 0px;
 }
 
-.text-section thead {
+thead {
 	display: table-header-group;
 	vertical-align: middle;
 	border-color: inherit;
 	border-collapse: separate;
 }
 
-.text-section tr {
+tr {
 	display: table-row;
 	vertical-align: inherit;
 	border-color: inherit;
 }
 
-.text-section th,
-.text-section td {
+th,
+td {
 	padding: var(--size-xs) var(--size-sm);
 	text-align: left;
 	vertical-align: top;
 	border-left: var(--border-l);
 }
 
-.text-section td,
-.text-section th {
+td,
+th {
 	border-top: var(--border-l);
 }
 
-.text-section thead:first-child tr:first-child th:first-child,
-.text-section tbody:first-child tr:first-child td:first-child {
+thead:first-child tr:first-child th:first-child,
+tbody:first-child tr:first-child td:first-child {
 	border-radius: var(--size-xs) 0 0 0;
 }
 
-.text-section thead:last-child tr:last-child th:first-child,
-.text-section tbody tr:last-child td:first-child {
+thead:last-child tr:last-child th:first-child,
+tbody tr:last-child td:first-child {
 	border-radius: 0 0 0 var(--size-xs);
 }
 
-.text-section tbody tr:first-child td:first-child {
+tbody tr:first-child td:first-child {
 	border-radius: var(--size-xs) 0 0 0;
 }
 
-.text-section thead tr:first-child th:last-child,
-.text-section tbody tr:first-child td:last-child {
+thead tr:first-child th:last-child,
+tbody tr:first-child td:last-child {
 	border-radius: 0 var(--size-xs) 0 0;
 }
 
-.text-section tbody tr:last-child td:last-child {
+tbody tr:last-child td:last-child {
 	border-radius: 0 0 var(--size-xs) 0;
 }
 
-.text-section table th:last-child,
-.text-section table td:last-child {
+table th:last-child,
+table td:last-child {
 	border-right: var(--border-l);
 }
 
-.text-section tbody tr:last-child td {
+tbody tr:last-child td {
 	border-bottom: var(--border-l);
 }
 
-.text-section thead:has(tr:has(th:empty)) {
+thead:has(th:empty) {
 	display: none;
 }
 
-.text-section table:not(:has(th:empty)) tbody tr:first-child td:first-child {
+table:not(:has(th:empty)) tbody tr:first-child td:first-child {
 	border-radius: 0;
 }
 
-.text-section table:not(:has(th:empty)) tbody tr:first-child td:last-child {
+table:not(:has(th:empty)) tbody tr:first-child td:last-child {
 	border-radius: 0;
 }

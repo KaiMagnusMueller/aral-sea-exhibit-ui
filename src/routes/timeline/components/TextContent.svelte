@@ -10,4 +10,8 @@
     <slot />
 </div>
 
-<style></style>
+<style>
+    div {
+        grid-column: 1/2;
+    }
+</style>

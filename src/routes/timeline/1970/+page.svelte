@@ -1,5 +1,5 @@
 <script>
-    import TabBar from '$lib/TabBar.svelte';
+    import TopicSelector from '$lib/TopicSelector.svelte';
 
     import { t, locale } from 'svelte-intl-precompile';
     import TextContent from '../components/TextContent.svelte';
@@ -16,30 +16,37 @@
     // @ts-ignore
     import Politics_en from './Politics_en.svx';
 
+    // @ts-ignore
+    import SeaTable_de from './SeaTable_de.svx';
+    // @ts-ignore
+    import SeaTable_en from './SeaTable_en.svx';
+
     // import { fly } from 'svelte/transition';
 
     import Image from '$lib/Image.svelte';
     import Cotton_01 from '$lib/media/Cotton_01.jpg';
+    import AralSeaOutline from './AraSeaOutline.svelte';
 
     import { topics, currentYear } from '../store';
     import ContentContainer from '../ContentContainer.svelte';
     import ImageSection from '../ImageSection.svelte';
     import TextSection from '../TextSection.svelte';
+    import Window from '$lib/Window.svelte';
 
     $currentYear = 1970;
 
     $topics.topicList = [
         {
             title: $t('1970.water.title_short'),
-            name: 'water',
+            value: 'water',
         },
         {
             title: $t('1970.cotton.title_short'),
-            name: 'cotton',
+            value: 'cotton',
         },
         {
             title: $t('1970.politics.title_short'),
-            name: 'politics',
+            value: 'politics',
         },
     ];
 </script>
@@ -50,12 +57,6 @@
 </svelte:head>
 
 <ContentContainer>
-    <ImageSection>
-        <div class="first-image">
-            <Image src={Cotton_01} alt={$t('1960.water.title')} />
-        </div>
-    </ImageSection>
-
     <TextSection>
         {#if $topics.currentTopic === 'water'}
             {#if $locale === 'de'}
@@ -100,9 +101,28 @@
             </div>
         </TextContent>
     </TextSection>
-</ContentContainer>
 
-<TabBar />
+    <div class="flex justify-center">
+        <AralSeaOutline />
+    </div>
+
+    <ImageSection>
+        <div class="align-bottom">
+            {#if $topics.currentTopic === 'water'}
+                {#if $locale === 'de'}
+                    <SeaTable_de />
+                {:else if $locale === 'en'}
+                    <SeaTable_en />
+                {/if}
+            {/if}
+        </div>
+        <div class="first-image">
+            <Window>
+                <Image src={Cotton_01} alt={$t('1960.water.title')} />
+            </Window>
+        </div>
+    </ImageSection>
+</ContentContainer>
 
 <style>
     .first-image {
