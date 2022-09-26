@@ -111,7 +111,7 @@
         </div>
     {/if}
     {#if $topics.currentTopic === 'cotton'}
-        <div class="align-bottom margin-l-auto">
+        <div class="align-bottom margin-l-auto margin-b-m">
             <Window padding transparent>
                 {#if $locale === 'de'}
                     <StatsHarvest_de />
@@ -121,8 +121,8 @@
             </Window>
         </div>
         <div class="cotton-image from-top-left to-width-80 image image-transition">
-            <Window>
-                <Image src={Kolchose} alt={'text'} />
+            <Window caption={$t('1960.cotton.image')}>
+                <Image src={Kolchose} alt={$t('1960.cotton.image')} />
             </Window>
         </div>
     {/if}

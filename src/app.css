@@ -195,6 +195,9 @@
 /* ----------------- */
 /* ----------------- */
 /* PADDING */
+.padding-all-xs {
+	padding: var(--size-xs);
+}
 
 .padding-all-s {
 	padding: var(--size-s);
@@ -220,6 +223,11 @@
 .margin-v-xl {
 	margin-top: var(--size-xl);
 	margin-bottom: var(--size-xl);
+}
+
+.margin-b-m {
+	margin-bottom: var(--size-m);
+
 }
 
 
