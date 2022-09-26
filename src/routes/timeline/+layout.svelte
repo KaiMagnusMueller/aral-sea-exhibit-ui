@@ -52,6 +52,7 @@
         grid-column: 1/-1;
         grid-row: 1/2;
         height: -webkit-fill-available;
+        pointer-events: none;
     }
 
     .page-content {
