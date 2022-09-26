@@ -93,7 +93,7 @@
     {/if}
 </TextSection>
 
-<div class="image-section margin-v-xl">
+<ImageSection>
     {#if $topics.currentTopic === 'water'}
         <div class="second-image image image-transition">
             <Window>
@@ -130,23 +130,9 @@
                 <Image src={Cotton_01} alt={$t('1960.water.title')} />
             </Window>
         </div> -->
-</div>
+</ImageSection>
 
 <style>
-    .image-section {
-        grid-column: 2/-1;
-        position: relative;
-        display: flex;
-    }
-
-    .first-image {
-        width: 50%;
-        top: 80px;
-        right: 0;
-        position: absolute;
-        transform: rotate(2deg);
-    }
-
     .second-image {
         width: 500px;
         top: 100px;
