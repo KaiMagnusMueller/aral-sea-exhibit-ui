@@ -12,69 +12,25 @@
     import State2010 from './parts/State2010.svelte';
     import State2020 from './parts/State2020.svelte';
 
-    function getElementsByDataAttribute(elem: HTMLElement, attr: string, value: any) {
-        console.log(elem);
-        console.log(attr, value);
-
-        value = value.toString();
-
-        let elementsWithAttr = [...elem.querySelectorAll(`[data-${attr}]`)];
-        if (value) {
-            elementsWithAttr = elementsWithAttr.filter((elem) => {
-                return elem.dataset[attr] === value.toString();
-            });
-        }
-
-        let result = elementsWithAttr;
-        return result;
-    }
-
-    function getStrokes(elements: HTMLElement[]) {
-        let strokes = [];
-
-        elements.forEach((elem) => {
-            strokes.push(...elem.getElementsByClassName('stroke'));
-        });
-
-        console.log(strokes);
-
-        let strokesArr = [...strokes];
-
-        return strokesArr;
-    }
-
-    function setStrokes(strokes: HTMLElement[], color: string) {
-        strokes.forEach((element) => {
-            element.style.stroke = color;
-        });
-    }
+    import { resetStrokes } from './mapHelpers';
 
     onMount(() => {
-        matches = getElementsByDataAttribute(mapElem, 'year', $currentYear);
+        console.log('mount');
 
-        console.log(matches);
-        // @ts-expect-error
-        let strokes = getStrokes(matches);
-
-        setStrokes(strokes, '#8300FE');
+        // resetStrokes(mapElem, $currentYear, '#A1EEFF', '#8300FE');
     });
 
     let mapElem: HTMLElement;
-    let matches;
 
     afterUpdate(() => {
-        resetStrokes($currentYear);
+        let highlightColor = '#A1EEFF';
+
+        if ($topics.currentTopic === 'water') {
+            highlightColor = '#8300FE';
+        }
+
+        resetStrokes(mapElem, $currentYear, '#A1EEFF', highlightColor);
     });
-
-    function resetStrokes(year: number) {
-        let strokes = getStrokes(matches);
-        setStrokes(strokes, '#A1EEFF');
-        matches = getElementsByDataAttribute(mapElem, 'year', year);
-        console.log(matches);
-
-        strokes = getStrokes(matches);
-        setStrokes(strokes, '#8300FE');
-    }
 </script>
 
 <div class="map-view">
@@ -83,7 +39,11 @@
         <p>{$currentYear}</p>
     </div>
 
-    <div class="map" bind:this={mapElem}>
+    <div
+        class="map image-transition"
+        class:fade={$topics.currentTopic != 'water'}
+        bind:this={mapElem}
+    >
         <div><Background /></div>
         {#if $currentYear <= 2020}
             <div data-year="2020"><State2020 /></div>
@@ -123,6 +83,10 @@
         position: relative;
         width: 720px;
         height: 872px;
+    }
+
+    .fade {
+        opacity: 0.5;
     }
 
     .map > div {

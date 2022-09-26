@@ -9,7 +9,7 @@
 
     // /** @type {import('./$types').LayoutData} */
     // export let data: any;
-    import AralSeaOutline from '$lib/AraSeaMap/AraSeaMap.svelte';
+    import AralSeaOutline from '$lib/AralSeaMap/AralSeaMap.svelte';
 </script>
 
 <header class="flex">
@@ -36,16 +36,10 @@
 </footer>
 
 <style>
-    header {
-    }
-
     .content-container {
         flex-grow: 1;
 
         overflow: hidden;
-    }
-
-    footer {
     }
 
     .center-helper {
