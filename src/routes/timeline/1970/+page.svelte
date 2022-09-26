@@ -56,73 +56,45 @@
     <meta name="description" content={$t('1970.title')} />
 </svelte:head>
 
-<ContentContainer>
-    <TextSection>
+<TextSection>
+    {#if $topics.currentTopic === 'water'}
+        {#if $locale === 'de'}
+            <Water_de />
+        {:else if $locale === 'en'}
+            <Water_en />
+        {/if}
+    {/if}
+    {#if $topics.currentTopic === 'cotton'}
+        {#if $locale === 'de'}
+            <Cotton_de />
+        {:else if $locale === 'en'}
+            <Cotton_en />
+        {/if}
+    {/if}
+    {#if $topics.currentTopic === 'politics'}
+        {#if $locale === 'de'}
+            <Politics_de />
+        {:else if $locale === 'en'}
+            <Politics_en />
+        {/if}
+    {/if}
+</TextSection>
+<ImageSection>
+    <div class="align-bottom margin-l-auto">
         {#if $topics.currentTopic === 'water'}
             {#if $locale === 'de'}
-                <Water_de />
+                <SeaTable_de />
             {:else if $locale === 'en'}
-                <Water_en />
+                <SeaTable_en />
             {/if}
         {/if}
-        {#if $topics.currentTopic === 'cotton'}
-            {#if $locale === 'de'}
-                <Cotton_de />
-            {:else if $locale === 'en'}
-                <Cotton_en />
-            {/if}
-        {/if}
-        {#if $topics.currentTopic === 'politics'}
-            {#if $locale === 'de'}
-                <Politics_de />
-            {:else if $locale === 'en'}
-                <Politics_en />
-            {/if}
-        {/if}
-
-        <TextContent duration={600}>
-            <div class="content">
-                <!-- <h1>{$t('1960.water.title')}</h1>
-                <p>{$t('1960.water.content')}</p>
-                <h1>{$t('1960.cotton.title')}</h1>
-                <p>{$t('1960.cotton.content')}</p>
-                <h1>{$t('1960.politics.title')}</h1>
-                <p>{$t('1960.politics.content')}</p> -->
-                <!-- 
-                {#if $locale === 'de'}
-                    <Water_de />
-                    <Cotton_de />
-                    <Politics_de />
-                {:else if $locale === 'en'}
-                    <Water_en />
-                    <Cotton_en />
-                    <Politics_en />
-                {/if} -->
-            </div>
-        </TextContent>
-    </TextSection>
-
-    <div class="flex justify-center">
-        <AralSeaOutline />
     </div>
-
-    <ImageSection>
-        <div class="align-bottom">
-            {#if $topics.currentTopic === 'water'}
-                {#if $locale === 'de'}
-                    <SeaTable_de />
-                {:else if $locale === 'en'}
-                    <SeaTable_en />
-                {/if}
-            {/if}
-        </div>
-        <div class="first-image">
-            <Window>
-                <Image src={Cotton_01} alt={$t('1960.water.title')} />
-            </Window>
-        </div>
-    </ImageSection>
-</ContentContainer>
+    <div class="first-image">
+        <Window>
+            <Image src={Cotton_01} alt={$t('1960.water.title')} />
+        </Window>
+    </div>
+</ImageSection>
 
 <style>
     .first-image {

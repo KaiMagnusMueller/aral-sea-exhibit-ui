@@ -3,8 +3,6 @@
 
     export let iconName: string = '';
     export let label = 'Placeholder';
-
-    console.log($$slots);
 </script>
 
 <div class="button-wrapper border-l ">

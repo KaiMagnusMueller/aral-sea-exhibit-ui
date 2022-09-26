@@ -2,6 +2,7 @@
     import { fly } from 'svelte/transition';
 
     export let header = '';
+    export let caption = '';
     export let padding = false;
     export let transparent = false;
 
@@ -14,27 +15,32 @@
     let delay = 200 * Math.random();
 </script>
 
-<div
-    class="window-container border-radius-l border-l shadow-m"
-    class:lightbox
-    class:transparent
-    on:click|self={() => {
-        lightbox = !lightbox;
-    }}
-    in:fly={{ delay: delay, duration: 800, y: 50 }}
->
-    {#if header}
-        <div class="header flex flex-cross-center padding-left-s border-bottom-l">
-            <h2>{header}</h2>
+<div class="window-container" class:lightbox in:fly={{ delay: delay, duration: 800, y: 50 }}>
+    <div
+        class="content-container border-radius-l border-l shadow-m"
+        class:transparent
+        on:click|self={() => {
+            lightbox = !lightbox;
+        }}
+    >
+        {#if header}
+            <div class="header flex flex-cross-center padding-left-s border-bottom-l">
+                <h2>{header}</h2>
+            </div>
+        {/if}
+        <div class="content" class:padding-all-s={padding}>
+            <slot />
+        </div>
+    </div>
+    {#if caption}
+        <div class="caption border-radius-l padding-all-xs">
+            <p>{caption}</p>
         </div>
     {/if}
-    <div class="content" class:padding-all-s={padding}>
-        <slot />
-    </div>
 </div>
 
 <style>
-    .window-container {
+    .content-container {
         position: relative;
         background-color: var(--aral-color-bg);
         overflow: clip;
@@ -43,15 +49,6 @@
         flex-direction: column;
         transition: all 0.5s ease;
     }
-
-    .transparent {
-        background: rgba(255, 255, 255, 0.6);
-        /* Black */
-
-        backdrop-filter: blur(27px);
-        /* Note: backdrop-filter has minimal browser support */
-    }
-
     .header {
         height: var(--size-m);
     }
@@ -64,6 +61,17 @@
         flex-grow: 1;
         display: flex;
         pointer-events: none;
+    }
+
+    .caption {
+        width: 80%;
+        margin-top: var(--size-xs);
+        background: #fffcdf2f;
+        backdrop-filter: blur(27px);
+    }
+
+    .caption p {
+        margin: 0;
     }
 
     .lightbox {
