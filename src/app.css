@@ -230,18 +230,69 @@
 /* LIGHTBOX */
 
 .image:has(.lightbox) {
-	width: 80% !important;
-	z-index: 1000 !important;
-	transform: rotate(0) !important;
-	top: 0 !important;
-
+	z-index: 1000;
+	margin: 0 !important;
 	/* transform: translate(-50%, -50%) !important; */
 }
 
+.center-v-h {
+	left: 50%;
+	transform: translate(-50%, -50%);
+	top: 50%;
+}
+
+.center-v-h:has(.lightbox) {
+	left: 50%;
+	transform: translate(-50%, -50%);
+	top: 50%;
+}
+
+.from-top-left {
+	transform: rotate(-2deg) translate(0, 0);
+
+}
+
+.from-top-left:has(.lightbox) {
+	transform: rotate(0deg) translate(0, 0);
+
+}
+
+.to-width-80:has(.lightbox) {
+	width: 80% !important;
+
+}
+
+
+.from-top-right {
+	top: 200px;
+	/* left: 100px; */
+	right: -100px;
+	transform: rotate(-2deg) translate(-50%, -50%);
+
+}
+
+.from-top-right:has(.lightbox) {
+	right: 50%;
+	top: 50%;
+	transform: rotate(0) translate(50%, -50%);
+
+}
 
 
 .image-transition {
 	transition: all 0.5s ease;
+}
+
+.transparent {
+	background: rgba(255, 255, 255, 0.6) !important;
+	/* background: #FFFCDF99 !important; */
+	backdrop-filter: blur(27px) !important;
+}
+
+.transparent-aral-bg,
+table {
+	background: #FFFCDF99 !important;
+	backdrop-filter: blur(27px) !important;
 }
 
 

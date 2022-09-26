@@ -62,6 +62,8 @@
     import StatsHarvest_en from './StatsHarvest_en.svelte';
 
     import Kolchose from '$lib/media/kolchose.jpg';
+
+    import KarakumChannel from '$lib/media/karakum-channel.jpg';
 </script>
 
 <svelte:head>
@@ -95,7 +97,7 @@
 
 <ImageSection>
     {#if $topics.currentTopic === 'water'}
-        <div class="second-image image image-transition">
+        <div class="second-image from-top-right to-width-80 image image-transition">
             <Window>
                 <Image src={SichlingFisch} alt={'text'} />
             </Window>
@@ -118,9 +120,16 @@
                 {/if}
             </Window>
         </div>
-        <div class="cotton-image image image-transition">
+        <div class="cotton-image from-top-left to-width-80 image image-transition">
             <Window>
                 <Image src={Kolchose} alt={'text'} />
+            </Window>
+        </div>
+    {/if}
+    {#if $topics.currentTopic === 'politics'}
+        <div class="karakum-image image image-transition center-v-h">
+            <Window>
+                <Image src={KarakumChannel} alt={'text'} />
             </Window>
         </div>
     {/if}
@@ -135,11 +144,7 @@
 <style>
     .second-image {
         width: 500px;
-        top: 100px;
-        /* left: 100px; */
-        right: 100px;
         position: absolute;
-        transform: rotate(-2deg);
     }
 
     .chart-test {
@@ -151,7 +156,12 @@
         width: 600px;
         /* left: 100px; */
         position: absolute;
-        transform: rotate(-2deg);
+    }
+
+    .karakum-image {
+        position: absolute;
+        width: 1200px;
+        filter: grayscale();
     }
 
     /* .image:has(.lightbox) {

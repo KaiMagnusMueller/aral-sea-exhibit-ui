@@ -43,15 +43,6 @@
         flex-direction: column;
         transition: all 0.5s ease;
     }
-
-    .transparent {
-        background: rgba(255, 255, 255, 0.6);
-        /* Black */
-
-        backdrop-filter: blur(27px);
-        /* Note: backdrop-filter has minimal browser support */
-    }
-
     .header {
         height: var(--size-m);
     }
