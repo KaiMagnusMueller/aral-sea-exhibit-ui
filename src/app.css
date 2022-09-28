@@ -17,6 +17,7 @@
 	--column-margin-top: 4rem;
 
 
+	--aral-color-highlight: #8300FE;
 	--aral-color-bg: #FFFCDF;
 	--aral-color-content: #000000;
 
@@ -297,11 +298,12 @@
 	backdrop-filter: blur(27px) !important;
 }
 
-.transparent-aral-bg,
-table {
+.transparent-aral-bg {
 	background: #FFFCDF99 !important;
 	backdrop-filter: blur(27px) !important;
 }
+
+
 
 
 /* ---------------------------- */
@@ -395,6 +397,10 @@ table {
 	border-left: 0;
 	border-radius: var(--size-xs);
 	border-spacing: 0px;
+
+	background: url("/100-90-5-monochrome.png");
+	background-color: #FFFCDF99 !important;
+	backdrop-filter: blur(27px) !important;
 }
 
 thead {

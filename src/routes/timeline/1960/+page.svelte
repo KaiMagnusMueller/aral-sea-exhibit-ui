@@ -63,7 +63,6 @@
 
     import Kolchose from '$lib/media/kolchose.jpg';
     import KarakumChannel from '$lib/media/karakum-channel.jpg';
-
 </script>
 
 <svelte:head>

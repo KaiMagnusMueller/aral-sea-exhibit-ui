@@ -3,6 +3,9 @@
 
 	import { t } from 'svelte-intl-precompile';
 	import { topics } from '../routes/timeline/store';
+
+	import AralSeaMap from '$lib/AralSeaMap/AralSeaMap.svelte';
+
 	onMount(() => {
 		$topics.currentTopic = '';
 	});
@@ -23,6 +26,8 @@
 		</span>
 		{$t('splash.intro.text')}
 	</h1>
+
+	<AralSeaMap currentYear={1970} />
 
 	<a href="timeline/">{$t('splash.start.button')}</a>
 
