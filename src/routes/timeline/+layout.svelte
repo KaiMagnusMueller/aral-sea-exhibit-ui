@@ -11,11 +11,33 @@
     // export let data: any;
 
     import BackgroundMap from '$lib/BackgroundMap/BackgroundMap.svelte';
-    import { afterNavigate } from '$app/navigation';
+    import { afterNavigate, beforeNavigate } from '$app/navigation';
 
     afterNavigate(() => {
         console.log('mount timeline page');
+        setInactivityTimer();
     });
+
+    beforeNavigate(() => {
+        clearTimer(inactivityTimer);
+        console.log('before navigate');
+    });
+
+    let inactivityTimer: any = null;
+    let inactivityDelayTime: number = 2000;
+
+    function setInactivityTimer() {
+        inactivityTimer = setTimeout(onTimerEnd, inactivityDelayTime);
+        console.log('timer started end timer in ' + inactivityDelayTime + ' milliseconds');
+    }
+
+    function onTimerEnd() {
+        console.info('DING. Timer has ended');
+    }
+
+    function clearTimer(timer: number) {
+        clearTimeout(inactivityTimer);
+    }
 </script>
 
 <header class="flex">
