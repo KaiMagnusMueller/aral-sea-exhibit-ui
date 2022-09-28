@@ -26,7 +26,7 @@
             {#if size === 'xl'}
                 <span class="text-body-xl">{label}</span>
             {:else}
-                <span class="text-body-m">{label}</span>
+                <span class="text-body-m-bold">{label}</span>
             {/if}
         </div>
     {/if}
@@ -65,7 +65,7 @@
     .icon {
         height: 32px;
         width: 32px;
-        padding: 6px;
+        padding: var(--size-xxs);
     }
 
     .normal span {

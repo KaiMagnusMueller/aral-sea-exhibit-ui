@@ -7,6 +7,11 @@
         "intro.text": "Seine Entwicklung von 1960 bis 2020",
         "start.button": "Starte die Reise"
     },
+    "intro": {
+        "prev": "Zurück",
+        "next": "Weiter",
+        "image": "Bauern bei der Baumwollernte im Dezember 1937 auf der Kolchose Chash Tepa im Kalinin-Distrikt der usbekischen Sozialistischen Sowjetrepublik"
+    },
     "1960": {
         "title": "Aral See 1960",
         "water": {

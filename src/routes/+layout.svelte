@@ -4,7 +4,9 @@
 	import LangSwitch from '$lib/LangSwitch.svelte';
 
 	import { addMessages, init } from 'svelte-intl-precompile';
+	//@ts-expect-error
 	import en from '$locales/en';
+	//@ts-expect-error
 	import de from '$locales/de';
 	addMessages('en', en);
 	addMessages('de', de);

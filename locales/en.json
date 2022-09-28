@@ -7,6 +7,11 @@
         "intro.text": "Its development from 1960 until 2020",
         "start.button": "Start the experience"
     },
+    "intro": {
+        "prev": "Back",
+        "next": "Continue",
+        "image": "Workers harvesting cotton in December 1937 on the collective farm Chash Tepa in the Kalinin district of the Uzbek Soviet Socialist Republic"
+    },
     "1960": {
         "title": "Aral Sea 1960",
         "water": {

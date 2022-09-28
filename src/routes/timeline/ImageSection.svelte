@@ -7,5 +7,6 @@
         position: relative;
 
         grid-column: 2/-1;
+        grid-row: 1/2;
     }
 </style>

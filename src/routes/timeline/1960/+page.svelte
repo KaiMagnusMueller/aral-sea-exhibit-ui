@@ -121,7 +121,7 @@
                 {/if}
             </Window>
         </div>
-        <div class="cotton-image from-top-left to-width-80 image image-transition">
+        <div class="cotton-image rotate--2deg to-width-80 image image-transition">
             <Window caption={$t('1960.cotton.image')}>
                 <Image src={Kolchose} alt={$t('1960.cotton.image')} />
             </Window>

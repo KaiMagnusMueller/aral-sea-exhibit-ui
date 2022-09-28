@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-
+	import { fade } from 'svelte/transition';
 	import { t } from 'svelte-intl-precompile';
 	import { topics } from '../routes/timeline/store';
 
@@ -13,8 +13,18 @@
 		$topics.currentTopic = '';
 	});
 
-	function handleTimelineStart(event) {
-		goto('/timeline/1960', { replaceState: true });
+	let fadeOut = false;
+
+	function handleTimelineStart() {
+		fadeOut = true;
+
+		setTimeout(() => {
+			goto('/timeline/1960', { replaceState: true });
+		}, 1200);
+	}
+
+	function startFade() {
+		fadeOut = true;
 	}
 </script>
 
@@ -22,6 +32,8 @@
 	<title>Home</title>
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
+
+<!-- <div transition:fade={{ delay: 0, duration: 300 }}> -->
 <div class="background-map">
 	<AralSeaMap currentYear={1970} />
 </div>
@@ -48,6 +60,11 @@
 		/>
 	</footer>
 </div>
+<!-- </div> -->
+
+{#if fadeOut}
+	<div class="fadeOut" in:fade={{ delay: 0, duration: 300 }} />
+{/if}
 
 <style>
 	.splash-screen {
@@ -93,5 +110,14 @@
 		transform: scale(2);
 		overflow: hidden;
 		z-index: -10;
+	}
+
+	.fadeOut {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-color: black;
 	}
 </style>

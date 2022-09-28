@@ -171,6 +171,15 @@
 	line-height: 28px;
 }
 
+.text-body-m-bold {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 28px;
+}
+
+
 .text-body-xl {
 	font-family: 'Inter';
 	font-style: normal;
@@ -268,12 +277,12 @@
 	top: 50%;
 }
 
-.from-top-left {
+.rotate--2deg {
 	transform: rotate(-2deg) translate(0, 0);
 
 }
 
-.from-top-left:has(.lightbox) {
+.rotate--2deg:has(.lightbox) {
 	transform: rotate(0deg) translate(0, 0);
 
 }
@@ -296,6 +305,21 @@
 	right: 50%;
 	top: 50%;
 	transform: rotate(0) translate(50%, -50%);
+
+}
+
+.from-bottom-left {
+	bottom: -360px;
+	left: 440px;
+	/* left: -100px; */
+	transform: rotate(0deg) translate(-50%, -50%);
+
+}
+
+.from-bottom-left:has(.lightbox) {
+	left: 50%;
+	bottom: 50%;
+	transform: rotate(0) translate(-50%, 50%);
 
 }
 

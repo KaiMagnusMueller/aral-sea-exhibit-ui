@@ -3,6 +3,8 @@
     import LangSwitch from '$lib/LangSwitch.svelte';
     import TopicSelector from '$lib/TopicSelector.svelte';
     import Button from '$lib/Button.svelte';
+    import { t } from 'svelte-intl-precompile';
+    import { fade } from 'svelte/transition';
 
     import question from '$lib/icons/question.svg?raw';
     // import PageTransition from '$lib/PageTransition.svelte';
@@ -11,16 +13,16 @@
     // export let data: any;
 
     import BackgroundMap from '$lib/BackgroundMap/BackgroundMap.svelte';
-    import { afterNavigate, beforeNavigate } from '$app/navigation';
+    import { afterNavigate, beforeNavigate, goto } from '$app/navigation';
 
     afterNavigate(() => {
-        console.log('mount timeline page');
+        // console.log('mount timeline page');
         setInactivityTimer();
     });
 
     beforeNavigate(() => {
         clearTimer(inactivityTimer);
-        console.log('before navigate');
+        // console.log('before navigate');
     });
 
     let inactivityTimer: any = null;
@@ -28,7 +30,7 @@
 
     function setInactivityTimer() {
         inactivityTimer = setTimeout(onTimerEnd, inactivityDelayTime);
-        console.log('timer started end timer in ' + inactivityDelayTime + ' milliseconds');
+        // console.log('timer started end timer in ' + inactivityDelayTime + ' milliseconds');
     }
 
     function onTimerEnd() {
@@ -38,6 +40,12 @@
     function clearTimer(timer: number) {
         clearTimeout(inactivityTimer);
     }
+
+    let fadeOut = true;
+
+    setTimeout(() => {
+        fadeOut = false;
+    }, 300);
 </script>
 
 <header class="flex">
@@ -61,7 +69,17 @@
     <div class="center-helper">
         <TopicSelector />
     </div>
+    <Button
+        label={$t('general.reset')}
+        on:click={() => {
+            goto('/');
+        }}
+    />
 </footer>
+
+{#if fadeOut}
+    <div class="fadeOut" out:fade={{ delay: 0, duration: 300 }} />
+{/if}
 
 <style>
     .content-container {
@@ -86,5 +104,14 @@
     .page-content {
         grid-column: 1/-1;
         grid-row: 1/2;
+    }
+
+    .fadeOut {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
     }
 </style>
