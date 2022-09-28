@@ -20,8 +20,7 @@
 </div>
 
 <section>
-	<h1>
-		<span class="welcome" />
+	<h1 class="main-title">
 		{$t('splash.title')}
 	</h1>
 	{$t('splash.intro.text')}
@@ -36,7 +35,6 @@
 <style>
 	section {
 		display: flex;
-		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		flex: 1;
@@ -46,22 +44,12 @@
 		width: 100%;
 	}
 
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
+	.main-title {
+		font-weight: 700;
+		font-size: 64px;
+		line-height: 77px;
+		letter-spacing: -0.02em;
 	}
-
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
-	}
-
 	.background-map {
 		position: absolute;
 		left: 350px;
