@@ -3,8 +3,8 @@
         "reset": "Restart"
     },
     "splash": {
-        "title": "",
-        "intro.text": "to the Aral Sea exhibit",
+        "title": "The Aral Sea",
+        "intro.text": "Its development from 1960 until 2020",
         "start.button": "Start the experience"
     },
     "1960": {

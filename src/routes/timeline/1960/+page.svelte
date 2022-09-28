@@ -58,6 +58,8 @@
         },
     ];
 
+    $topics = $topics;
+
     import StatsHarvest_de from './StatsHarvest_de.svelte';
     import StatsHarvest_en from './StatsHarvest_en.svelte';
 

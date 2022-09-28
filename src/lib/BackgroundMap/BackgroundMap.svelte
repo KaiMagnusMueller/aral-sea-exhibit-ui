@@ -4,17 +4,6 @@
     import { fade } from 'svelte/transition';
     import { topics, currentYear } from '../../routes/timeline/store';
 
-    import Background from '../AralSeaMap/parts/Background.svelte';
-    import State1960 from '../AralSeaMap/parts/State1960.svelte';
-    import State1970 from '../AralSeaMap/parts/State1970.svelte';
-    import State1980 from '../AralSeaMap/parts/State1980.svelte';
-    import State1990 from '../AralSeaMap/parts/State1990.svelte';
-    import State2000 from '../AralSeaMap/parts/State2000.svelte';
-    import State2010 from '../AralSeaMap/parts/State2010.svelte';
-    import State2020 from '../AralSeaMap/parts/State2020.svelte';
-
-    import { resetStrokes } from './mapHelpers';
-
     let highlight = false;
 
     onMount(() => {
@@ -23,13 +12,13 @@
         // resetStrokes(mapElem, $currentYear, '#A1EEFF', '#8300FE');
     });
 
-    $: {
+    afterUpdate(() => {
         if ($topics.currentTopic === 'water') {
             highlight = true;
         } else {
             highlight = false;
         }
-    }
+    });
 
     let mapElem: HTMLDivElement;
 </script>

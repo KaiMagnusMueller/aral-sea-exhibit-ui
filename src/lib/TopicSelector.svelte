@@ -4,11 +4,11 @@
     import { t } from 'svelte-intl-precompile';
     import { topics } from '../routes/timeline/store';
 
-    onMount(() => {
+    $: {
         if (!$topics.currentTopic) {
             $topics.currentTopic = $topics.topicList[0].value;
         }
-    });
+    }
 
     function handleClick(event: MouseEvent) {
         console.log(event);

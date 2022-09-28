@@ -15,19 +15,16 @@
 	<title>Home</title>
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
+<div class="background-map">
+	<AralSeaMap currentYear={1970} />
+</div>
 
 <section>
 	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset="svelte-welcome.webp" type="image/webp" />
-				<img src="svelte-welcome.png" alt="Welcome" />
-			</picture>
-		</span>
-		{$t('splash.intro.text')}
+		<span class="welcome" />
+		{$t('splash.title')}
 	</h1>
-
-	<AralSeaMap currentYear={1970} />
+	{$t('splash.intro.text')}
 
 	<a href="timeline/">{$t('splash.start.button')}</a>
 
@@ -63,5 +60,16 @@
 		height: 100%;
 		top: 0;
 		display: block;
+	}
+
+	.background-map {
+		position: absolute;
+		left: 350px;
+		top: 330px;
+		height: auto;
+		width: auto;
+		transform: scale(1.5);
+		overflow: hidden;
+		z-index: -10;
 	}
 </style>

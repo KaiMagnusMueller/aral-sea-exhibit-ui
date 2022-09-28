@@ -36,5 +36,7 @@
 		box-sizing: border-box;
 		height: 100vh;
 		gap: 32px;
+		position: relative;
+		overflow: hidden;
 	}
 </style>

@@ -8,12 +8,27 @@
     import State2010 from './parts/State2010.svelte';
     import State2020 from './parts/State2020.svelte';
 
-    import { afterUpdate } from 'svelte';
+    import { afterUpdate, onMount } from 'svelte';
     import { resetStrokes } from '$lib/BackgroundMap/mapHelpers';
 
     export let mapElem: any = '';
     export let currentYear: number = 1960;
     export let highlight = false;
+
+    $: {
+        console.log(mapElem);
+        console.log(currentYear);
+        console.log(highlight);
+        let highlightColor = '#A1EEFF';
+
+        if (highlight) {
+            highlightColor = '#8300FE';
+        }
+
+        resetStrokes(mapElem, currentYear, '#A1EEFF', highlightColor);
+    }
+
+    onMount(() => {});
 
     afterUpdate(() => {
         let highlightColor = '#A1EEFF';
@@ -22,12 +37,11 @@
             highlightColor = '#8300FE';
         }
 
-        console.log(mapElem);
         resetStrokes(mapElem, currentYear, '#A1EEFF', highlightColor);
     });
 </script>
 
-<div bind:this={mapElem}>
+<div class="map-wrapper" bind:this={mapElem}>
     <div><Background /></div>
     {#if currentYear <= 2020}
         <div data-year="2020"><State2020 /></div>
@@ -53,9 +67,14 @@
 </div>
 
 <style>
+    .map-wrapper {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: a;
+    }
+
     div > div {
-        position: absolute;
-        left: 0;
-        top: 0;
+        grid-area: a;
     }
 </style>

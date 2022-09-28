@@ -9,7 +9,8 @@
 
     // /** @type {import('./$types').LayoutData} */
     // export let data: any;
-    import AralSeaOutline from '$lib/BackgroundMap/BackgroundMap.svelte';
+
+    import BackgroundMap from '$lib/BackgroundMap/BackgroundMap.svelte';
 </script>
 
 <header class="flex">
@@ -19,7 +20,7 @@
 <div class="content-container content-1-2-1 row-1 grid gap-s overflow-hidden">
     <!-- <PageTransition pathname={data.pathname}> -->
     <div class="aral-sea-outline flex align-self-center justify-center">
-        <AralSeaOutline />
+        <BackgroundMap />
     </div>
     <div class="page-content content-1-2-1 row-1 grid gap-s overflow-hidden">
         <slot />

@@ -4,7 +4,7 @@ export function getElementsByDataAttribute(elem: HTMLElement, attr: string, valu
         return []
     }
 
-    console.log(attr, value);
+    // console.log(attr, value);
     // @ts-ignore
     let elementsWithAttr: HTMLElement[] = [...elem.querySelectorAll(`[data-${attr}]`)];
 
@@ -42,7 +42,7 @@ export function setStrokes(strokes: HTMLElement[], color: string) {
 
 export function resetStrokes(mapElem: HTMLElement, year: number, colorDefault: string, colorHighlight: string) {
 
-    console.log(mapElem, year);
+    // console.log(mapElem, year);
 
 
     let matches: HTMLElement[] = getElementsByDataAttribute(mapElem, 'year', null);
@@ -50,7 +50,7 @@ export function resetStrokes(mapElem: HTMLElement, year: number, colorDefault: s
     let strokes = getStrokes(matches);
     setStrokes(strokes, colorDefault);
     matches = getElementsByDataAttribute(mapElem, 'year', year);
-    console.log(matches);
+    // console.log(matches);
 
     strokes = getStrokes(matches);
     setStrokes(strokes, colorHighlight);
