@@ -16,9 +16,9 @@
     export let highlight = false;
 
     $: {
-        console.log(mapElem);
-        console.log(currentYear);
-        console.log(highlight);
+        // console.log(mapElem);
+        // console.log(currentYear);
+        // console.log(highlight);
         let highlightColor = '#A1EEFF';
 
         if (highlight) {

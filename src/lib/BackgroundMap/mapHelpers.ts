@@ -29,7 +29,6 @@ export function getStrokes(elements: HTMLElement[]) {
         strokes.push(...elem.getElementsByClassName('stroke'));
     });
 
-    console.log(strokes);
     let strokesArr = [...strokes];
     return strokesArr;
 }

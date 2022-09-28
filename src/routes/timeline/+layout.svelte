@@ -11,6 +11,11 @@
     // export let data: any;
 
     import BackgroundMap from '$lib/BackgroundMap/BackgroundMap.svelte';
+    import { afterNavigate } from '$app/navigation';
+
+    afterNavigate(() => {
+        console.log('mount timeline page');
+    });
 </script>
 
 <header class="flex">

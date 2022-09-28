@@ -171,6 +171,14 @@
 	line-height: 28px;
 }
 
+.text-body-xl {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 30px;
+	line-height: 47px;
+}
+
 .text-heading-m {
 	font-family: 'Inter';
 	font-style: normal;
@@ -212,6 +220,10 @@
 /* ----------------- */
 /* ----------------- */
 /* MARGIN */
+
+.margin-none {
+	margin: 0;
+}
 
 .margin-all-s {
 	margin: var(--size-s);
@@ -334,7 +346,7 @@ p {
 }
 
 a {
-	color: var(--accent-color);
+	color: blue;
 	text-decoration: none;
 }
 

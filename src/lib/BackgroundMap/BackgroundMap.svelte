@@ -7,8 +7,7 @@
     let highlight = false;
 
     onMount(() => {
-        console.log('mount');
-
+        // console.log('mount');
         // resetStrokes(mapElem, $currentYear, '#A1EEFF', '#8300FE');
     });
 

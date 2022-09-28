@@ -11,7 +11,7 @@
     }
 
     function handleClick(event: MouseEvent) {
-        console.log(event);
+        // console.log(event);
 
         // @ts-ignore
         $topics.currentTopic = event.target.attributes.name.value;
