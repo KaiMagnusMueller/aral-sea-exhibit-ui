@@ -58,12 +58,13 @@
         },
     ];
 
+    $topics = $topics;
+
     import StatsHarvest_de from './StatsHarvest_de.svelte';
     import StatsHarvest_en from './StatsHarvest_en.svelte';
 
     import Kolchose from '$lib/media/kolchose.jpg';
     import KarakumChannel from '$lib/media/karakum-channel.jpg';
-
 </script>
 
 <svelte:head>
@@ -120,7 +121,7 @@
                 {/if}
             </Window>
         </div>
-        <div class="cotton-image from-top-left to-width-80 image image-transition">
+        <div class="cotton-image rotate--2deg to-width-80 image image-transition">
             <Window caption={$t('1960.cotton.image')}>
                 <Image src={Kolchose} alt={$t('1960.cotton.image')} />
             </Window>

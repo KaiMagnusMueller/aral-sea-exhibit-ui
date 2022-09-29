@@ -1,11 +1,20 @@
 <script lang="ts">
     import { isEmpty } from '$lib/utils';
+    import { createEventDispatcher } from 'svelte';
 
     export let iconName: string = '';
     export let label = 'Placeholder';
+    export let variant = 'secondary';
+    export let size = 'm';
+
+    let dispatch = createEventDispatcher();
+
+    function handleClick(event: MouseEvent) {
+        dispatch('click', {});
+    }
 </script>
 
-<div class="button-wrapper border-l ">
+<div class="{variant} {size} button-wrapper border-l" on:click={handleClick}>
     {#if !isEmpty($$slots)}
         <slot />
     {:else if iconName}
@@ -14,7 +23,11 @@
         </div>
     {:else}
         <div class="inner">
-            <span class="text-body-m">{label}</span>
+            {#if size === 'xl'}
+                <span class="text-body-xl">{label}</span>
+            {:else}
+                <span class="text-body-m-bold">{label}</span>
+            {/if}
         </div>
     {/if}
 </div>
@@ -37,7 +50,13 @@
         padding: 6px 16px;
     }
 
-    .inner:hover {
+    .secondary .inner:hover {
+        background-color: var(--aral-color-content);
+        color: var(--aral-color-bg);
+        fill: var(--aral-color-bg);
+    }
+
+    .primary {
         background-color: var(--aral-color-content);
         color: var(--aral-color-bg);
         fill: var(--aral-color-bg);
@@ -46,6 +65,9 @@
     .icon {
         height: 32px;
         width: 32px;
-        padding: 6px;
+        padding: var(--size-xxs);
+    }
+
+    .normal span {
     }
 </style>

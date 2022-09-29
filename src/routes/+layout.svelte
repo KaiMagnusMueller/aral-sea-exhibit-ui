@@ -4,7 +4,9 @@
 	import LangSwitch from '$lib/LangSwitch.svelte';
 
 	import { addMessages, init } from 'svelte-intl-precompile';
+	//@ts-expect-error
 	import en from '$locales/en';
+	//@ts-expect-error
 	import de from '$locales/de';
 	addMessages('en', en);
 	addMessages('de', de);
@@ -30,11 +32,13 @@
 		flex: 1;
 		display: flex;
 		flex-direction: column;
-		padding: 1rem 80px;
+		padding: 1rem 5rem;
 		width: 100%;
 		margin: 0 auto;
 		box-sizing: border-box;
 		height: 100vh;
 		gap: 32px;
+		position: relative;
+		overflow: hidden;
 	}
 </style>

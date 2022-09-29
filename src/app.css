@@ -1,5 +1,5 @@
-@import '@fontsource/fira-mono';
 @import '@fontsource/inter';
+@import '@fontsource/inter/700.css';
 
 :root {
 	font-family: "Inter", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
@@ -17,6 +17,7 @@
 	--column-margin-top: 4rem;
 
 
+	--aral-color-highlight: #8300FE;
 	--aral-color-bg: #FFFCDF;
 	--aral-color-content: #000000;
 
@@ -170,6 +171,23 @@
 	line-height: 28px;
 }
 
+.text-body-m-bold {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 28px;
+}
+
+
+.text-body-xl {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 30px;
+	line-height: 47px;
+}
+
 .text-heading-m {
 	font-family: 'Inter';
 	font-style: normal;
@@ -211,6 +229,10 @@
 /* ----------------- */
 /* ----------------- */
 /* MARGIN */
+
+.margin-none {
+	margin: 0;
+}
 
 .margin-all-s {
 	margin: var(--size-s);
@@ -255,12 +277,12 @@
 	top: 50%;
 }
 
-.from-top-left {
+.rotate--2deg {
 	transform: rotate(-2deg) translate(0, 0);
 
 }
 
-.from-top-left:has(.lightbox) {
+.rotate--2deg:has(.lightbox) {
 	transform: rotate(0deg) translate(0, 0);
 
 }
@@ -286,6 +308,21 @@
 
 }
 
+.from-bottom-left {
+	bottom: -360px;
+	left: 440px;
+	/* left: -100px; */
+	transform: rotate(0deg) translate(-50%, -50%);
+
+}
+
+.from-bottom-left:has(.lightbox) {
+	left: 50%;
+	bottom: 50%;
+	transform: rotate(0) translate(-50%, 50%);
+
+}
+
 
 .image-transition {
 	transition: all 0.5s ease;
@@ -297,11 +334,12 @@
 	backdrop-filter: blur(27px) !important;
 }
 
-.transparent-aral-bg,
-table {
+.transparent-aral-bg {
 	background: #FFFCDF99 !important;
 	backdrop-filter: blur(27px) !important;
 }
+
+
 
 
 /* ---------------------------- */
@@ -332,7 +370,7 @@ p {
 }
 
 a {
-	color: var(--accent-color);
+	color: blue;
 	text-decoration: none;
 }
 
@@ -395,6 +433,10 @@ table {
 	border-left: 0;
 	border-radius: var(--size-xs);
 	border-spacing: 0px;
+
+	background: url("/100-90-5-monochrome.png");
+	background-color: #FFFCDF99 !important;
+	backdrop-filter: blur(27px) !important;
 }
 
 thead {
