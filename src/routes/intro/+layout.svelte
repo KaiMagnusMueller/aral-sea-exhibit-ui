@@ -1,10 +1,11 @@
 <script lang="ts">
-    import { goto } from '$app/navigation';
-    import Button from '$lib/Button.svelte';
-    import LangSwitch from '$lib/LangSwitch.svelte';
     import { t } from 'svelte-intl-precompile';
+    import { goto } from '$app/navigation';
 
     import { nextStep, prevStep } from './store';
+    import Button from '$lib/Button.svelte';
+    import LangSwitch from '$lib/LangSwitch.svelte';
+    import FadeToBlack from '$lib/FadeToBlack.svelte';
 
     console.log('/' + $nextStep);
 </script>
@@ -43,6 +44,8 @@
         />
     </div>
 </footer>
+
+<FadeToBlack startBlack />
 
 <style>
     footer {

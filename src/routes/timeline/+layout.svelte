@@ -14,6 +14,7 @@
 
     import BackgroundMap from '$lib/BackgroundMap/BackgroundMap.svelte';
     import { afterNavigate, beforeNavigate, goto } from '$app/navigation';
+    import FadeToBlack from '$lib/FadeToBlack.svelte';
 
     afterNavigate(() => {
         // console.log('mount timeline page');
@@ -41,12 +42,12 @@
         clearTimeout(inactivityTimer);
     }
 
-    let fadeOut = true;
-
-    setTimeout(() => {
-        fadeOut = false;
-    }, 300);
+    function handleKeydown(event: KeyboardEvent) {
+        console.log(event.key);
+    }
 </script>
+
+<svelte:window on:keydown={handleKeydown} />
 
 <header class="flex">
     <TimelineHeader />
@@ -77,9 +78,7 @@
     />
 </footer>
 
-{#if fadeOut}
-    <div class="fadeOut" out:fade={{ delay: 0, duration: 300 }} />
-{/if}
+<FadeToBlack startBlack />
 
 <style>
     .content-container {
@@ -104,14 +103,5 @@
     .page-content {
         grid-column: 1/-1;
         grid-row: 1/2;
-    }
-
-    .fadeOut {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: black;
     }
 </style>

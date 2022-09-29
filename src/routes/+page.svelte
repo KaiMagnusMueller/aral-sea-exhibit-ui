@@ -19,7 +19,7 @@
 		fadeOut = true;
 
 		setTimeout(() => {
-			goto('/timeline/1960', { replaceState: true });
+			goto('/intro/step-1');
 		}, 1200);
 	}
 
