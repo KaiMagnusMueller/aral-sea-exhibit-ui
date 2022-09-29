@@ -65,12 +65,41 @@
 
     import Kolchose from '$lib/media/kolchose.jpg';
     import KarakumChannel from '$lib/media/karakum-channel.jpg';
+    import Modal from '$lib/Modal.svelte';
+    import Button from '$lib/Button.svelte';
+
+    let visible = true;
 </script>
 
 <svelte:head>
     <title>{$t('1960.title')}</title>
     <meta name="description" content={$t('1960.title')} />
 </svelte:head>
+
+<Modal
+    {visible}
+    header={'Before you start'}
+    on:submit={() => {
+        visible = !visible;
+
+        setTimeout(() => {
+            visible = !visible;
+        }, 1000);
+    }}
+>
+    <h1 class="margin-none margin-t-s">
+        Make sure all layers are properly inserted into the model before you begin
+    </h1>
+    <svg
+        width="1200"
+        height="420"
+        viewBox="0 0 1200 420"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <rect x="0.5" y="0.5" width="1199" height="419" stroke="black" />
+    </svg>
+</Modal>
 
 <TextSection>
     {#if $topics.currentTopic === 'water'}

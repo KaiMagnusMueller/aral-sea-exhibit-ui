@@ -42,8 +42,14 @@
         clearTimeout(inactivityTimer);
     }
 
+    let acknowledgeModelReset: boolean = false;
+
     import { currentYear } from './store';
     function handleKeydown(event: KeyboardEvent) {
+        if (!acknowledgeModelReset) {
+            return;
+        }
+
         console.log(event.key);
 
         // 1960

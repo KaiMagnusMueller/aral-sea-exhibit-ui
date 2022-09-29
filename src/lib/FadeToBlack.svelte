@@ -18,7 +18,7 @@
 </script>
 
 {#if startBlack}
-    <div class="fadeOut" out:fade={{ delay: 0, duration: 300 }} />
+    <div class="fadeOut z-2000" out:fade={{ delay: 0, duration: 300 }} />
 {/if}
 
 <style>
