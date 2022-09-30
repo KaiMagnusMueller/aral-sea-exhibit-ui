@@ -14,7 +14,11 @@
     }
 </script>
 
-<div class="{variant} {size} button-wrapper border-l" on:click={handleClick}>
+<div
+    class="{variant} {size} button-wrapper border-l"
+    class:border-l={variant === 'secondary'}
+    on:click={handleClick}
+>
     {#if !isEmpty($$slots)}
         <slot />
     {:else if iconName}
@@ -50,7 +54,8 @@
         padding: 6px 16px;
     }
 
-    .secondary .inner:hover {
+    .secondary .inner:hover,
+    .tertiary .inner:hover {
         background-color: var(--aral-color-content);
         color: var(--aral-color-bg);
         fill: var(--aral-color-bg);

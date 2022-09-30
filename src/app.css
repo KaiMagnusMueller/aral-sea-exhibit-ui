@@ -19,6 +19,7 @@
 
 	--aral-color-highlight: #8300FE;
 	--aral-color-bg: #FFFCDF;
+	--aral-color-bg-light: #fffdee;
 	--aral-color-content: #000000;
 
 
@@ -40,6 +41,11 @@
 .aral-background {
 	background: url("/100-90-5-monochrome.png");
 	background-color: var(--aral-color-bg);
+}
+
+.aral-background-light {
+	background: url("/100-90-5-monochrome.png");
+	background-color: var(--aral-color-bg-light);
 }
 
 .overflow-hidden {

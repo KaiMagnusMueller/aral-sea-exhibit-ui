@@ -21,7 +21,9 @@
     <div class="modal-wrapper fullscreen ">
         <div class="modal-background fullscreen z-1000" transition:fade />
         <div class="modal-container z-1000" transition:scale={{ start: 0.95 }}>
-            <div class="content-container aral-background border-radius-xxl border-l shadow-xl">
+            <div
+                class="content-container aral-background-light border-radius-xxl border-l shadow-xl"
+            >
                 {#if header}
                     <header class="header flex flex-cross-center padding-left-sm border-bottom-l">
                         <h2 class="margin-none">{header}</h2>
