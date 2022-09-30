@@ -11,6 +11,6 @@ import SamarkantBasar from "$lib/media/SamarkantBasar.jpg"
 
 In den 1970er-Jahren beobachtete man eine weitere Ausdehnung des Baumwollanbaus in Usbekistan, der zunächst zu Lasten der Getreideflächen ging. Aufgrund überdurchschnittlich steigender Getreideerträge verlor die Baumwolle in der zweiten Hälfte der 1970er-Jahre jedoch an Status. Der Arbeitsaufwand für Baumwolle stieg in den Kolchosen um das 6-Fache und in den Sowchosen sogar um das 11,5-Fache gegenüber dem Aufwand des Getreideanbaus. Obwohl die Baumwollproduktion immer noch zu einem positiven Einkommensbeitrag in der Landwirtschaft beitrug, verschlechterte sich ihre Rentabilität zunehmend. 
 
-            <Window caption={$t('1970.cotton.image')}>
+<div class="border-l border-radius-l overflow-hidden">
                 <Image src={SamarkantBasar} alt={$t('1970.cotton.image')} />
-            </Window>
+</div>

@@ -298,6 +298,12 @@
 	margin-left: auto;
 }
 
+.margin-v-m {
+	margin-top: var(--size-m);
+	margin-bottom: var(--size-m);
+}
+
+
 .margin-v-xl {
 	margin-top: var(--size-xl);
 	margin-bottom: var(--size-xl);

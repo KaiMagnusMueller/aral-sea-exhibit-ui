@@ -10,6 +10,6 @@ import SamarkantBasar from "$lib/media/SamarkantBasar.jpg"
 
 In the 1970s, a further expansion of cotton cultivation in Uzbekistan was observed, which was initially at the expense of the area under cereal cultivation. However, due to above-average increases in grain yields, cotton lost status in the second half of the 1970s. The labor input for cotton increased 6-fold in collective farms and as much as 11.5-fold in sovkhozes compared to the input for cereal crops. Although cotton production still contributed positively to agricultural income, its profitability increasingly deteriorated.
 
-            <Window caption={$t('1970.cotton.image')}>
+<div class="border-l border-radius-l overflow-hidden">
                 <Image src={SamarkantBasar} alt={$t('1970.cotton.image')} />
-            </Window>
+</div>
