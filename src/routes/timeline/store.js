@@ -11,3 +11,4 @@ export let topics = writable({
     currentTopic: ""
 })
 export let currentYear = writable()
+export let acknowledgeModelReset = writable(false)

@@ -1,3 +1,16 @@
-# Baumwollproduktion
+<script>
+    import { t } from 'svelte-intl-precompile';
 
-Baumwolle wurde im Planwirtschaftssystem u.a. in Kolchosen und Sowchosen angebaut. Ein Kolchos ist ein kollektiv landwirtschaftlicher Betrieb. Eine Sowchose ein staatlicher Großbetrieb in der Landwirtschaft der ehemaligen Sowjetunion. Die Unternehmensverfassung ist ähnlich der eines staatlichen Unternehmens in der Industrie: Der Direktor wird von übergeordneten Instanzen eingesetzt, die Beschäftigten haben Arbeitnehmerstatus. Seit 1952 hat Usbekistan trotz großer Anstrengungen wie Bewässerung und Zwangsarbeit die Baumwollpläne nicht mehr richtig erfüllen können.
+import SamarkantBasar from "$lib/media/SamarkantBasar.jpg"
+    import Image from '$lib/Image.svelte';
+    import Window from '$lib/Window.svelte';
+
+</script>
+
+# Die Baumwolle
+
+In den 1970er-Jahren beobachtete man eine weitere Ausdehnung des Baumwollanbaus in Usbekistan, der zunächst zu Lasten der Getreideflächen ging. Aufgrund überdurchschnittlich steigender Getreideerträge verlor die Baumwolle in der zweiten Hälfte der 1970er-Jahre jedoch an Status. Der Arbeitsaufwand für Baumwolle stieg in den Kolchosen um das 6-Fache und in den Sowchosen sogar um das 11,5-Fache gegenüber dem Aufwand des Getreideanbaus. Obwohl die Baumwollproduktion immer noch zu einem positiven Einkommensbeitrag in der Landwirtschaft beitrug, verschlechterte sich ihre Rentabilität zunehmend. 
+
+            <Window caption={$t('1970.cotton.image')}>
+                <Image src={SamarkantBasar} alt={$t('1970.cotton.image')} />
+            </Window>

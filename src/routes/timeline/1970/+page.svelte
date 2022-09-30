@@ -32,6 +32,8 @@
     import ImageSection from '../ImageSection.svelte';
     import TextSection from '../TextSection.svelte';
     import Window from '$lib/Window.svelte';
+    import StatsProductionDe from './StatsProduction_de.svelte';
+    import StatsProductionEn from './StatsProduction_en.svelte';
 
     $currentYear = 1970;
 
@@ -89,11 +91,17 @@
             {/if}
         {/if}
     </div>
-    <div class="first-image">
-        <Window>
-            <Image src={Cotton_01} alt={$t('1960.water.title')} />
-        </Window>
-    </div>
+    {#if $topics.currentTopic === 'cotton'}
+        <div class="align-bottom margin-l-auto margin-b-m">
+            <Window padding transparent>
+                {#if $locale === 'de'}
+                    <StatsProductionDe />
+                {:else if $locale === 'en'}
+                    <StatsProductionEn />
+                {/if}
+            </Window>
+        </div>
+    {/if}
 </ImageSection>
 
 <style>

@@ -34,7 +34,7 @@
 
     let imagePath = '';
 
-    import { topics, currentYear } from '../store';
+    import { topics, currentYear, acknowledgeModelReset } from '../store';
     import ContentContainer from '../ContentContainer.svelte';
     import ImageSection from '../ImageSection.svelte';
     import TextSection from '../TextSection.svelte';
@@ -65,12 +65,28 @@
 
     import Kolchose from '$lib/media/kolchose.jpg';
     import KarakumChannel from '$lib/media/karakum-channel.jpg';
+    import Modal from '$lib/Modal.svelte';
+    import Button from '$lib/Button.svelte';
+    import ModalInsertLayer from './ModalInsertLayer.svelte';
+
+    let visible = true;
 </script>
 
 <svelte:head>
     <title>{$t('1960.title')}</title>
     <meta name="description" content={$t('1960.title')} />
 </svelte:head>
+
+<Modal
+    visible={!$acknowledgeModelReset}
+    header={$t('model-reset.header')}
+    on:submit={() => {
+        $acknowledgeModelReset = true;
+    }}
+>
+    <h1 class="margin-none margin-t-s">{$t('model-reset.title')}</h1>
+    <ModalInsertLayer />
+</Modal>
 
 <TextSection>
     {#if $topics.currentTopic === 'water'}

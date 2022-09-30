@@ -42,8 +42,65 @@
         clearTimeout(inactivityTimer);
     }
 
+    let acknowledgeModelReset: boolean = false;
+
+    import { currentYear } from './store';
     function handleKeydown(event: KeyboardEvent) {
+        if (!acknowledgeModelReset) {
+            return;
+        }
+
         console.log(event.key);
+
+        // 1960
+        if (event.key === 'q' && $currentYear === 1960) {
+            goto('/timeline/1970');
+        }
+
+        // 1970
+        if (event.key === '1' && $currentYear === 1970) {
+            goto('/timeline/1960');
+        }
+        if (event.key === 'w' && $currentYear === 1970) {
+            goto('/timeline/1980');
+        }
+
+        // 1980
+        if (event.key === '2' && $currentYear === 1980) {
+            goto('/timeline/1970');
+        }
+        if (event.key === 'e' && $currentYear === 1980) {
+            goto('/timeline/1990');
+        }
+
+        // 1990
+        if (event.key === '3' && $currentYear === 1990) {
+            goto('/timeline/1980');
+        }
+        if (event.key === 'r' && $currentYear === 1990) {
+            goto('/timeline/2000');
+        }
+
+        // 2000
+        if (event.key === '4' && $currentYear === 2000) {
+            goto('/timeline/1990');
+        }
+        if (event.key === 't' && $currentYear === 2010) {
+            goto('/timeline/2010');
+        }
+
+        // 2010
+        if (event.key === '5' && $currentYear === 2000) {
+            goto('/timeline/2000');
+        }
+        if (event.key === 'z' && $currentYear === 2010) {
+            goto('/timeline/2020');
+        }
+
+        // 2020
+        if (event.key === '6' && $currentYear === 2010) {
+            goto('/timeline/2010');
+        }
     }
 </script>
 
