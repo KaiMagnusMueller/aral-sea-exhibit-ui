@@ -1,6 +1,7 @@
 {
     "general": {
-        "reset": "Neustart"
+        "reset": "Neustart",
+        "button-submit": "Ok"
     },
     "splash": {
         "title": "Der Aralsee",
@@ -11,6 +12,10 @@
         "prev": "Zurück",
         "next": "Weiter",
         "image": "Bauern bei der Baumwollernte im Dezember 1937 auf der Kolchose Chash Tepa im Kalinin-Distrikt der usbekischen Sozialistischen Sowjetrepublik"
+    },
+    "model-reset": {
+        "header": "Bevor Sie beginnen",
+        "title": "Setzen Sie alle Ebenen ein, bevor Sie beginnen"
     },
     "1960": {
         "title": "Aral See 1960",
@@ -36,7 +41,8 @@
         },
         "cotton": {
             "title": "Baumwollproduktion",
-            "title_short": "Baumwollproduktion"
+            "title_short": "Baumwollproduktion",
+            "image": "Marktfrauen auf dem Siob Basar in Samarkand, Usbekistan"
         },
         "politics": {
             "title": "Politische Situation / Entscheidungen",

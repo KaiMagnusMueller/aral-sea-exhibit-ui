@@ -1,5 +1,6 @@
 <script lang="ts">
     import { createEventDispatcher } from 'svelte';
+    import { t } from 'svelte-intl-precompile';
 
     export let visible: boolean = true;
 
@@ -35,7 +36,7 @@
                     </main>
 
                     <footer class="flex justify-self-right">
-                        <Button label={submitText} on:click={handleClick} />
+                        <Button label={$t('general.button-submit')} on:click={handleClick} />
                     </footer>
                 </div>
             </div>

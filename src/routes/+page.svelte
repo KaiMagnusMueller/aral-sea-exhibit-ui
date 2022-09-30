@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import { t } from 'svelte-intl-precompile';
-	import { topics } from '../routes/timeline/store';
+	import { topics, acknowledgeModelReset } from '../routes/timeline/store';
 
 	import AralSeaMap from '$lib/AralSeaMap/AralSeaMap.svelte';
 	import Button from '$lib/Button.svelte';
@@ -26,6 +26,8 @@
 	function startFade() {
 		fadeOut = true;
 	}
+
+	$acknowledgeModelReset = false;
 </script>
 
 <svelte:head>

@@ -34,7 +34,7 @@
 
     let imagePath = '';
 
-    import { topics, currentYear } from '../store';
+    import { topics, currentYear, acknowledgeModelReset } from '../store';
     import ContentContainer from '../ContentContainer.svelte';
     import ImageSection from '../ImageSection.svelte';
     import TextSection from '../TextSection.svelte';
@@ -78,17 +78,13 @@
 </svelte:head>
 
 <Modal
-    {visible}
-    header={'Before you start'}
+    visible={!$acknowledgeModelReset}
+    header={$t('model-reset.header')}
     on:submit={() => {
-        visible = !visible;
-
-        setTimeout(() => {
-            visible = !visible;
-        }, 1000);
+        $acknowledgeModelReset = true;
     }}
 >
-    <h1 class="margin-none margin-t-s">Insert all layers into the model before you begin</h1>
+    <h1 class="margin-none margin-t-s">{$t('model-reset.title')}</h1>
     <ModalInsertLayer />
 </Modal>
 
