@@ -373,6 +373,22 @@
 
 }
 
+
+.from-top-right-corner {
+	top: 100px;
+	/* left: 100px; */
+	right: -100px;
+	transform: rotate(-2deg) translate(-50%, -50%);
+
+}
+
+.from-top-right-corner:has(.lightbox) {
+	right: 50%;
+	top: 50%;
+	transform: rotate(0) translate(50%, -50%);
+
+}
+
 .from-bottom-left {
 	bottom: -360px;
 	left: 440px;

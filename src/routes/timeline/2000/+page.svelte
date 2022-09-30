@@ -30,6 +30,7 @@
     import Window from '$lib/Window.svelte';
     import Image from '$lib/Image.svelte';
 
+    import SaigaAntilpoe from '$lib/media/saiga-antilope.jpg';
     import QuiltProtest from '$lib/media/Quilt-Protest.jpg';
 
     $currentYear = 2000;
@@ -80,9 +81,9 @@
 
 <ImageSection>
     {#if $topics.currentTopic === 'water'}
-        <div class="second-image from-top-right to-width-80 image image-transition">
+        <div class="second-image from-top-right-corner to-width-80 image image-transition">
             <Window>
-                <Image src={''} alt={'text'} />
+                <Image src={SaigaAntilpoe} alt={'text'} />
             </Window>
         </div>
         <div class="align-bottom margin-l-auto">
@@ -94,7 +95,7 @@
         </div>
     {/if}
     {#if $topics.currentTopic === 'cotton'}
-        <div class="align-bottom margin-l-auto margin-b-m">
+        <div class="stats center-v-h">
             <Window padding transparent>
                 {#if $locale === 'de'}
                     <StatsProportions_de />
@@ -114,8 +115,17 @@
 </ImageSection>
 
 <style>
+    .second-image {
+        width: 400px;
+        position: absolute;
+    }
+
     .karakum-image {
         position: absolute;
         width: 1000px;
+    }
+
+    .stats {
+        position: absolute;
     }
 </style>
