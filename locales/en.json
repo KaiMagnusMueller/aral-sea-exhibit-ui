@@ -49,5 +49,76 @@
             "title_short": "Political Situation",
             "image": "Soviet stamp from 1984. The environmental damage, already evident in the 1970s, shows face late with a public call for environmental protection."
         }
+    },
+    "1980": {
+        "title": "Aral Sea 1980",
+        "water": {
+            "title": "",
+            "title_short": ""
+        },
+        "cotton": {
+            "title": "",
+            "title_short": "",
+            "image": ""
+        },
+        "politics": {
+            "title": "",
+            "title_short": "",
+            "image": "Old Soviet era tractor in Samarkand, Uzbekistan"
+        }
+    },
+    "1990": {
+        "title": "Aral Sea 1990",
+        "water": {
+            "title": "",
+            "title_short": "",
+            "image": "Stamp from 1991. Ships lie on the dry bottom of the Aral Sea and the habitat of the saiga antelope is dwindling."
+        },
+        "cotton": {
+            "title": "",
+            "title_short": "",
+            "image": "Cotton harvest on an Uzbek plantation"
+        },
+        "politics": {
+            "title": "",
+            "title_short": "",
+            "image": "Traditional Kazakh yurts in Uzbekistan"
+        }
+    },
+    "2000": {
+        "title": "Aral See 2000",
+        "water": {
+            "title": "",
+            "title_short": "",
+            "image": ""
+        },
+        "cotton": {
+            "title": "",
+            "title_short": "",
+            "image": ""
+        },
+        "politics": {
+            "title": "",
+            "title_short": "",
+            "image": "Quilt held up in Washington at a demonstration against child labor in Uzbek cotton harvesting"
+        }
+    },
+    "2010": {
+        "title": "Aral Sea 2010",
+        "water": {
+            "title": "",
+            "title_short": "",
+            "image": ""
+        },
+        "cotton": {
+            "title": "",
+            "title_short": "",
+            "image": "Cotton pickers in the surroundings of Khiva, Xorazm province in Uzbekistan"
+        },
+        "politics": {
+            "title": "",
+            "title_short": "",
+            "image": ""
+        }
     }
 }

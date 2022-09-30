@@ -1,0 +1,18 @@
+## Kleiner Aralsee (nördlich)
+
+                             |       
+---------------------------- | ------
+Wasserspiegel m über NN      | 40,2  
+Wasservolumen km<sup>3</sup> | 23  
+Oberfläche km<sup>2</sup>    | 2.804
+Salzgehalt / Salinität (g/L) | 30    
+
+
+## Großer Aralsee (südlich)
+
+                             |       
+---------------------------- | ------
+Wasserspiegel m über NN      | 39,1  
+Wasservolumen km<sup>3</sup> | 341  
+Oberfläche km<sup>2</sup>    | 36.900
+Salzgehalt / Salinität (g/L) | 30    

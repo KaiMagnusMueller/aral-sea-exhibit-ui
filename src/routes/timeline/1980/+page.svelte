@@ -1,7 +1,7 @@
 <script>
     import { t, locale } from 'svelte-intl-precompile';
     import { page } from '$app/stores';
-    import { topics, currentYear, acknowledgeModelReset } from '../store';
+    import { topics, currentYear } from '../store';
     import Modal from '$lib/Modal.svelte';
     import TextSection from '../TextSection.svelte';
 
@@ -23,9 +23,14 @@
     // @ts-ignore
     import SeaTable_en from './SeaTable_en.svx';
 
+    import StatsHarvest_de from './StatsHarvest_de.svelte';
+    import StatsHarvest_en from './StatsHarvest_en.svelte';
+
     import ImageSection from '../ImageSection.svelte';
     import Window from '$lib/Window.svelte';
     import Image from '$lib/Image.svelte';
+
+    import AlterTraktor from '$lib/media/alter-traktor.jpg';
 
     $currentYear = 1980;
 
@@ -98,26 +103,19 @@
                 {/if}
             </Window>
         </div>
-        <div class="cotton-image rotate--2deg to-width-80 image image-transition">
-            <Window caption={$t('1960.cotton.image')}>
-                <Image src={''} alt={$t('1960.cotton.image')} />
-            </Window>
-        </div>
     {/if}
     {#if $topics.currentTopic === 'politics'}
         <div class="karakum-image image image-transition center-v-h">
-            <Window>
-                <Image src={''} alt={'text'} />
+            <Window caption={$t('1980.politics.image')}>
+                <Image src={AlterTraktor} alt={$t('1980.politics.image')} />
             </Window>
         </div>
     {/if}
-
-    <!-- <div class="first-image">
-            <Window>
-                <Image src={Cotton_01} alt={$t('1960.water.title')} />
-            </Window>
-        </div> -->
 </ImageSection>
 
 <style>
+    .karakum-image {
+        position: absolute;
+        width: 1000px;
+    }
 </style>

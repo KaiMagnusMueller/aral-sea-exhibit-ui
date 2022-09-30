@@ -22,35 +22,29 @@
     import SeaTable_de from './SeaTable_de.svx';
     // @ts-ignore
     import SeaTable_en from './SeaTable_en.svx';
-    // @ts-ignore
-    import CottonTable_de from './CottonTable_de.svx';
-    // @ts-ignore
-    import CottonTable_en from './CottonTable_en.svx';
 
-    import StatsHarvest_de from './StatsHarvest_de.svelte';
-    import StatsHarvest_en from './StatsHarvest_en.svelte';
+    import StatsWages_de from './StatsWages_de.svelte';
+    import StatsWages_en from './StatsWages_en.svelte';
 
     import ImageSection from '../ImageSection.svelte';
     import Window from '$lib/Window.svelte';
     import Image from '$lib/Image.svelte';
 
-    import Pfluecker from '$lib/media/baumwollpfluecker.jpg';
-    import BriefmarkeAntilope from '$lib/media/1990-BriefmarkeAntilope.jpg';
-    import Jurten from '$lib/media/kazach-jurten.jpg';
+    import PflueckerChiwa from '$lib/media/baumwollpfluecker-in-chiwa.jpg';
 
-    $currentYear = 1990;
+    $currentYear = 2010;
 
     $topics.topicList = [
         {
-            title: $t('1990.water.title_short'),
+            title: $t('2010.water.title_short'),
             value: 'water',
         },
         {
-            title: $t('1990.cotton.title_short'),
+            title: $t('2010.cotton.title_short'),
             value: 'cotton',
         },
         {
-            title: $t('1990.politics.title_short'),
+            title: $t('2010.politics.title_short'),
             value: 'politics',
         },
     ];
@@ -86,13 +80,6 @@
 
 <ImageSection>
     {#if $topics.currentTopic === 'water'}
-        <div
-            class="second-image caption-width-hack from-bottom-left-corner to-width-80 image image-transition"
-        >
-            <Window caption={$t('1990.water.image')}>
-                <Image src={BriefmarkeAntilope} alt={$t('1990.water.image')} />
-            </Window>
-        </div>
         <div class="align-bottom margin-l-auto">
             {#if $locale === 'de'}
                 <SeaTable_de />
@@ -102,45 +89,29 @@
         </div>
     {/if}
     {#if $topics.currentTopic === 'cotton'}
-        <div class="cotton-image rotate--2deg to-width-80 image image-transition">
-            <Window caption={$t('1990.cotton.image')}>
-                <Image src={Pfluecker} alt={$t('1990.cotton.image')} />
+        <div
+            class="second-image from-bottom-left-corner-2 z-1000 to-width-80 image image-transition"
+        >
+            <Window caption={$t('2010.cotton.image')}>
+                <Image src={PflueckerChiwa} alt={$t('2010.cotton.image')} />
             </Window>
         </div>
-        <div class="cotton-table align-bottom margin-l-auto ">
-            {#if $locale === 'de'}
-                <CottonTable_de />
-            {:else if $locale === 'en'}
-                <CottonTable_en />
-            {/if}
-        </div>
-    {/if}
-    {#if $topics.currentTopic === 'politics'}
-        <div class="karakum-image center-v-h image image-transition">
-            <Window caption={$t('1990.politics.image')}>
-                <Image src={Jurten} alt={$t('1990.politics.image')} />
+        <div class="align-bottom margin-l-auto margin-b-m">
+            <Window padding transparent>
+                {#if $locale === 'de'}
+                    <StatsWages_de />
+                {:else if $locale === 'en'}
+                    <StatsWages_en />
+                {/if}
             </Window>
         </div>
     {/if}
+    {#if $topics.currentTopic === 'politics'}{/if}
 </ImageSection>
 
 <style>
     .second-image {
-        width: 400px;
-        position: absolute;
-    }
-
-    :global(.caption-width-hack .caption) {
-        width: 100% !important;
-    }
-
-    .cotton-table {
-        max-width: 580px;
-    }
-
-    .cotton-image {
-        width: 600px;
-        /* left: 100px; */
+        width: 500px;
         position: absolute;
     }
 
