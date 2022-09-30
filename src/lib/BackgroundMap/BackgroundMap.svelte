@@ -23,11 +23,6 @@
 </script>
 
 <div class="map-view image-transition" class:fade={$topics.currentTopic != 'water'}>
-    <div class="debug">
-        <p>{$topics.currentTopic}</p>
-        <p>{$currentYear}</p>
-    </div>
-
     <svg
         class="map-border"
         width="1760"

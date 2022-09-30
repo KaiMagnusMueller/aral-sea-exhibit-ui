@@ -1,0 +1,8 @@
+## Aralsee
+
+                             |       
+---------------------------- | ------
+Wasserspiegel m über NN      | 45,7  
+Wasservolumen km<sup>3</sup> | 648,7  
+Oberfläche km<sup>2</sup>    | 51.700
+Salzgehalt / Salinität (g/L) | 16,8    

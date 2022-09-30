@@ -46,7 +46,79 @@
         },
         "politics": {
             "title": "Politische Situation / Entscheidungen",
-            "title_short": "Politische Situation"
+            "title_short": "Politische Situation",
+            "image": "Sowjetische Briefmarke aus dem Jahr 1984. Die bereits in den 1970er Jahren deutlichen Umweltschäden zeigen erst spät mit einem öffentlichen Aufruf zum Umweltschutz Gesicht."
+        }
+    },
+    "1980": {
+        "title": "Aral See 1980",
+        "water": {
+            "title": "",
+            "title_short": ""
+        },
+        "cotton": {
+            "title": "",
+            "title_short": "",
+            "image": ""
+        },
+        "politics": {
+            "title": "",
+            "title_short": "",
+            "image": "Alter Traktor aus der Sowjetzeit in Samarkand, Usbekistan"
+        }
+    },
+    "1990": {
+        "title": "Aral See 1990",
+        "water": {
+            "title": "",
+            "title_short": "",
+            "image": "Briefmarke aus dem Jahr 1991. Schiffe liegen auf dem trockenen Grund des Aralsees und der Lebensraum der Saiga Antilope schwindet."
+        },
+        "cotton": {
+            "title": "",
+            "title_short": "",
+            "image": "Baumwollernte auf einer usbekischen Plantage"
+        },
+        "politics": {
+            "title": "",
+            "title_short": "",
+            "image": "Traditionelle kasachische Jurten in Usbekistan"
+        }
+    },
+    "2000": {
+        "title": "Aral See 2000",
+        "water": {
+            "title": "",
+            "title_short": "",
+            "image": ""
+        },
+        "cotton": {
+            "title": "",
+            "title_short": "",
+            "image": ""
+        },
+        "politics": {
+            "title": "",
+            "title_short": "",
+            "image": "Quilt, der in Washington auf einer Demonstration gegen Kinderarbeit in der usbekischen Baum-wollernte hochgehalten wurde"
+        }
+    },
+    "2010": {
+        "title": "Aral See 2010",
+        "water": {
+            "title": "",
+            "title_short": "",
+            "image": ""
+        },
+        "cotton": {
+            "title": "",
+            "title_short": "",
+            "image": "Baumwollpflückerinnen in der Umgebung von Chiwa, der Provinz Xorazm in Usbekistan"
+        },
+        "politics": {
+            "title": "",
+            "title_short": "",
+            "image": ""
         }
     }
 }

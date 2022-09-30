@@ -1,3 +1,15 @@
-# Cotton Production
+<script>
+    import { t } from 'svelte-intl-precompile';
 
-Cotton was grown in the planned economy system in collective farms and sovkhozes, among others. A kolkhoz is a collective agricultural enterprise. A sovkhoz is a large-scale state-owned agricultural enterprise in the former Soviet Union. The enterprise constitution is similar to that of a state enterprise in industry: the director is appointed by higher authorities, and the employees have employee status. Since 1952, Uzbekistan has not been able to properly fulfill cotton plans despite great efforts such as irrigation and forced labor.
+import SamarkantBasar from "$lib/media/SamarkantBasar.jpg"
+    import Image from '$lib/Image.svelte';
+    import Window from '$lib/Window.svelte';
+
+</script>
+# Cotton
+
+In the 1970s, a further expansion of cotton cultivation in Uzbekistan was observed, which was initially at the expense of the area under cereal cultivation. However, due to above-average increases in grain yields, cotton lost status in the second half of the 1970s. The labor input for cotton increased 6-fold in collective farms and as much as 11.5-fold in sovkhozes compared to the input for cereal crops. Although cotton production still contributed positively to agricultural income, its profitability increasingly deteriorated.
+
+            <Window caption={$t('1970.cotton.image')}>
+                <Image src={SamarkantBasar} alt={$t('1970.cotton.image')} />
+            </Window>

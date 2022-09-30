@@ -49,7 +49,7 @@
     {#if currentYear <= 2010}
         <div data-year="2010"><State2010 /></div>
     {/if}
-    {#if currentYear <= 200}
+    {#if currentYear <= 2000}
         <div data-year="2000"><State2000 /></div>
     {/if}
     {#if currentYear <= 1990}

@@ -1,0 +1,27 @@
+## Großer Aralsee (westliches Becken)
+
+                             |       
+---------------------------- | ------
+| Wasserspiegel m über NN      | 27       |
+| Wasservolumen km<sup>3</sup> | 56       |
+| Oberfläche km<sup>2</sup>    | 3.588    |
+| Salzgehalt / Salinität (g/L) | über 100 |
+
+## Großer Aralsee (östliches Becken)
+
+                             |       
+---------------------------- | ------
+| Wasserspiegel m über NN      | 27       |
+| Wasservolumen km<sup>3</sup> | 0,64     |
+| Oberfläche km<sup>2</sup>    | 516      |
+| Salzgehalt / Salinität (g/L) | über 150 |
+
+
+## Kleiner Aralsee
+
+                             |       
+---------------------------- | ------
+| Wasserspiegel m über NN      | 42    |
+| Wasservolumen km<sup>3</sup> | 27    |
+| Oberfläche km<sup>2</sup>    | 3.200 |
+| Salzgehalt / Salinität (g/L) | 8     |

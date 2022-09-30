@@ -1,0 +1,8 @@
+## Aral Sea
+
+                              |       
+----------------------------- | ------
+Water level m above sea level | 45.7  
+Water volume km<sup>3</sup>   | 648.7  
+Surface area km<sup>2</sup>   | 51,700
+Salinity (g/L)                | 16.8   

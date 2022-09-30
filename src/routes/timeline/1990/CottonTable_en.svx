@@ -1,0 +1,11 @@
+## Supply of agricultural machinery to Uzbekistan at the end of the Soviet period (1990)
+
+| Machines                                    | Quantity in pieces |
+| ------------------------------------------- | ------------------ |
+| Cotton Harvesters                           | 2.600              |
+| Cultivators                                 | 8.200              |
+| Mowers                                      | 600                |
+| Combine harvester                           | 800                |
+| Machines for mineral fertilizer application | 600                |
+| Machines for organic fertilizer application | 600                |
+| Presses                                     | 1.000              |
