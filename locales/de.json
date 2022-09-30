@@ -46,7 +46,25 @@
         },
         "politics": {
             "title": "Politische Situation / Entscheidungen",
-            "title_short": "Politische Situation"
+            "title_short": "Politische Situation",
+            "image": "Sowjetische Briefmarke aus dem Jahr 1984. Die bereits in den 1970er Jahren deutlichen Umweltschäden zeigen erst spät mit einem öffentlichen Aufruf zum Umweltschutz Gesicht."
+        }
+    },
+    "1980": {
+        "title": "Aral See 1980",
+        "water": {
+            "title": "",
+            "title_short": ""
+        },
+        "cotton": {
+            "title": "",
+            "title_short": "",
+            "image": ""
+        },
+        "politics": {
+            "title": "",
+            "title_short": "",
+            "image": ""
         }
     }
 }

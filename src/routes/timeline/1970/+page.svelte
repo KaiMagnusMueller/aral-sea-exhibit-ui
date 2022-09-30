@@ -26,6 +26,7 @@
     import Image from '$lib/Image.svelte';
     import Cotton_01 from '$lib/media/Cotton_01.jpg';
     import AralSeaOutline from './AraSeaOutline.svelte';
+    import Briefmarke from '$lib/media/sowjetunion-briefmarke-1984.jpg';
 
     import { topics, currentYear } from '../store';
     import ContentContainer from '../ContentContainer.svelte';
@@ -102,14 +103,18 @@
             </Window>
         </div>
     {/if}
+    {#if $topics.currentTopic === 'politics'}
+        <div class="karakum-image image image-transition center-v-h">
+            <Window caption={$t('1970.politics.image')}>
+                <Image src={Briefmarke} alt={$t('1970.politics.image')} />
+            </Window>
+        </div>
+    {/if}
 </ImageSection>
 
 <style>
-    .first-image {
-        width: 50%;
-        right: 0;
-        top: 80px;
+    .karakum-image {
         position: absolute;
-        transform: rotate(2deg);
+        width: 1000px;
     }
 </style>
