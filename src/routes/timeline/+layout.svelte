@@ -42,11 +42,9 @@
         clearTimeout(inactivityTimer);
     }
 
-    let acknowledgeModelReset: boolean = false;
-
-    import { currentYear } from './store';
+    import { currentYear, acknowledgeModelReset } from './store';
     function handleKeydown(event: KeyboardEvent) {
-        if (!acknowledgeModelReset) {
+        if (!$acknowledgeModelReset) {
             return;
         }
 
