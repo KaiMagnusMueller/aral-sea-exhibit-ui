@@ -29,7 +29,6 @@
     import { fly } from 'svelte/transition';
 
     import Image from '$lib/Image.svelte';
-    import Cotton_01 from '$lib/media/Cotton_01.jpg';
     import SichlingFisch from '$lib/media/Sichling-Fisch.jpg';
 
     let imagePath = '';

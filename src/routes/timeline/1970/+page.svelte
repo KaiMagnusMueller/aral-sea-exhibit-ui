@@ -24,7 +24,6 @@
     // import { fly } from 'svelte/transition';
 
     import Image from '$lib/Image.svelte';
-    import Cotton_01 from '$lib/media/Cotton_01.jpg';
     import AralSeaOutline from './AraSeaOutline.svelte';
     import Briefmarke from '$lib/media/sowjetunion-briefmarke-1984.jpg';
 
