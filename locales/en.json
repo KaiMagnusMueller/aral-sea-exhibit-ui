@@ -1,4 +1,9 @@
 {
+    "about": {
+        "submit": "Close",
+        "project-by": "A project by"
+
+    },
     "general": {
         "reset": "Restart",
         "button-submit": "Ok"

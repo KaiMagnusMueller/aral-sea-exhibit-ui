@@ -266,6 +266,9 @@
 	padding-top: var(--size-s);
 }
 
+.padding-t-m {
+	padding-top: var(--size-m);
+}
 
 .padding-all-xs {
 	padding: var(--size-xs);
@@ -487,6 +490,10 @@
 	width: 120px;
 }
 
+
+.qr-code-small {
+	width: 100px;
+}
 
 /* ---------------------------- */
 /* ---------------------------- */

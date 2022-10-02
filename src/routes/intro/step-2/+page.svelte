@@ -16,31 +16,35 @@
     $nextStep = 'timeline/1960';
 </script>
 
-<div class="cotton-image  image image-transition">
+<div class="cotton-image image image-transition">
     <Window caption={$t('intro.image')}>
         <Image src={Cotton_02} alt={$t('intro.image')} />
     </Window>
 </div>
 
-<div class="table margin-l-auto">
-    {#if $locale === 'de'}
+
+    <div class="table margin-l-auto">
+        {#if $locale === 'de'}
         <IntroTable_de />
-    {:else if $locale === 'en'}
+        {:else if $locale === 'en'}
         <IntroTable_en />
-    {/if}
-</div>
+        {/if}
+    </div>
 
 <style>
     .cotton-image {
         grid-column: 1/3;
         grid-row: 1/2;
         width: 50%;
-        top: 100px;
+        top: 150px;
+        left: 150px;
         position: absolute;
     }
 
     .table {
         grid-column: 3/4;
         grid-row: 1/2;
+
+        right: 100px;
     }
 </style>
