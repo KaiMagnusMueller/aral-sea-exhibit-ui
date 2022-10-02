@@ -122,7 +122,7 @@
                         poster={Poster}
                         autoplay
                         loop
-                        src="localhost:8080/media/WFS_Trailer_de.mp4"
+                        src="https://cdn.kaimagnus.de/aral-sea/WFS_Trailer_de.mp4"
                     />
                 {:else if $locale === "en"}
                     <!-- svelte-ignore a11y-media-has-caption -->
@@ -130,7 +130,7 @@
                         poster={Poster}
                         autoplay
                         loop
-                        src="localhost:8080/media/WFS_Trailer_en.mp4"
+                        src="https://cdn.kaimagnus.de/aral-sea/WFS_Trailer_en.mp4"
                     />
                 {/if}
             </Window>
