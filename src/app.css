@@ -580,6 +580,11 @@ button:focus:not(:focus-visible) {
 /* ----------------- */
 /* TABLE */
 
+h2+table:not(:last-child) {
+	margin-bottom: 24px;
+}
+
+
 table {
 	/* border: var(--border-l); */
 	width: 100%;

@@ -1,3 +1,12 @@
+## Small Aral Sea (north)
+
+                              |       
+----------------------------- | ------
+| Water level m above sea level | over 42 |
+| Water volume km<sup>3</sup>   | 28.8    |
+| Surface area km<sup>2</sup>   | 3,412   |
+| Salinity (g/L)                | 7       |
+
 ## Great Aral Sea (western basin)
 
                               |       
@@ -15,11 +24,3 @@
 | Surface area km<sup>2</sup>   | 2,537                    |
 | Salinity (g/L)                | over 150                 |
 
-## Small Aral Sea (north)
-
-                              |       
------------------------------ | ------
-| Water level m above sea level | over 42 |
-| Water volume km<sup>3</sup>   | 28.8    |
-| Surface area km<sup>2</sup>   | 3,412   |
-| Salinity (g/L)                | 7       |
