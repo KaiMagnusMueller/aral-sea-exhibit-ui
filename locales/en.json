@@ -11,7 +11,7 @@
     "splash": {
         "title": "The Aral Sea",
         "intro.text": "Its development from 1960 until 2020",
-        "start.button": "Start the experience"
+        "start.button": "Start the journey"
     },
     "intro": {
         "prev": "Back",
@@ -20,7 +20,7 @@
     },
     "model-reset": {
         "header": "Before you start",
-        "title": "Insert all layers into the model before you begin"
+        "title": "Insert all acrylic layers into the installation to start."
     },
     "1960": {
         "title": "Aral Sea 1960",
