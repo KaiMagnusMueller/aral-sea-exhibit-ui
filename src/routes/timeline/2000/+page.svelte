@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import { t, locale } from "svelte-intl-precompile";
     import { page } from "$app/stores";
     import { topics, currentYear } from "../store";
@@ -34,6 +34,7 @@
     import QuiltProtest from "$lib/media/Quilt-Protest.jpg";
     import QR_Code from "./QR_Code.svg";
     import QRCode from "$lib/QRCode.svelte";
+    import TabBar from "$lib/TabBar.svelte";
 
     $currentYear = 2000;
 
@@ -51,6 +52,50 @@
             value: "politics",
         },
     ];
+
+    import Stats2000_de from "./stats/2000_de.svelte";
+    import Stats2005_de from "./stats/2005_de.svelte";
+    import Stats2010_de from "./stats/2010_de.svelte";
+
+    import Stats2000_en from "./stats/2000_en.svelte";
+    import Stats2005_en from "./stats/2005_en.svelte";
+    import Stats2010_en from "./stats/2010_en.svelte";
+
+    let listItems = [
+        {
+            title: "2000",
+            value: 2000,
+            active: true,
+        },
+        {
+            title: "2005",
+            value: 2005,
+        },
+        {
+            title: "2010",
+            value: 2010,
+        },
+    ];
+
+    let activeChart: number = 2000;
+
+    function handleClick(event) {
+        const activeItemValue = event.detail.activeItem;
+
+        let foundElem = listItems.findIndex((elem) => {
+            return elem.value == activeItemValue;
+        });
+
+        listItems.forEach((elem) => {
+            elem.active = false;
+        });
+
+        listItems[foundElem].active = true;
+
+        activeChart = listItems[foundElem].value;
+
+        console.log(foundElem);
+    }
 </script>
 
 <svelte:head>
@@ -100,12 +145,31 @@
     {/if}
     {#if $topics.currentTopic === "cotton"}
         <div class="stats center-v-h">
-            <Window padding transparent>
-                {#if $locale === "de"}
-                    <StatsProportions_de />
-                {:else if $locale === "en"}
-                    <StatsProportions_en />
-                {/if}
+            <Window padding transparent enableEvents>
+                <div class="selectable-chart-container">
+                    {#if activeChart === 2000}
+                        {#if $locale === "de"}
+                            <Stats2000_de />
+                        {:else if $locale === "en"}
+                            <Stats2000_en />
+                        {/if}
+                    {/if}
+                    {#if activeChart === 2005}
+                        {#if $locale === "de"}
+                            <Stats2005_de />
+                        {:else if $locale === "en"}
+                            <Stats2005_en />
+                        {/if}
+                    {/if}
+                    {#if activeChart === 2010}
+                        {#if $locale === "de"}
+                            <Stats2010_de />
+                        {:else if $locale === "en"}
+                            <Stats2010_en />
+                        {/if}
+                    {/if}
+                    <TabBar items={listItems} on:selection={handleClick} />
+                </div>
             </Window>
         </div>
     {/if}
@@ -140,5 +204,13 @@
 
     .stats {
         position: absolute;
+    }
+
+    .selectable-chart-container {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        align-items: center;
+        padding: 0 24px;
     }
 </style>

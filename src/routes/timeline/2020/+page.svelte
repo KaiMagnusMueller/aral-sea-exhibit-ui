@@ -90,7 +90,7 @@
 <ImageSection>
     {#if $topics.currentTopic === "water"}
         <div
-            class="second-image caption-width-hack from-bottom-left-corner to-width-80 image image-transition"
+            class="second-image caption-width-hack from-bottom-left-corner-3 to-width-80 image image-transition"
         >
             <Window caption={$t("2020.water.image")}>
                 <Image src={ShipDry} alt={$t("2020.water.image")} />

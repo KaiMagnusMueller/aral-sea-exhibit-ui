@@ -257,6 +257,16 @@
 /* ----------------- */
 /* ----------------- */
 /* PADDING */
+
+.padding-t-xs {
+	padding-top: var(--size-xs);
+}
+
+.padding-t-s {
+	padding-top: var(--size-s);
+}
+
+
 .padding-all-xs {
 	padding: var(--size-xs);
 }
@@ -438,6 +448,19 @@
 }
 
 .from-bottom-left-corner-2:has(.lightbox) {
+	left: 50%;
+	bottom: 50%;
+	transform: rotate(0) translate(-50%, 50%);
+
+}
+
+.from-bottom-left-corner-3 {
+	bottom: -180px;
+	left: -180px;
+	transform: rotate(-2deg) translate(-50%, -50%);
+}
+
+.from-bottom-left-corner-3:has(.lightbox) {
 	left: 50%;
 	bottom: 50%;
 	transform: rotate(0) translate(-50%, 50%);

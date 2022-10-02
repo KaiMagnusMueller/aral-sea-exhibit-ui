@@ -15,4 +15,4 @@ Salzgehalt / Salinität (g/L) | 11 bis 14
 Wasserspiegel m über NN      | 33,80  
 Wasservolumen km<sup>3</sup> | 330  
 Oberfläche km<sup>2</sup>    | 36.900
-Salzgehalt / Salinität (g/L) | 20 bis 150    
+Salzgehalt / Salinität (g/L) | 20 bis 150
