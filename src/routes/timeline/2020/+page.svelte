@@ -28,6 +28,8 @@
     // @ts-ignore
     import CottonTable_en from "./CottonTable_en.svx";
 
+    import ShipDry from "$lib/media/ship-dry.jpg"
+
     import StatsProduction_de from "./StatsProduction_de.svelte";
     import StatsProduction_en from "./StatsProduction_en.svelte";
 
@@ -88,10 +90,10 @@
 <ImageSection>
     {#if $topics.currentTopic === "water"}
         <div
-            class="second-image from-top-right to-width-80 image image-transition"
+            class="second-image caption-width-hack from-bottom-left-corner to-width-80 image image-transition"
         >
-            <Window>
-                <Image src={""} alt={"text"} />
+            <Window caption={$t("2020.water.image")}>
+                <Image src={ShipDry} alt={$t("2020.water.image")} />
             </Window>
         </div>
         <div class="align-bottom margin-l-auto">
@@ -146,6 +148,11 @@
 </ImageSection>
 
 <style>
+
+.second-image {
+    position: absolute;
+    width: 400px;
+}
     .cotton-table {
         position: absolute;
     }

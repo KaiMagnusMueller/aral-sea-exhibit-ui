@@ -130,7 +130,7 @@
         position: absolute;
     }
 
-    :global(.caption-width-hack .caption) {
+    :global(.caption-width-hack :not(.lightbox) .caption) {
         width: 100% !important;
     }
 

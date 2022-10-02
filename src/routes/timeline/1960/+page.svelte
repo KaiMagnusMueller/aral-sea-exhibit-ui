@@ -114,11 +114,6 @@
 
 <ImageSection>
     {#if $topics.currentTopic === 'water'}
-        <div class="second-image from-top-right to-width-80 image image-transition">
-            <Window>
-                <Image src={SichlingFisch} alt={'text'} />
-            </Window>
-        </div>
         <div class="align-bottom margin-l-auto">
             {#if $locale === 'de'}
                 <SeaTable_de />
