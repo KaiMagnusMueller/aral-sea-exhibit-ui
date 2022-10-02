@@ -120,5 +120,23 @@
             "title_short": "",
             "image": ""
         }
+    },
+    "2020": {
+        "title": "Aral Sea 2010",
+        "water": {
+            "title": "",
+            "title_short": "",
+            "image": ""
+        },
+        "cotton": {
+            "title": "",
+            "title_short": "",
+            "image": "Cotton pickers in the surroundings of Khiva, Xorazm province in Uzbekistan"
+        },
+        "politics": {
+            "title": "",
+            "title_short": "",
+            "video": "Techno video von ABC"
+        }
     }
 }

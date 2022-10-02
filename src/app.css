@@ -124,6 +124,14 @@
 	align-self: center;
 }
 
+.align-baseline {
+	align-items: baseline;
+}
+
+.align-flex-end {
+	align-items: flex-end;
+}
+
 .justify-self-right {
 	justify-content: end;
 }
@@ -314,6 +322,11 @@
 
 }
 
+.margin-b-xs {
+	margin-bottom: var(--size-xs);
+}
+
+
 .margin-t-s {
 	margin-top: var(--size-s);
 
@@ -447,7 +460,9 @@
 	backdrop-filter: blur(27px) !important;
 }
 
-
+.qr-code {
+	width: 120px;
+}
 
 
 /* ---------------------------- */
