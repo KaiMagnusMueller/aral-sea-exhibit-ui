@@ -35,7 +35,7 @@
     .cotton-image {
         grid-column: 1/3;
         grid-row: 1/2;
-        width: 50%;
+        width: 58%;
         top: 150px;
         left: 150px;
         position: absolute;
@@ -46,5 +46,6 @@
         grid-row: 1/2;
 
         right: 100px;
+        transform: translate(0px, 100px);
     }
 </style>

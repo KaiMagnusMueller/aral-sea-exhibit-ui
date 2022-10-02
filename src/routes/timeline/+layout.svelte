@@ -6,7 +6,7 @@
     import { t, locale } from "svelte-intl-precompile";
     import { fade } from "svelte/transition";
 
-    import question from "$lib/icons/question.svg?raw";
+    import info from "$lib/icons/info.svg?raw";
     // import PageTransition from '$lib/PageTransition.svelte';
 
     // /** @type {import('./$types').LayoutData} */
@@ -104,7 +104,6 @@
 
     import QRKM from "./qr_code_km.svg";
     import QRMartin from "./qr_code_martin.svg";
-    import Invader from "./invader.svelte";
     import Image from "$lib/Image.svelte";
 
     // @ts-ignore
@@ -192,7 +191,8 @@
     <TopicSelector />
 </div>
     <Button
-    iconName={question}
+    iconName={info}
+    variant="tertiary"
     on:click={() => {
         console.log("Open about modal");
         modalVisible = !modalVisible;
