@@ -1,4 +1,8 @@
 {
+    "about": {
+        "submit": "Schließen",
+        "project-by": "Ein Projekt von"
+    },
     "general": {
         "reset": "Neustart",
         "button-submit": "Ok"
@@ -15,7 +19,7 @@
     },
     "model-reset": {
         "header": "Bevor Sie beginnen",
-        "title": "Setzen Sie alle Ebenen ein, bevor Sie beginnen"
+        "title": "Setzen Sie alle Acryl-Ebenen in die Installation ein um zu beginnen."
     },
     "1960": {
         "title": "Aral See 1960",
@@ -119,6 +123,24 @@
             "title": "",
             "title_short": "",
             "image": ""
+        }
+    },
+    "2020": {
+        "title": "Aral Sea 2010",
+        "water": {
+            "title": "",
+            "title_short": "",
+            "image": "Trockenliegendes Schiff in der Nähe von Moynaq, einer ehemaligen Hafenstadt am Aralsee"
+        },
+        "cotton": {
+            "title": "",
+            "title_short": "",
+            "image": "Cotton pickers in the surroundings of Khiva, Xorazm province in Uzbekistan"
+        },
+        "politics": {
+            "title": "",
+            "title_short": "",
+            "video": "Techno video von ABC"
         }
     }
 }

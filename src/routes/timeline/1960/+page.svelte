@@ -29,8 +29,6 @@
     import { fly } from 'svelte/transition';
 
     import Image from '$lib/Image.svelte';
-    import Cotton_01 from '$lib/media/Cotton_01.jpg';
-    import SichlingFisch from '$lib/media/Sichling-Fisch.jpg';
 
     let imagePath = '';
 
@@ -114,11 +112,6 @@
 
 <ImageSection>
     {#if $topics.currentTopic === 'water'}
-        <div class="second-image from-top-right to-width-80 image image-transition">
-            <Window>
-                <Image src={SichlingFisch} alt={'text'} />
-            </Window>
-        </div>
         <div class="align-bottom margin-l-auto">
             {#if $locale === 'de'}
                 <SeaTable_de />
@@ -151,11 +144,6 @@
         </div>
     {/if}
 
-    <!-- <div class="first-image">
-            <Window>
-                <Image src={Cotton_01} alt={$t('1960.water.title')} />
-            </Window>
-        </div> -->
 </ImageSection>
 
 <style>

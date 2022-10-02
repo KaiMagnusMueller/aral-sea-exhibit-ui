@@ -4,5 +4,5 @@
 ---------------------------- | ------
 Wasserspiegel m über NN      | 51,1  
 Wasservolumen km<sup>3</sup> | 925  
-Oberfläche km<sup>2</sup>    | 60,2
+Oberfläche km<sup>2</sup>    | 60,200
 Salzgehalt / Salinität (g/L) | 12   

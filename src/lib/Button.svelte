@@ -54,11 +54,15 @@
         padding: 6px 16px;
     }
 
-    .secondary .inner:hover,
-    .tertiary .inner:hover {
+    .secondary .inner:hover{
         background-color: var(--aral-color-content);
         color: var(--aral-color-bg);
         fill: var(--aral-color-bg);
+    }
+
+
+    .tertiary .inner:hover {
+
     }
 
     .primary {

@@ -124,6 +124,14 @@
 	align-self: center;
 }
 
+.align-baseline {
+	align-items: baseline;
+}
+
+.align-flex-end {
+	align-items: flex-end;
+}
+
 .justify-self-right {
 	justify-content: end;
 }
@@ -249,6 +257,19 @@
 /* ----------------- */
 /* ----------------- */
 /* PADDING */
+
+.padding-t-xs {
+	padding-top: var(--size-xs);
+}
+
+.padding-t-s {
+	padding-top: var(--size-s);
+}
+
+.padding-t-m {
+	padding-top: var(--size-m);
+}
+
 .padding-all-xs {
 	padding: var(--size-xs);
 }
@@ -314,6 +335,11 @@
 
 }
 
+.margin-b-xs {
+	margin-bottom: var(--size-xs);
+}
+
+
 .margin-t-s {
 	margin-top: var(--size-s);
 
@@ -373,6 +399,22 @@
 
 }
 
+
+.from-top-right-corner {
+	top: 100px;
+	/* left: 100px; */
+	right: -100px;
+	transform: rotate(-2deg) translate(-50%, -50%);
+
+}
+
+.from-top-right-corner:has(.lightbox) {
+	right: 50%;
+	top: 50%;
+	transform: rotate(0) translate(50%, -50%);
+
+}
+
 .from-bottom-left {
 	bottom: -360px;
 	left: 440px;
@@ -389,7 +431,7 @@
 }
 
 .from-bottom-left-corner {
-	bottom: -260px;
+	bottom: -220px;
 	left: -180px;
 	/* right: -100px; */
 	transform: rotate(-2deg) translate(-50%, -50%);
@@ -415,6 +457,19 @@
 
 }
 
+.from-bottom-left-corner-3 {
+	bottom: -180px;
+	left: -180px;
+	transform: rotate(-2deg) translate(-50%, -50%);
+}
+
+.from-bottom-left-corner-3:has(.lightbox) {
+	left: 50%;
+	bottom: 50%;
+	transform: rotate(0) translate(-50%, 50%);
+
+}
+
 
 .image-transition {
 	transition: all 0.5s ease;
@@ -431,8 +486,14 @@
 	backdrop-filter: blur(27px) !important;
 }
 
+.qr-code {
+	width: 120px;
+}
 
 
+.qr-code-small {
+	width: 100px;
+}
 
 /* ---------------------------- */
 /* ---------------------------- */
@@ -519,8 +580,14 @@ button:focus:not(:focus-visible) {
 /* ----------------- */
 /* TABLE */
 
+h2+table:not(:last-child) {
+	margin-bottom: 24px;
+}
+
+
 table {
 	/* border: var(--border-l); */
+	width: 100%;
 	border-collapse: separate;
 	border-left: 0;
 	border-radius: var(--size-xs);
@@ -583,6 +650,7 @@ tbody tr:last-child td:last-child {
 table th:last-child,
 table td:last-child {
 	border-right: var(--border-l);
+	text-align: right;
 }
 
 tbody tr:last-child td {

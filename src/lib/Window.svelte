@@ -5,10 +5,7 @@
     export let caption = '';
     export let padding = false;
     export let transparent = false;
-
-    function handleClick(event: MouseEvent) {
-        console.log(event);
-    }
+    export let enableEvents = false
 
     let lightbox = false;
 
@@ -28,7 +25,7 @@
                 <h2>{header}</h2>
             </div>
         {/if}
-        <div class="content" class:padding-all-s={padding}>
+        <div class="content" class:padding-all-s={padding} class:enable-pointer-events="{enableEvents}">
             <slot />
         </div>
     </div>
@@ -61,6 +58,10 @@
         flex-grow: 1;
         display: flex;
         pointer-events: none;
+    }
+
+    .enable-pointer-events {
+        pointer-events: all;
     }
 
     .caption {

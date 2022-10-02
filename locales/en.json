@@ -1,4 +1,9 @@
 {
+    "about": {
+        "submit": "Close",
+        "project-by": "A project by"
+
+    },
     "general": {
         "reset": "Restart",
         "button-submit": "Ok"
@@ -6,7 +11,7 @@
     "splash": {
         "title": "The Aral Sea",
         "intro.text": "Its development from 1960 until 2020",
-        "start.button": "Start the experience"
+        "start.button": "Start the journey"
     },
     "intro": {
         "prev": "Back",
@@ -15,7 +20,7 @@
     },
     "model-reset": {
         "header": "Before you start",
-        "title": "Insert all layers into the model before you begin"
+        "title": "Insert all acrylic layers into the installation to start."
     },
     "1960": {
         "title": "Aral Sea 1960",
@@ -119,6 +124,24 @@
             "title": "",
             "title_short": "",
             "image": ""
+        }
+    },
+    "2020": {
+        "title": "Aral Sea 2010",
+        "water": {
+            "title": "",
+            "title_short": "",
+            "image": "Dry-laid ship near Moynaq, a former port city on the Aral Sea"
+        },
+        "cotton": {
+            "title": "",
+            "title_short": "",
+            "image": "Cotton pickers in the surroundings of Khiva, Xorazm province in Uzbekistan"
+        },
+        "politics": {
+            "title": "",
+            "title_short": "",
+            "video": "Techno video by ABC"
         }
     }
 }

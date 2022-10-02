@@ -8,7 +8,7 @@
     import Button from './Button.svelte';
 
     export let header = '';
-    export let submitText = 'Ok';
+    export let submitText = $t('general.button-submit');
     export let padding = true;
 
     let dispatch = createEventDispatcher();
@@ -36,7 +36,7 @@
                     </main>
 
                     <footer class="flex justify-self-right">
-                        <Button label={$t('general.button-submit')} on:click={handleClick} />
+                        <Button label={submitText} on:click={handleClick} />
                     </footer>
                 </div>
             </div>

@@ -94,7 +94,7 @@
         </div>
     {/if}
     {#if $topics.currentTopic === 'cotton'}
-        <div class="align-bottom margin-l-auto margin-b-m">
+        <div class="stats center-v-h">
             <Window padding transparent>
                 {#if $locale === 'de'}
                     <StatsHarvest_de />
@@ -117,5 +117,9 @@
     .karakum-image {
         position: absolute;
         width: 1000px;
+    }
+
+    .stats {
+        position: absolute;
     }
 </style>
