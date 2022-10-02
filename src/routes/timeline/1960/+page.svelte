@@ -29,7 +29,6 @@
     import { fly } from 'svelte/transition';
 
     import Image from '$lib/Image.svelte';
-    import SichlingFisch from '$lib/media/Sichling-Fisch.jpg';
 
     let imagePath = '';
 
@@ -145,11 +144,6 @@
         </div>
     {/if}
 
-    <!-- <div class="first-image">
-            <Window>
-                <Image src={Cotton_01} alt={$t('1960.water.title')} />
-            </Window>
-        </div> -->
 </ImageSection>
 
 <style>
